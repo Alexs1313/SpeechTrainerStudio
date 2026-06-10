@@ -1,0 +1,151 @@
+import React from 'react';
+import {Modal, Pressable, StyleSheet, Text, View} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+import {useSafeAreaInsets} from 'react-native-safe-area-context';
+
+import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {ShopText} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioShop/SpeechTrainerStudioShop/SpeechTrainerStudioShop';
+
+type Props = {
+  text: ShopText | null;
+  balance: number;
+  onCancel: () => void;
+  onConfirm: () => void;
+};
+
+export function ShopPurchaseModal({text, balance, onCancel, onConfirm}: Props) {
+  const insets = useSafeAreaInsets();
+
+  if (!text) {
+    return null;
+  }
+
+  const afterPurchase = balance - text.price;
+
+  return (
+    <Modal visible transparent animationType="slide" onRequestClose={onCancel}>
+      <Pressable style={styles.speechTrainerStudioBackdrop} onPress={onCancel}>
+        <Pressable
+          style={[styles.speechTrainerStudioSheet, {paddingBottom: insets.bottom + 24}]}
+          onPress={e => e.stopPropagation()}>
+          <View style={styles.speechTrainerStudioHandle} />
+          <Text style={styles.speechTrainerStudioTitle}>Confirm Purchase</Text>
+
+          <Text style={styles.speechTrainerStudioMessage}>
+            Unlock{' '}
+            <Text style={styles.speechTrainerStudioMessageBold}>{text.title}</Text>
+            {' for '}
+            <Text style={styles.speechTrainerStudioMessagePrice}>🎤 {text.price} Microphones</Text>
+            ?
+          </Text>
+
+          <Text style={styles.speechTrainerStudioBalanceNote}>
+            You have {balance} Microphones. After this purchase: {afterPurchase}.
+          </Text>
+
+          <View style={styles.speechTrainerStudioActions}>
+            <Pressable onPress={onCancel} style={styles.speechTrainerStudioCancelButton}>
+              <Text style={styles.speechTrainerStudioCancelText}>Cancel</Text>
+            </Pressable>
+            <Pressable onPress={onConfirm} style={styles.speechTrainerStudioBuyWrapper}>
+              <LinearGradient
+                colors={['#d97706', colors.coachTipText]}
+                start={{x: 0, y: 0}}
+                end={{x: 1, y: 1}}
+                style={styles.speechTrainerStudioBuyButton}>
+                <Text style={styles.speechTrainerStudioBuyText}>🎤 Buy Now</Text>
+              </LinearGradient>
+            </Pressable>
+          </View>
+        </Pressable>
+      </Pressable>
+    </Modal>
+  );
+}
+
+const styles = StyleSheet.create({
+  speechTrainerStudioBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.65)',
+    justifyContent: 'flex-end',
+  },
+  speechTrainerStudioSheet: {
+    backgroundColor: '#1a0f3c',
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    borderWidth: 1,
+    borderColor: 'rgba(139, 92, 246, 0.25)',
+    paddingHorizontal: 24,
+    paddingTop: 24,
+  },
+  speechTrainerStudioHandle: {
+    width: 40,
+    height: 4,
+    borderRadius: 999,
+    backgroundColor: 'rgba(139, 92, 246, 0.4)',
+    alignSelf: 'center',
+    marginBottom: 20,
+  },
+  speechTrainerStudioTitle: {
+    fontFamily: fonts.outfitBold,
+    fontSize: 20,
+    lineHeight: 28,
+    color: colors.textPrimary,
+    marginBottom: 16,
+  },
+  speechTrainerStudioMessage: {
+    fontFamily: fonts.dmSansRegular,
+    fontSize: 14,
+    lineHeight: 22,
+    color: colors.textSecondary,
+    marginBottom: 8,
+  },
+  speechTrainerStudioMessageBold: {
+    fontFamily: fonts.dmSansBold,
+    color: colors.textPrimary,
+  },
+  speechTrainerStudioMessagePrice: {
+    fontFamily: fonts.dmSansBold,
+    color: colors.coachTipText,
+  },
+  speechTrainerStudioBalanceNote: {
+    fontFamily: fonts.dmSansRegular,
+    fontSize: 13,
+    lineHeight: 20,
+    color: colors.textSecondary,
+    marginBottom: 24,
+  },
+  speechTrainerStudioActions: {
+    flexDirection: 'row',
+    gap: 12,
+  },
+  speechTrainerStudioCancelButton: {
+    flex: 1,
+    height: 46,
+    borderRadius: 20,
+    backgroundColor: 'rgba(139, 92, 246, 0.1)',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  speechTrainerStudioCancelText: {
+    fontFamily: fonts.dmSansSemiBold,
+    fontSize: 15,
+    color: colors.textAccent,
+  },
+  speechTrainerStudioBuyWrapper: {
+    flex: 1,
+    borderRadius: 20,
+    overflow: 'hidden',
+  },
+  speechTrainerStudioBuyButton: {
+    height: 46,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  speechTrainerStudioBuyText: {
+    fontFamily: fonts.dmSansBold,
+    fontSize: 15,
+    color: '#000000',
+  },
+});

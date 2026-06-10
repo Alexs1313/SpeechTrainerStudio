@@ -1,0 +1,65 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Black.ttf",
+      "sha1": "928765ebc49e7c22a223052891a9b7e9c1ced790"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Bold.ttf",
+      "sha1": "10e061ac7f01fd542e0c1956e89b12a272607f5d"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-ExtraBold.ttf",
+      "sha1": "283ba20eb28248c93a2f109c6694c2aaa1107561"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Medium.ttf",
+      "sha1": "dad2637623defedd4720447c5bbaa3d96b1594ee"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Regular.ttf",
+      "sha1": "76c500a4e46a2ef4252e909109926e08272ac849"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-SemiBold.ttf",
+      "sha1": "d0f49c8f35f1155a2c0a945051319e134d3ba0cf"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Black.ttf",
+      "sha1": "ea3a5e53fe33a31ff5c020bea83e933e380e0620"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Bold.ttf",
+      "sha1": "148c9a4f145442e85509a202472f3dfc002f2359"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-ExtraBold.ttf",
+      "sha1": "a46134346caa0c18b65157641be59e5973037ded"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-ExtraLight.ttf",
+      "sha1": "351d1b900b0055d0ac42069f1f6dc4f03207767d"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Light.ttf",
+      "sha1": "22de7012df58897c09b4d31b963d317293237c1e"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Medium.ttf",
+      "sha1": "9d7db2e6a458135b81b68078a7f4863fa17c2024"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Regular.ttf",
+      "sha1": "06a8de7221f96cdce3e90e32444f1db7897b479a"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-SemiBold.ttf",
+      "sha1": "187a51467f6faeab3853f62a38c729817a938bc0"
+    },
+    {
+      "path": "SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Thin.ttf",
+      "sha1": "f20be5b036a2a7452d142c9947ee774988a10352"
+    }
+  ]
+}
