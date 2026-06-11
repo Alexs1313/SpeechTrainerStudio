@@ -1,4 +1,4 @@
-package com.speechtrainerstudio
+package com.revolutvoicetrainer.studio
 
 import android.app.Application
 import com.facebook.react.PackageList

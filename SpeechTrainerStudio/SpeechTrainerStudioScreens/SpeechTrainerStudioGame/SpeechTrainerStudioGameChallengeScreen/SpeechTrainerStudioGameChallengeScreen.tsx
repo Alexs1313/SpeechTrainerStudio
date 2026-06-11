@@ -52,7 +52,6 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
       setSecondsLeft(prev => {
         if (prev <= 1) {
           clearInterval(interval);
-          handleSubmit();
           return 0;
         }
         return prev - 1;
@@ -60,7 +59,13 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [handleSubmit]);
+  }, []);
+
+  useEffect(() => {
+    if (secondsLeft === 0) {
+      handleSubmit();
+    }
+  }, [secondsLeft, handleSubmit]);
 
   return (
     <AppBackground>

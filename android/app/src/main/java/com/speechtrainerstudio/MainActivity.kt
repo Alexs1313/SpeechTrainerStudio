@@ -1,4 +1,4 @@
-package com.speechtrainerstudio
+package com.revolutvoicetrainer.studio
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

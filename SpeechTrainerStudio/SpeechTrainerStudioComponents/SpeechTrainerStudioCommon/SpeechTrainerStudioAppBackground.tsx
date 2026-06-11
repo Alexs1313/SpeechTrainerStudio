@@ -8,7 +8,7 @@ export function AppBackground({children}: PropsWithChildren) {
   return (
     <View style={styles.speechTrainerStudioContainer}>
       <LinearGradient
-        colors={['rgba(109, 40, 217, 0.12)', 'rgba(0, 0, 0, 0)']}
+        colors={['rgb(51, 5, 83)', 'rgba(37, 2, 47, 0.98)']}
         style={styles.speechTrainerStudioGlow}
       />
       {children}
