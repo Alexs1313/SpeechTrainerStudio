@@ -13,6 +13,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {OnboardingPagination} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioOnboarding/SpeechTrainerStudioOnboardingPagination';
 import {ONBOARDING_STEPS} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioOnboardingSteps';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 
@@ -142,11 +143,13 @@ const styles = StyleSheet.create({
     borderColor: colors.imageBorder,
     overflow: 'hidden',
     marginBottom: 40,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.19,
-    shadowRadius: 50,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 0},
+      shadowOpacity: 0.19,
+      shadowRadius: 50,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioImageInner: {
     flex: 1,
@@ -193,11 +196,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioButtonWrapper: {
     borderRadius: 16,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.4,
-    shadowRadius: 16,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.4,
+      shadowRadius: 16,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioButton: {
     height: 56,

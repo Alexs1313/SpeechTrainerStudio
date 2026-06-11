@@ -12,14 +12,20 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
-import {SessionConfig, SessionResult} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
+import {
+  SessionConfig,
+  SessionResult,
+} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
 import {formatTimer} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioFormatDuration/SpeechTrainerStudioFormatDuration';
 import {
   SCROLL_SPEED_PX,
   TEXT_LINE_HEIGHT,
   TEXT_SIZE_PX,
 } from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompterSettings/SpeechTrainerStudioPrompterSettings';
+import Orientation from 'react-native-orientation-locker';
+import {useFocusEffect} from '@react-navigation/native';
 
 type Props = {
   config: SessionConfig;
@@ -44,6 +50,16 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
   const fontSize = TEXT_SIZE_PX[config.size];
   const lineHeight = TEXT_LINE_HEIGHT[config.size];
   const scrollSpeed = SCROLL_SPEED_PX[config.speed];
+
+  useFocusEffect(
+    useCallback(() => {
+      Orientation.lockToPortrait();
+
+      return () => {
+        Orientation.unlockAllOrientations();
+      };
+    }, []),
+  );
 
   const finishSession = useCallback(() => {
     const durationMs = Math.max(elapsedMs, 1000);
@@ -95,21 +111,33 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
 
   return (
     <View style={styles.speechTrainerStudioContainer}>
-      <StatusBar barStyle="light-content" backgroundColor={colors.sessionBackground} />
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor={colors.sessionBackground}
+      />
 
       <View style={styles.speechTrainerStudioProgressTrack}>
         <LinearGradient
           colors={[colors.buttonGradientStart, colors.tabActive]}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
-          style={[styles.speechTrainerStudioProgressFill, {width: `${progress}%`}]}
+          style={[
+            styles.speechTrainerStudioProgressFill,
+            {width: `${progress}%`},
+          ]}
         />
       </View>
 
-      <View style={[styles.speechTrainerStudioTopBar, {paddingTop: insets.top + 8}]}>
+      <View
+        style={[
+          styles.speechTrainerStudioTopBar,
+          {paddingTop: insets.top + 8},
+        ]}>
         <View style={styles.speechTrainerStudioTimerRow}>
           <Text style={styles.speechTrainerStudioMetaIcon}>🕐</Text>
-          <Text style={styles.speechTrainerStudioMetaText}>{formatTimer(elapsedMs)}</Text>
+          <Text style={styles.speechTrainerStudioMetaText}>
+            {formatTimer(elapsedMs)}
+          </Text>
         </View>
         <Text style={styles.speechTrainerStudioMetaText}>{progress}%</Text>
       </View>
@@ -140,8 +168,14 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
         />
       </View>
 
-      <View style={[styles.speechTrainerStudioControls, {paddingBottom: insets.bottom + 90}]}>
-        <Pressable onPress={onClose} style={styles.speechTrainerStudioCloseButton}>
+      <View
+        style={[
+          styles.speechTrainerStudioControls,
+          {paddingBottom: insets.bottom + 90},
+        ]}>
+        <Pressable
+          onPress={onClose}
+          style={styles.speechTrainerStudioCloseButton}>
           <Text style={styles.speechTrainerStudioCloseIcon}>✕</Text>
         </Pressable>
 
@@ -163,7 +197,9 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
           </LinearGradient>
         </Pressable>
 
-        <Pressable onPress={handleReset} style={styles.speechTrainerStudioResetButton}>
+        <Pressable
+          onPress={handleReset}
+          style={styles.speechTrainerStudioResetButton}>
           <Text style={styles.speechTrainerStudioResetIcon}>↺</Text>
         </Pressable>
       </View>
@@ -259,11 +295,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   speechTrainerStudioPlayWrapper: {
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.5,
-    shadowRadius: 12,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 0},
+      shadowOpacity: 0.5,
+      shadowRadius: 12,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioPlayButton: {
     width: 64,

@@ -21,7 +21,10 @@ import {
 } from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioShopTexts';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
-import {ShopFilterId, ShopText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioShop/SpeechTrainerStudioShop/SpeechTrainerStudioShop';
+import {
+  ShopFilterId,
+  ShopText,
+} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioShop/SpeechTrainerStudioShop/SpeechTrainerStudioShop';
 
 type Props = {
   balance: number;
@@ -61,7 +64,11 @@ export function ShopListScreen({
     const canAfford = balance >= text.price;
 
     return (
-      <View style={[styles.speechTrainerStudioCard, owned && styles.speechTrainerStudioCardOwned]}>
+      <View
+        style={[
+          styles.speechTrainerStudioCard,
+          owned && styles.speechTrainerStudioCardOwned,
+        ]}>
         {owned ? (
           <LinearGradient
             colors={['rgba(21, 128, 61, 0.15)', 'rgba(17, 8, 48, 0.7)']}
@@ -71,9 +78,17 @@ export function ShopListScreen({
           />
         ) : null}
 
-        <View style={[styles.speechTrainerStudioCardHeader, owned && styles.speechTrainerStudioCardHeaderOwned]}>
-          <Text style={styles.speechTrainerStudioCardHeaderEmoji}>{category.emoji}</Text>
-          <Text style={styles.speechTrainerStudioCardHeaderTitle}>{category.title}</Text>
+        <View
+          style={[
+            styles.speechTrainerStudioCardHeader,
+            owned && styles.speechTrainerStudioCardHeaderOwned,
+          ]}>
+          <Text style={styles.speechTrainerStudioCardHeaderEmoji}>
+            {category.emoji}
+          </Text>
+          <Text style={styles.speechTrainerStudioCardHeaderTitle}>
+            {category.title}
+          </Text>
           {owned ? (
             <View style={styles.speechTrainerStudioOwnedBadge}>
               <Text style={styles.speechTrainerStudioOwnedCheck}>✓</Text>
@@ -85,13 +100,21 @@ export function ShopListScreen({
         <View style={styles.speechTrainerStudioCardBody}>
           <View style={styles.speechTrainerStudioCardTopRow}>
             <View style={styles.speechTrainerStudioCardTextBlock}>
-              <Text style={styles.speechTrainerStudioCardTitle}>{text.title}</Text>
-              <Text style={styles.speechTrainerStudioCardDescription}>{text.description}</Text>
+              <Text style={styles.speechTrainerStudioCardTitle}>
+                {text.title}
+              </Text>
+              <Text style={styles.speechTrainerStudioCardDescription}>
+                {text.description}
+              </Text>
             </View>
-            <View style={[styles.speechTrainerStudioLockButton, owned && styles.speechTrainerStudioLockButtonOwned]}>
+            <View
+              style={[
+                styles.speechTrainerStudioLockButton,
+                owned && styles.speechTrainerStudioLockButtonOwned,
+              ]}>
               <Image
                 source={
-                  owned
+                  !owned
                     ? require('../../../SpeechTrainerStudioAssets/images/lock.png')
                     : require('../../../SpeechTrainerStudioAssets/images/unlocked.png')
                 }
@@ -100,11 +123,15 @@ export function ShopListScreen({
           </View>
 
           <View style={styles.speechTrainerStudioCardFooter}>
-            <Text style={styles.speechTrainerStudioWordCount}>{text.wordCount} words</Text>
+            <Text style={styles.speechTrainerStudioWordCount}>
+              {text.wordCount} words
+            </Text>
             {owned ? (
               <View style={styles.speechTrainerStudioAvailableBadge}>
                 <Text style={styles.speechTrainerStudioAvailableCheck}>✓</Text>
-                <Text style={styles.speechTrainerStudioAvailableText}>Available</Text>
+                <Text style={styles.speechTrainerStudioAvailableText}>
+                  Available
+                </Text>
               </View>
             ) : (
               <Pressable
@@ -118,13 +145,22 @@ export function ShopListScreen({
                     end={{x: 1, y: 1}}
                     style={styles.speechTrainerStudioPriceButton}>
                     <Text style={styles.speechTrainerStudioPriceMic}>🎤</Text>
-                    <Text style={styles.speechTrainerStudioPriceValue}>{text.price}</Text>
+                    <Text style={styles.speechTrainerStudioPriceValue}>
+                      {text.price}
+                    </Text>
                   </LinearGradient>
                 ) : (
                   <View
-                    style={[styles.speechTrainerStudioPriceButton, styles.speechTrainerStudioPriceButtonDisabled]}>
-                    <Text style={styles.speechTrainerStudioPriceMicDisabled}>🎤</Text>
-                    <Text style={styles.speechTrainerStudioPriceValueDisabled}>{text.price}</Text>
+                    style={[
+                      styles.speechTrainerStudioPriceButton,
+                      styles.speechTrainerStudioPriceButtonDisabled,
+                    ]}>
+                    <Text style={styles.speechTrainerStudioPriceMicDisabled}>
+                      🎤
+                    </Text>
+                    <Text style={styles.speechTrainerStudioPriceValueDisabled}>
+                      {text.price}
+                    </Text>
                   </View>
                 )}
               </Pressable>
@@ -132,7 +168,9 @@ export function ShopListScreen({
           </View>
 
           {owned ? (
-            <Text style={styles.speechTrainerStudioPreview}>{getTextPreview(text.body)}</Text>
+            <Text style={styles.speechTrainerStudioPreview}>
+              {getTextPreview(text.body)}
+            </Text>
           ) : null}
         </View>
       </View>
@@ -154,13 +192,17 @@ export function ShopListScreen({
         ItemSeparatorComponent={ListSeparator}
         ListHeaderComponent={
           <>
-            <Text style={styles.speechTrainerStudioEyebrow}>Premium Content</Text>
+            <Text style={styles.speechTrainerStudioEyebrow}>
+              Premium Content
+            </Text>
 
             <View style={styles.speechTrainerStudioHeaderRow}>
               <Text style={styles.speechTrainerStudioTitle}>Text Shop</Text>
               <View style={styles.speechTrainerStudioBalanceBadge}>
                 <Text style={styles.speechTrainerStudioBalanceMic}>🎤</Text>
-                <Text style={styles.speechTrainerStudioBalanceValue}>{balance}</Text>
+                <Text style={styles.speechTrainerStudioBalanceValue}>
+                  {balance}
+                </Text>
               </View>
             </View>
 
@@ -205,8 +247,14 @@ export function ShopListScreen({
       />
 
       {toastMessage ? (
-        <View style={[styles.speechTrainerStudioToast, {bottom: insets.bottom + 90}]}>
-          <Text style={styles.speechTrainerStudioToastText}>{toastMessage}</Text>
+        <View
+          style={[
+            styles.speechTrainerStudioToast,
+            {bottom: insets.bottom + 90},
+          ]}>
+          <Text style={styles.speechTrainerStudioToastText}>
+            {toastMessage}
+          </Text>
         </View>
       ) : null}
     </AppBackground>

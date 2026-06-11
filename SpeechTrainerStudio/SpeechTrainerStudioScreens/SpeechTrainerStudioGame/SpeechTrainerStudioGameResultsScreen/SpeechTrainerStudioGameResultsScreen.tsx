@@ -5,6 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {GameChallengeResult} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioGame/SpeechTrainerStudioGame/SpeechTrainerStudioGame';
 import {formatGameTime} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioGame/SpeechTrainerStudioGameEvaluation/SpeechTrainerStudioGameEvaluation';
@@ -271,11 +272,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioPlayWrapper: {
     borderRadius: 16,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.35,
-    shadowRadius: 16,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.35,
+      shadowRadius: 16,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioPlayButton: {
     height: 55,

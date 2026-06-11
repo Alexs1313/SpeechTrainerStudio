@@ -13,6 +13,7 @@ import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTraine
 import {SegmentedControl} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioSegmentedControl';
 import {getCategoryById} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioPrompterTexts';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {
   PrompterText,
@@ -250,11 +251,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioBeginWrapper: {
     borderRadius: 16,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.4,
-    shadowRadius: 16,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.4,
+      shadowRadius: 16,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioBeginButton: {
     height: 56,

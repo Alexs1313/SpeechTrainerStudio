@@ -5,6 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 
 type Step = {
@@ -135,11 +136,13 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(139, 92, 246, 0.25)',
     overflow: 'hidden',
     marginBottom: 24,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.15,
-    shadowRadius: 30,
-    elevation: 6,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 0},
+      shadowOpacity: 0.15,
+      shadowRadius: 30,
+      elevation: 6,
+    }),
   },
   speechTrainerStudioHeroGradient: {borderRadius: 24},
   speechTrainerStudioHeroInner: {
@@ -207,11 +210,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioStartWrapper: {
     borderRadius: 16,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.4,
-    shadowRadius: 16,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.4,
+      shadowRadius: 16,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioStartButton: {
     height: 56,

@@ -5,6 +5,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {SessionResult} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
 import {formatDuration} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioFormatDuration/SpeechTrainerStudioFormatDuration';
@@ -151,11 +152,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
 
     marginBottom: 20,
-    shadowColor: '#22c55e',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.13,
-    shadowRadius: 40,
-    elevation: 4,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#22c55e',
+      shadowOffset: {width: 0, height: 0},
+      shadowOpacity: 0.13,
+      shadowRadius: 40,
+      elevation: 4,
+    }),
   },
   speechTrainerStudioTrophy: {
     fontSize: 60,
@@ -236,11 +239,13 @@ const styles = StyleSheet.create({
   speechTrainerStudioPrimaryWrapper: {
     borderRadius: 16,
     marginBottom: 12,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.35,
-    shadowRadius: 16,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.35,
+      shadowRadius: 16,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioPrimaryButton: {
     height: 55,

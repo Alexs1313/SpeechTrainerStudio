@@ -1,5 +1,12 @@
 import React, {useEffect} from 'react';
-import {Image, ImageBackground, StatusBar, StyleSheet, View} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Platform,
+  StatusBar,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 const LOADER_DURATION_MS = 5000;
 
@@ -22,8 +29,19 @@ export function SpeechTrainerStudioLoaderScreen({onComplete}: Props) {
         resizeMode="cover">
         <View style={styles.speechTrainerStudioLogoContainer}>
           <Image
-            source={require('../../../SpeechTrainerStudioAssets/images/loaderlogo.png')}
-            style={styles.speechTrainerStudioLogo}
+            source={
+              Platform.OS === 'ios'
+                ? require('../../../SpeechTrainerStudioAssets/images/loaderlogo.png')
+                : require('../../../SpeechTrainerStudioAssets/images/icn.png')
+            }
+            style={[
+              styles.speechTrainerStudioLogo,
+              Platform.OS === 'android' && {
+                width: 200,
+                height: 200,
+                borderRadius: 50,
+              },
+            ]}
             resizeMode="contain"
           />
         </View>
@@ -47,8 +65,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioLogo: {
-    width: 180,
-    height: 180,
-  },
+  speechTrainerStudioLogo: {},
 });

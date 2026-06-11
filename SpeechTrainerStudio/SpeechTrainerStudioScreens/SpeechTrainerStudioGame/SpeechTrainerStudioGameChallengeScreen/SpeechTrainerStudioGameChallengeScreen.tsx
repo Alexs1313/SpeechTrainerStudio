@@ -15,6 +15,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {GAME_DURATION_SEC} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioGameTopics';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {countWords} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioWordCount/SpeechTrainerStudioWordCount';
 
@@ -213,11 +214,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioSubmitWrapper: {
     borderRadius: 16,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 8},
-    shadowOpacity: 0.35,
-    shadowRadius: 12,
-    elevation: 8,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 8},
+      shadowOpacity: 0.35,
+      shadowRadius: 12,
+      elevation: 8,
+    }),
   },
   speechTrainerStudioSubmitButton: {
     height: 56,

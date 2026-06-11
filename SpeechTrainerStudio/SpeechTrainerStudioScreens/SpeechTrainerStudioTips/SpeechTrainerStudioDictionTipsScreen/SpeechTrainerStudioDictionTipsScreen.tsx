@@ -13,11 +13,17 @@ import {
 } from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioDictionTips';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
-import {DictionTip, TipCategoryId} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioTips/SpeechTrainerStudioTips/SpeechTrainerStudioTips';
+import {
+  DictionTip,
+  TipCategoryId,
+} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioTips/SpeechTrainerStudioTips/SpeechTrainerStudioTips';
+import Orientation from 'react-native-orientation-locker';
+import {useFocusEffect} from '@react-navigation/native';
 
 export function DictionTipsScreen() {
   const insets = useSafeAreaInsets();
-  const [selectedCategory, setSelectedCategory] = useState<TipCategoryId>('voice');
+  const [selectedCategory, setSelectedCategory] =
+    useState<TipCategoryId>('voice');
   const [expandedTipId, setExpandedTipId] = useState<string | null>(null);
   const [modalTip, setModalTip] = useState<DictionTip | null>(null);
 
@@ -41,6 +47,16 @@ export function DictionTipsScreen() {
     setModalTip(prev => getShuffleTip(prev?.id));
   }, []);
 
+  useFocusEffect(
+    useCallback(() => {
+      Orientation.lockToPortrait();
+
+      return () => {
+        Orientation.unlockAllOrientations();
+      };
+    }, []),
+  );
+
   return (
     <AppBackground>
       <ScrollView
@@ -49,7 +65,9 @@ export function DictionTipsScreen() {
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.speechTrainerStudioEyebrow}>Speaking Coach Tips</Text>
+        <Text style={styles.speechTrainerStudioEyebrow}>
+          Speaking Coach Tips
+        </Text>
         <Text style={styles.speechTrainerStudioTitle}>Diction Tips</Text>
 
         <Pressable onPress={handleShuffleTip}>
@@ -59,7 +77,9 @@ export function DictionTipsScreen() {
             end={{x: 1, y: 1}}
             style={styles.speechTrainerStudioShuffleButton}>
             <Text style={styles.speechTrainerStudioShuffleIcon}>🔀</Text>
-            <Text style={styles.speechTrainerStudioShuffleLabel}>Shuffle Tip</Text>
+            <Text style={styles.speechTrainerStudioShuffleLabel}>
+              Shuffle Tip
+            </Text>
           </LinearGradient>
         </Pressable>
 
@@ -70,9 +90,15 @@ export function DictionTipsScreen() {
               <Pressable
                 key={cat.id}
                 onPress={() => handleCategoryChange(cat.id)}
-                style={[styles.speechTrainerStudioFilterChip, active && styles.speechTrainerStudioFilterChipActive]}>
+                style={[
+                  styles.speechTrainerStudioFilterChip,
+                  active && styles.speechTrainerStudioFilterChipActive,
+                ]}>
                 <Text
-                  style={[styles.speechTrainerStudioFilterLabel, active && styles.speechTrainerStudioFilterLabelActive]}>
+                  style={[
+                    styles.speechTrainerStudioFilterLabel,
+                    active && styles.speechTrainerStudioFilterLabelActive,
+                  ]}>
                   {cat.emoji} {cat.shortLabel}
                 </Text>
               </Pressable>
@@ -81,8 +107,12 @@ export function DictionTipsScreen() {
         </View>
 
         <View style={styles.speechTrainerStudioSectionHeader}>
-          <Text style={styles.speechTrainerStudioSectionEmoji}>{category.emoji}</Text>
-          <Text style={styles.speechTrainerStudioSectionTitle}>{category.title}</Text>
+          <Text style={styles.speechTrainerStudioSectionEmoji}>
+            {category.emoji}
+          </Text>
+          <Text style={styles.speechTrainerStudioSectionTitle}>
+            {category.title}
+          </Text>
         </View>
 
         <View style={styles.speechTrainerStudioTipList}>

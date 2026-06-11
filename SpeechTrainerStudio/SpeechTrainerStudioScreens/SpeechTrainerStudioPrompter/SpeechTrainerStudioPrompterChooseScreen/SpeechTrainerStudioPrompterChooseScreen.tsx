@@ -6,6 +6,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {PROMPTER_CATEGORIES} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioPrompterTexts';
 import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
 import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {PrompterCategoryId, PrompterText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
 
@@ -224,11 +225,13 @@ const styles = StyleSheet.create({
   },
   speechTrainerStudioCategoryCardActive: {
     borderColor: colors.cardBorderActive,
-    shadowColor: '#8b5cf6',
-    shadowOffset: {width: 0, height: 0},
-    shadowOpacity: 0.2,
-    shadowRadius: 20,
-    elevation: 4,
+    ...speechTrainerStudioShadow({
+      shadowColor: '#8b5cf6',
+      shadowOffset: {width: 0, height: 0},
+      shadowOpacity: 0.2,
+      shadowRadius: 20,
+      elevation: 4,
+    }),
   },
   speechTrainerStudioCategoryIcon: {
     width: 48,
