@@ -3,5 +3,5 @@ module.exports = {
     ios: {},
     android: {},
   },
-  assets: ['./SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/'],
+  assets: ['./src/assets/fonts/'],
 };

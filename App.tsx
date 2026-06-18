@@ -1,12 +1,12 @@
 import React from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 
-import {SpeechTrainerStudioApp} from './SpeechTrainerStudioApp';
+import {AppNavigator} from './src/navigation/AppNavigator';
 
 function App(): React.JSX.Element {
   return (
     <SafeAreaProvider>
-      <SpeechTrainerStudioApp />
+      <AppNavigator />
     </SafeAreaProvider>
   );
 }

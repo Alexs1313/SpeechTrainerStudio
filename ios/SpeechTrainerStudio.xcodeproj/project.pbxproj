@@ -7,54 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07388DC49F0747E69F6757FE /* Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E5A522DA9E0473FBA3771ED /* Outfit-Bold.ttf */; };
+		0548DF7C516748978CCCAC2B /* Outfit-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E9152F35BC425789F21690 /* Outfit-ExtraBold.ttf */; };
+		0826300714294A229851319E /* Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 112E198ED97042D993222C33 /* Outfit-Bold.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-SpeechTrainerStudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SpeechTrainerStudio.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		17A3933601FA47C895CFCD19 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EDDF6AD81CA245078787905E /* DMSans-Regular.ttf */; };
-		1E28921BB2214FAD80A103D9 /* DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73C37507D40A42CA8D8A6C21 /* DMSans-SemiBold.ttf */; };
-		1EDAA5852C5A46F0BB2E239E /* Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64F0331EAC4048709A3C7B76 /* Outfit-ExtraLight.ttf */; };
-		268440B0CAEF4AD2BCF063B0 /* Outfit-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 786A5D210FF040A9A6AD2A05 /* Outfit-ExtraBold.ttf */; };
-		2EE5B83D0E184A61B1A9202D /* Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD710D3F1A28413A965A9739 /* Outfit-Black.ttf */; };
-		3126CF7CF41146CBAFF6A5D8 /* Outfit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18C470109EF9443BA54C220B /* Outfit-SemiBold.ttf */; };
-		489D154E0B2A412CA112A692 /* Outfit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F671B76126DF4505BC5FAF55 /* Outfit-Medium.ttf */; };
-		4D47E6D9654C488E8424B801 /* Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DF29BA5D10749D29A35636F /* Outfit-Regular.ttf */; };
+		333C62AF4DAE47B8BD811286 /* DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 981903F578AE485F8E573196 /* DMSans-ExtraBold.ttf */; };
+		538E79177AB641F2BD653747 /* Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402DC431BB5042AFA62AC2E3 /* Outfit-Regular.ttf */; };
+		5D0F9114D59C4F91A156137C /* Outfit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B7D672FCBDF400FB4F61772 /* Outfit-SemiBold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
+		77D5A501882043719B7D6174 /* Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3885390D849F4F26A074BFC2 /* Outfit-ExtraLight.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		91D83FC0C20242D48C62CCFF /* Outfit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 215357074B1D466495C9EB2B /* Outfit-Light.ttf */; };
-		9A494BFF226A4D63843B34C3 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F46945237FC143278914AF04 /* DMSans-Medium.ttf */; };
-		CE95386F1E4241ACBC5C687A /* DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 96B0ECAA5D1B451A94DB923D /* DMSans-Black.ttf */; };
-		DA0A1C8EB7714B4BB3428358 /* Outfit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E90FF3F11804A4190C945CB /* Outfit-Thin.ttf */; };
+		91DDC9F6082F4267B8EC3F58 /* DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01218B4D979446EFB84CA86C /* DMSans-Medium.ttf */; };
+		9A55DC34BFB343B688AE7421 /* DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA20623565484017A8CB7A4B /* DMSans-Black.ttf */; };
+		9EE445AFBB3C490D9335E262 /* Outfit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0242C6C93A1D4B44A1BD9DCE /* Outfit-Thin.ttf */; };
+		B0F4D2F2F6F74BEDB6283C42 /* Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A19F105D73440BE820820EE /* Outfit-Black.ttf */; };
+		C6FFF98D2FBA4F00A50E679C /* Outfit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2D37CDFD60471986FEA410 /* Outfit-Light.ttf */; };
+		CF7B5CD9082B401A8F388847 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAE5861A88994B06861F6DA9 /* DMSans-Bold.ttf */; };
+		DEF4B5B58A01407494209534 /* Outfit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02426CD126B444E193FBDE56 /* Outfit-Medium.ttf */; };
+		E28B2E3691BB49FB9D3BAAE4 /* DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14A91122EB284E0F99BC61C2 /* DMSans-SemiBold.ttf */; };
 		E410F094409376D2022CA62B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		E498DAA6EF5643E5BFA54EFC /* DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 81DDF4E001844D01BF15CBA9 /* DMSans-ExtraBold.ttf */; };
-		F1CAC67B858A44F985E0F4A1 /* DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 32BAB6A3519F4517B017683C /* DMSans-Bold.ttf */; };
+		F4573BC82E474051A39AD9A8 /* DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C88601D20E114E73B8321732 /* DMSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01218B4D979446EFB84CA86C /* DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Medium.ttf"; path = "../src/assets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		02426CD126B444E193FBDE56 /* Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Medium.ttf"; path = "../src/assets/fonts/Outfit-Medium.ttf"; sourceTree = "<group>"; };
+		0242C6C93A1D4B44A1BD9DCE /* Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Thin.ttf"; path = "../src/assets/fonts/Outfit-Thin.ttf"; sourceTree = "<group>"; };
+		112E198ED97042D993222C33 /* Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Bold.ttf"; path = "../src/assets/fonts/Outfit-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SpeechTrainerStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechTrainerStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpeechTrainerStudio/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SpeechTrainerStudio/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SpeechTrainerStudio/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		18C470109EF9443BA54C220B /* Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-SemiBold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
-		215357074B1D466495C9EB2B /* Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Light.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Light.ttf"; sourceTree = "<group>"; };
-		32BAB6A3519F4517B017683C /* DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Bold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		14A91122EB284E0F99BC61C2 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-SemiBold.ttf"; path = "../src/assets/fonts/DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		1A19F105D73440BE820820EE /* Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Black.ttf"; path = "../src/assets/fonts/Outfit-Black.ttf"; sourceTree = "<group>"; };
+		1E2D37CDFD60471986FEA410 /* Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Light.ttf"; path = "../src/assets/fonts/Outfit-Light.ttf"; sourceTree = "<group>"; };
+		3885390D849F4F26A074BFC2 /* Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraLight.ttf"; path = "../src/assets/fonts/Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SpeechTrainerStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTrainerStudio.debug.xcconfig"; path = "Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio.debug.xcconfig"; sourceTree = "<group>"; };
-		4E5A522DA9E0473FBA3771ED /* Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Bold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Bold.ttf"; sourceTree = "<group>"; };
+		402DC431BB5042AFA62AC2E3 /* Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Regular.ttf"; path = "../src/assets/fonts/Outfit-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SpeechTrainerStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTrainerStudio.release.xcconfig"; path = "Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SpeechTrainerStudio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeechTrainerStudio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		64F0331EAC4048709A3C7B76 /* Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraLight.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
-		73C37507D40A42CA8D8A6C21 /* DMSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-SemiBold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SpeechTrainerStudio/AppDelegate.swift; sourceTree = "<group>"; };
-		786A5D210FF040A9A6AD2A05 /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraBold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7B7D672FCBDF400FB4F61772 /* Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-SemiBold.ttf"; path = "../src/assets/fonts/Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SpeechTrainerStudio/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		81DDF4E001844D01BF15CBA9 /* DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-ExtraBold.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		8E90FF3F11804A4190C945CB /* Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Thin.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Thin.ttf"; sourceTree = "<group>"; };
-		96B0ECAA5D1B451A94DB923D /* DMSans-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Black.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Black.ttf"; sourceTree = "<group>"; };
-		9DF29BA5D10749D29A35636F /* Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Regular.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Regular.ttf"; sourceTree = "<group>"; };
+		981903F578AE485F8E573196 /* DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-ExtraBold.ttf"; path = "../src/assets/fonts/DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BAE5861A88994B06861F6DA9 /* DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Bold.ttf"; path = "../src/assets/fonts/DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		C88601D20E114E73B8321732 /* DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Regular.ttf"; path = "../src/assets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		CA20623565484017A8CB7A4B /* DMSans-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Black.ttf"; path = "../src/assets/fonts/DMSans-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EDDF6AD81CA245078787905E /* DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Regular.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Regular.ttf"; sourceTree = "<group>"; };
-		F46945237FC143278914AF04 /* DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "DMSans-Medium.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		F671B76126DF4505BC5FAF55 /* Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Medium.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Medium.ttf"; sourceTree = "<group>"; };
-		FD710D3F1A28413A965A9739 /* Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-Black.ttf"; path = "../SpeechTrainerStudio/SpeechTrainerStudioAssets/fonts/Outfit-Black.ttf"; sourceTree = "<group>"; };
+		F0E9152F35BC425789F21690 /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Outfit-ExtraBold.ttf"; path = "../src/assets/fonts/Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,21 +123,21 @@
 		B2CDA1C3C7D84C84932656E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EDDF6AD81CA245078787905E /* DMSans-Regular.ttf */,
-				F46945237FC143278914AF04 /* DMSans-Medium.ttf */,
-				32BAB6A3519F4517B017683C /* DMSans-Bold.ttf */,
-				4E5A522DA9E0473FBA3771ED /* Outfit-Bold.ttf */,
-				9DF29BA5D10749D29A35636F /* Outfit-Regular.ttf */,
-				FD710D3F1A28413A965A9739 /* Outfit-Black.ttf */,
-				8E90FF3F11804A4190C945CB /* Outfit-Thin.ttf */,
-				18C470109EF9443BA54C220B /* Outfit-SemiBold.ttf */,
-				64F0331EAC4048709A3C7B76 /* Outfit-ExtraLight.ttf */,
-				786A5D210FF040A9A6AD2A05 /* Outfit-ExtraBold.ttf */,
-				73C37507D40A42CA8D8A6C21 /* DMSans-SemiBold.ttf */,
-				F671B76126DF4505BC5FAF55 /* Outfit-Medium.ttf */,
-				81DDF4E001844D01BF15CBA9 /* DMSans-ExtraBold.ttf */,
-				215357074B1D466495C9EB2B /* Outfit-Light.ttf */,
-				96B0ECAA5D1B451A94DB923D /* DMSans-Black.ttf */,
+				C88601D20E114E73B8321732 /* DMSans-Regular.ttf */,
+				01218B4D979446EFB84CA86C /* DMSans-Medium.ttf */,
+				BAE5861A88994B06861F6DA9 /* DMSans-Bold.ttf */,
+				112E198ED97042D993222C33 /* Outfit-Bold.ttf */,
+				402DC431BB5042AFA62AC2E3 /* Outfit-Regular.ttf */,
+				1A19F105D73440BE820820EE /* Outfit-Black.ttf */,
+				0242C6C93A1D4B44A1BD9DCE /* Outfit-Thin.ttf */,
+				7B7D672FCBDF400FB4F61772 /* Outfit-SemiBold.ttf */,
+				3885390D849F4F26A074BFC2 /* Outfit-ExtraLight.ttf */,
+				F0E9152F35BC425789F21690 /* Outfit-ExtraBold.ttf */,
+				14A91122EB284E0F99BC61C2 /* DMSans-SemiBold.ttf */,
+				02426CD126B444E193FBDE56 /* Outfit-Medium.ttf */,
+				981903F578AE485F8E573196 /* DMSans-ExtraBold.ttf */,
+				1E2D37CDFD60471986FEA410 /* Outfit-Light.ttf */,
+				CA20623565484017A8CB7A4B /* DMSans-Black.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -214,21 +214,21 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E410F094409376D2022CA62B /* PrivacyInfo.xcprivacy in Resources */,
-				17A3933601FA47C895CFCD19 /* DMSans-Regular.ttf in Resources */,
-				9A494BFF226A4D63843B34C3 /* DMSans-Medium.ttf in Resources */,
-				F1CAC67B858A44F985E0F4A1 /* DMSans-Bold.ttf in Resources */,
-				07388DC49F0747E69F6757FE /* Outfit-Bold.ttf in Resources */,
-				4D47E6D9654C488E8424B801 /* Outfit-Regular.ttf in Resources */,
-				2EE5B83D0E184A61B1A9202D /* Outfit-Black.ttf in Resources */,
-				DA0A1C8EB7714B4BB3428358 /* Outfit-Thin.ttf in Resources */,
-				3126CF7CF41146CBAFF6A5D8 /* Outfit-SemiBold.ttf in Resources */,
-				1EDAA5852C5A46F0BB2E239E /* Outfit-ExtraLight.ttf in Resources */,
-				268440B0CAEF4AD2BCF063B0 /* Outfit-ExtraBold.ttf in Resources */,
-				1E28921BB2214FAD80A103D9 /* DMSans-SemiBold.ttf in Resources */,
-				489D154E0B2A412CA112A692 /* Outfit-Medium.ttf in Resources */,
-				E498DAA6EF5643E5BFA54EFC /* DMSans-ExtraBold.ttf in Resources */,
-				91D83FC0C20242D48C62CCFF /* Outfit-Light.ttf in Resources */,
-				CE95386F1E4241ACBC5C687A /* DMSans-Black.ttf in Resources */,
+				F4573BC82E474051A39AD9A8 /* DMSans-Regular.ttf in Resources */,
+				91DDC9F6082F4267B8EC3F58 /* DMSans-Medium.ttf in Resources */,
+				CF7B5CD9082B401A8F388847 /* DMSans-Bold.ttf in Resources */,
+				0826300714294A229851319E /* Outfit-Bold.ttf in Resources */,
+				538E79177AB641F2BD653747 /* Outfit-Regular.ttf in Resources */,
+				B0F4D2F2F6F74BEDB6283C42 /* Outfit-Black.ttf in Resources */,
+				9EE445AFBB3C490D9335E262 /* Outfit-Thin.ttf in Resources */,
+				5D0F9114D59C4F91A156137C /* Outfit-SemiBold.ttf in Resources */,
+				77D5A501882043719B7D6174 /* Outfit-ExtraLight.ttf in Resources */,
+				0548DF7C516748978CCCAC2B /* Outfit-ExtraBold.ttf in Resources */,
+				E28B2E3691BB49FB9D3BAAE4 /* DMSans-SemiBold.ttf in Resources */,
+				DEF4B5B58A01407494209534 /* Outfit-Medium.ttf in Resources */,
+				333C62AF4DAE47B8BD811286 /* DMSans-ExtraBold.ttf in Resources */,
+				C6FFF98D2FBA4F00A50E679C /* Outfit-Light.ttf in Resources */,
+				9A55DC34BFB343B688AE7421 /* DMSans-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +349,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsjfnkdsfl.speechstudio;
 				PRODUCT_NAME = SpeechTrainerStudio;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -381,7 +381,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsjfnkdsfl.speechstudio;
 				PRODUCT_NAME = SpeechTrainerStudio;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
