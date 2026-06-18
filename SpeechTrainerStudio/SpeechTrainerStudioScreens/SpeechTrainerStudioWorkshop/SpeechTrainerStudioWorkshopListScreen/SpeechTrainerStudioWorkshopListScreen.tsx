@@ -14,9 +14,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {WorkshopCategoryPills} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshopCategoryPills';
 import {getCategoryEmoji} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioWorkshopCategories';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {WorkshopFilterId, WorkshopText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop';
+import {colors, fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   texts: WorkshopText[];
@@ -56,31 +55,31 @@ export function WorkshopListScreen({
   };
 
   const renderItem: ListRenderItem<WorkshopText> = ({item: text}) => (
-    <View style={styles.speechTrainerStudioCard}>
-      <View style={styles.speechTrainerStudioCardInner}>
-        <View style={styles.speechTrainerStudioCardBody}>
-          <Text style={styles.speechTrainerStudioCardEmoji}>
+    <View style={styles.WorkshopListScreenCard}>
+      <View style={styles.WorkshopListScreenCardInner}>
+        <View style={styles.WorkshopListScreenCardBody}>
+          <Text style={styles.WorkshopListScreenCardEmoji}>
             {getCategoryEmoji(text.categoryId)}
           </Text>
-          <Text style={styles.speechTrainerStudioCardTitle}>{text.title}</Text>
-          <Text style={styles.speechTrainerStudioCardDescription} numberOfLines={2}>
+          <Text style={styles.WorkshopListScreenCardTitle}>{text.title}</Text>
+          <Text style={styles.WorkshopListScreenCardDescription} numberOfLines={2}>
             {text.description}
           </Text>
-          <Text style={styles.speechTrainerStudioCardWordCount}>{text.wordCount} words</Text>
+          <Text style={styles.WorkshopListScreenCardWordCount}>{text.wordCount} words</Text>
         </View>
 
-        <View style={styles.speechTrainerStudioCardActions}>
+        <View style={styles.WorkshopListScreenCardActions}>
           <Pressable
             onPress={() => onEdit(text)}
-            style={styles.speechTrainerStudioEditButton}
+            style={styles.WorkshopListScreenEditButton}
             hitSlop={4}>
-            <Text style={styles.speechTrainerStudioEditIcon}>✎</Text>
+            <Text style={styles.WorkshopListScreenEditIcon}>✎</Text>
           </Pressable>
           <Pressable
             onPress={() => handleDelete(text)}
-            style={styles.speechTrainerStudioDeleteButton}
+            style={styles.WorkshopListScreenDeleteButton}
             hitSlop={4}>
-            <Text style={styles.speechTrainerStudioDeleteIcon}>🗑</Text>
+            <Text style={styles.WorkshopListScreenDeleteIcon}>🗑</Text>
           </Pressable>
         </View>
       </View>
@@ -94,38 +93,38 @@ export function WorkshopListScreen({
         keyExtractor={item => item.id}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
-        style={styles.speechTrainerStudioList}
+        style={styles.WorkshopListScreenList}
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.WorkshopListScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         ItemSeparatorComponent={ListSeparator}
         ListHeaderComponent={
           <>
-            <Text style={styles.speechTrainerStudioEyebrow}>Text Workshop</Text>
+            <Text style={styles.WorkshopListScreenEyebrow}>Text Workshop</Text>
 
-            <View style={styles.speechTrainerStudioHeaderRow}>
-              <Text style={styles.speechTrainerStudioTitle}>Your Texts</Text>
-              <Pressable onPress={onNew} style={styles.speechTrainerStudioNewButtonWrapper}>
+            <View style={styles.WorkshopListScreenHeaderRow}>
+              <Text style={styles.WorkshopListScreenTitle}>Your Texts</Text>
+              <Pressable onPress={onNew} style={styles.WorkshopListScreenNewButtonWrapper}>
                 <LinearGradient
                   colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
                   start={{x: 0, y: 0}}
                   end={{x: 1, y: 1}}
-                  style={styles.speechTrainerStudioNewButton}>
-                  <Text style={styles.speechTrainerStudioNewButtonIcon}>+</Text>
-                  <Text style={styles.speechTrainerStudioNewButtonText}>New</Text>
+                  style={styles.WorkshopListScreenNewButton}>
+                  <Text style={styles.WorkshopListScreenNewButtonIcon}>+</Text>
+                  <Text style={styles.WorkshopListScreenNewButtonText}>New</Text>
                 </LinearGradient>
               </Pressable>
             </View>
 
-            <View style={styles.speechTrainerStudioFilters}>
+            <View style={styles.WorkshopListScreenFilters}>
               <WorkshopCategoryPills
                 selectedId={filterId}
                 onSelect={onFilterChange}
               />
             </View>
 
-            <Text style={styles.speechTrainerStudioCount}>
+            <Text style={styles.WorkshopListScreenCount}>
               {filtered.length} {filtered.length === 1 ? 'text' : 'texts'}
             </Text>
           </>
@@ -136,42 +135,42 @@ export function WorkshopListScreen({
 }
 
 function ListSeparator() {
-  return <View style={styles.speechTrainerStudioSeparator} />;
+  return <View style={styles.WorkshopListScreenSeparator} />;
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioList: {
+  WorkshopListScreenList: {
     flex: 1,
   },
-  speechTrainerStudioContent: {
+  WorkshopListScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioSeparator: {
+  WorkshopListScreenSeparator: {
     height: 12,
   },
-  speechTrainerStudioEyebrow: {
+  WorkshopListScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioHeaderRow: {
+  WorkshopListScreenHeaderRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-  speechTrainerStudioTitle: {
+  WorkshopListScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     lineHeight: 34,
     color: colors.textPrimary,
     flex: 1,
   },
-  speechTrainerStudioNewButtonWrapper: {
+  WorkshopListScreenNewButtonWrapper: {
     borderRadius: 20,
   },
-  speechTrainerStudioNewButton: {
+  WorkshopListScreenNewButton: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 36,
@@ -180,74 +179,74 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     gap: 4,
   },
-  speechTrainerStudioNewButtonIcon: {
+  WorkshopListScreenNewButtonIcon: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 16,
     color: colors.white,
     lineHeight: 18,
   },
-  speechTrainerStudioNewButtonText: {
+  WorkshopListScreenNewButtonText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     color: colors.white,
     lineHeight: 20,
   },
-  speechTrainerStudioFilters: {
+  WorkshopListScreenFilters: {
     marginBottom: 16,
     marginHorizontal: -20,
     paddingLeft: 20,
   },
-  speechTrainerStudioCount: {
+  WorkshopListScreenCount: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 12,
   },
-  speechTrainerStudioCard: {
+  WorkshopListScreenCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     backgroundColor: colors.cardBackground,
     overflow: 'hidden',
   },
-  speechTrainerStudioCardInner: {
+  WorkshopListScreenCardInner: {
     padding: 16,
     flexDirection: 'row',
     alignItems: 'flex-start',
   },
-  speechTrainerStudioCardBody: {
+  WorkshopListScreenCardBody: {
     flex: 1,
     paddingRight: 8,
   },
-  speechTrainerStudioCardEmoji: {
+  WorkshopListScreenCardEmoji: {
     fontSize: 14,
     lineHeight: 21,
     marginBottom: 4,
   },
-  speechTrainerStudioCardTitle: {
+  WorkshopListScreenCardTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     lineHeight: 23,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioCardDescription: {
+  WorkshopListScreenCardDescription: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
     marginBottom: 8,
   },
-  speechTrainerStudioCardWordCount: {
+  WorkshopListScreenCardWordCount: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     lineHeight: 17,
     color: colors.textSecondary,
   },
-  speechTrainerStudioCardActions: {
+  WorkshopListScreenCardActions: {
     gap: 8,
   },
-  speechTrainerStudioEditButton: {
+  WorkshopListScreenEditButton: {
     width: 32,
     height: 32,
     borderRadius: 20,
@@ -255,11 +254,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioEditIcon: {
+  WorkshopListScreenEditIcon: {
     fontSize: 14,
     color: colors.tabActive,
   },
-  speechTrainerStudioDeleteButton: {
+  WorkshopListScreenDeleteButton: {
     width: 32,
     height: 32,
     borderRadius: 20,
@@ -267,7 +266,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioDeleteIcon: {
+  WorkshopListScreenDeleteIcon: {
     fontSize: 13,
   },
 });

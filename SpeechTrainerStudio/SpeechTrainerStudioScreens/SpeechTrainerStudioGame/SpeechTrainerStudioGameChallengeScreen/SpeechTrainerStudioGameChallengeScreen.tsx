@@ -14,10 +14,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {GAME_DURATION_SEC} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioGameTopics';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {countWords} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioWordCount/SpeechTrainerStudioWordCount';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   topic: string;
@@ -52,7 +50,6 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
       setSecondsLeft(prev => {
         if (prev <= 1) {
           clearInterval(interval);
-          handleSubmit();
           return 0;
         }
         return prev - 1;
@@ -60,21 +57,27 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [handleSubmit]);
+  }, []);
+
+  useEffect(() => {
+    if (secondsLeft === 0) {
+      handleSubmit();
+    }
+  }, [secondsLeft, handleSubmit]);
 
   return (
     <AppBackground>
       <KeyboardAvoidingView
-        style={styles.speechTrainerStudioFlex}
+        style={styles.GameChallengeScreenFlex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
-        <View style={styles.speechTrainerStudioProgressTrack}>
-          <View style={[styles.speechTrainerStudioProgressFill, {width: `${progress * 100}%`}]} />
+        <View style={styles.GameChallengeScreenProgressTrack}>
+          <View style={[styles.GameChallengeScreenProgressFill, {width: `${progress * 100}%`}]} />
         </View>
 
         <ScrollView
-          style={styles.speechTrainerStudioFlex}
+          style={styles.GameChallengeScreenFlex}
           contentContainerStyle={[
-            styles.speechTrainerStudioContent,
+            styles.GameChallengeScreenContent,
             {
               paddingTop: insets.top + 16,
               paddingBottom: insets.bottom + 100,
@@ -82,43 +85,43 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
           ]}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}>
-          <View style={styles.speechTrainerStudioStatsRow}>
-            <View style={styles.speechTrainerStudioTimerRow}>
-              <Text style={styles.speechTrainerStudioTimerIcon}>⏱</Text>
-              <Text style={styles.speechTrainerStudioTimerText}>{secondsLeft}s</Text>
+          <View style={styles.GameChallengeScreenStatsRow}>
+            <View style={styles.GameChallengeScreenTimerRow}>
+              <Text style={styles.GameChallengeScreenTimerIcon}>⏱</Text>
+              <Text style={styles.GameChallengeScreenTimerText}>{secondsLeft}s</Text>
             </View>
-            <Text style={styles.speechTrainerStudioWordCount}>
+            <Text style={styles.GameChallengeScreenWordCount}>
               {wordCount} {wordCount === 1 ? 'word' : 'words'}
             </Text>
           </View>
 
-          <View style={styles.speechTrainerStudioTopicCard}>
+          <View style={styles.GameChallengeScreenTopicCard}>
             <LinearGradient
               colors={['rgba(109, 40, 217, 0.3)', 'rgba(139, 92, 246, 0.15)']}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 1}}
-              style={styles.speechTrainerStudioTopicGradient}>
-              <View style={styles.speechTrainerStudioTopicInner}>
-                <Text style={styles.speechTrainerStudioTopicLabel}>Your Topic</Text>
-                <Text style={styles.speechTrainerStudioTopicText}>{topic}</Text>
+              style={styles.GameChallengeScreenTopicGradient}>
+              <View style={styles.GameChallengeScreenTopicInner}>
+                <Text style={styles.GameChallengeScreenTopicLabel}>Your Topic</Text>
+                <Text style={styles.GameChallengeScreenTopicText}>{topic}</Text>
               </View>
             </LinearGradient>
           </View>
 
-          <View style={styles.speechTrainerStudioInputWrapper}>
+          <View style={styles.GameChallengeScreenInputWrapper}>
             <TextInput
               value={response}
               onChangeText={setResponse}
               placeholder="Start writing your speech here... Don't overthink it. Just write what comes to you."
               placeholderTextColor={colors.textSecondary}
-              style={styles.speechTrainerStudioInput}
+              style={styles.GameChallengeScreenInput}
               multiline
               textAlignVertical="top"
               autoFocus
             />
           </View>
 
-          <Pressable onPress={handleSubmit} style={styles.speechTrainerStudioSubmitWrapper}>
+          <Pressable onPress={handleSubmit} style={styles.GameChallengeScreenSubmitWrapper}>
             <LinearGradient
               colors={
                 hasContent
@@ -127,8 +130,8 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
               }
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
-              style={styles.speechTrainerStudioSubmitButton}>
-              <Text style={styles.speechTrainerStudioSubmitText}>Submit Response</Text>
+              style={styles.GameChallengeScreenSubmitButton}>
+              <Text style={styles.GameChallengeScreenSubmitText}>Submit Response</Text>
             </LinearGradient>
           </Pressable>
         </ScrollView>
@@ -138,50 +141,50 @@ export function GameChallengeScreen({topic, onSubmit}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioFlex: {flex: 1},
-  speechTrainerStudioProgressTrack: {
+  GameChallengeScreenFlex: {flex: 1},
+  GameChallengeScreenProgressTrack: {
     height: 6,
     backgroundColor: 'rgba(139, 92, 246, 0.15)',
   },
-  speechTrainerStudioProgressFill: {
+  GameChallengeScreenProgressFill: {
     height: 6,
     backgroundColor: '#8b5cf6',
     borderRadius: 999,
   },
-  speechTrainerStudioContent: {paddingHorizontal: 20},
-  speechTrainerStudioStatsRow: {
+  GameChallengeScreenContent: {paddingHorizontal: 20},
+  GameChallengeScreenStatsRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-  speechTrainerStudioTimerRow: {
+  GameChallengeScreenTimerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  speechTrainerStudioTimerIcon: {fontSize: 16},
-  speechTrainerStudioTimerText: {
+  GameChallengeScreenTimerIcon: {fontSize: 16},
+  GameChallengeScreenTimerText: {
     fontFamily: fonts.outfitExtraBold,
     fontSize: 22,
     lineHeight: 33,
     color: '#8b5cf6',
   },
-  speechTrainerStudioWordCount: {
+  GameChallengeScreenWordCount: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
   },
-  speechTrainerStudioTopicCard: {
+  GameChallengeScreenTopicCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.25)',
     overflow: 'hidden',
     marginBottom: 16,
   },
-  speechTrainerStudioTopicGradient: {borderRadius: 16},
-  speechTrainerStudioTopicInner: {padding: 16},
-  speechTrainerStudioTopicLabel: {
+  GameChallengeScreenTopicGradient: {borderRadius: 16},
+  GameChallengeScreenTopicInner: {padding: 16},
+  GameChallengeScreenTopicLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     lineHeight: 17,
@@ -190,13 +193,13 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 8,
   },
-  speechTrainerStudioTopicText: {
+  GameChallengeScreenTopicText: {
     fontFamily: fonts.outfitBold,
     fontSize: 18,
     lineHeight: 24,
     color: colors.textPrimary,
   },
-  speechTrainerStudioInputWrapper: {
+  GameChallengeScreenInputWrapper: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
@@ -204,7 +207,7 @@ const styles = StyleSheet.create({
     minHeight: 320,
     marginBottom: 16,
   },
-  speechTrainerStudioInput: {
+  GameChallengeScreenInput: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 15,
     lineHeight: 26,
@@ -212,7 +215,7 @@ const styles = StyleSheet.create({
     padding: 16,
     minHeight: 320,
   },
-  speechTrainerStudioSubmitWrapper: {
+  GameChallengeScreenSubmitWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -222,13 +225,13 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioSubmitButton: {
+  GameChallengeScreenSubmitButton: {
     height: 56,
     borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioSubmitText: {
+  GameChallengeScreenSubmitText: {
     fontFamily: fonts.dmSansBold,
     fontSize: 16,
     color: colors.white,

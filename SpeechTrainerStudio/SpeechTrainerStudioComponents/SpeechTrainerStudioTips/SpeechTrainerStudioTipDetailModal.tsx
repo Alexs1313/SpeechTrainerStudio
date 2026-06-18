@@ -11,9 +11,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
+import {icons} from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioAssets';
 import {getCategoryById} from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioDictionTips';
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 import {DictionTip} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioTips/SpeechTrainerStudioTips/SpeechTrainerStudioTips';
 
 type Props = {
@@ -43,51 +43,51 @@ export function TipDetailModal({tip, onClose, onAnother}: Props) {
 
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onClose}>
-      <Pressable style={styles.speechTrainerStudioBackdrop} onPress={onClose}>
+      <Pressable style={styles.TipDetailModalBackdrop} onPress={onClose}>
         <Pressable
-          style={[styles.speechTrainerStudioSheet, {}]}
+          style={[styles.TipDetailModalSheet, {}]}
           onPress={e => e.stopPropagation()}>
           <LinearGradient
             colors={['#1a0845', '#0d0625']}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
-            style={styles.speechTrainerStudioSheetGradient}>
+            style={styles.TipDetailModalSheetGradient}>
             <View style={{padding: 25, paddingBottom: 40}}>
-              <View style={styles.speechTrainerStudioHandle} />
-              <View style={styles.speechTrainerStudioSheetHeader}>
-                <View style={styles.speechTrainerStudioCategoryBadge}>
-                  <Text style={styles.speechTrainerStudioCategoryBadgeText}>
+              <View style={styles.TipDetailModalHandle} />
+              <View style={styles.TipDetailModalSheetHeader}>
+                <View style={styles.TipDetailModalCategoryBadge}>
+                  <Text style={styles.TipDetailModalCategoryBadgeText}>
                     {category.emoji} {category.title}
                   </Text>
                 </View>
-                <Pressable style={styles.speechTrainerStudioShareButton} onPress={handleShare}>
+                <Pressable style={styles.TipDetailModalShareButton} onPress={handleShare}>
                   <Image
-                    source={require('../../SpeechTrainerStudioAssets/images/share.png')}
-                    style={styles.speechTrainerStudioShareIcon}
+                    source={icons.share}
+                    style={styles.TipDetailModalShareIcon}
                   />
                 </Pressable>
               </View>
 
-              <Text style={styles.speechTrainerStudioTitle}>{tip.title}</Text>
-              <Text style={styles.speechTrainerStudioDescription}>{tip.description}</Text>
+              <Text style={styles.TipDetailModalTitle}>{tip.title}</Text>
+              <Text style={styles.TipDetailModalDescription}>{tip.description}</Text>
 
               {tip.howToPractice && (
-                <View style={styles.speechTrainerStudioPracticeBox}>
-                  <Text style={styles.speechTrainerStudioPracticeLabel}>How to Practice</Text>
-                  <Text style={styles.speechTrainerStudioPracticeText}>{tip.howToPractice}</Text>
+                <View style={styles.TipDetailModalPracticeBox}>
+                  <Text style={styles.TipDetailModalPracticeLabel}>How to Practice</Text>
+                  <Text style={styles.TipDetailModalPracticeText}>{tip.howToPractice}</Text>
                 </View>
               )}
 
-              {tip.origin && <Text style={styles.speechTrainerStudioOrigin}>📜 {tip.origin}</Text>}
+              {tip.origin && <Text style={styles.TipDetailModalOrigin}>📜 {tip.origin}</Text>}
 
-              <View style={styles.speechTrainerStudioActions}>
-                <Pressable style={styles.speechTrainerStudioActionButton} onPress={onAnother}>
-                  <View style={styles.speechTrainerStudioAnotherButton}>
-                    <Text style={styles.speechTrainerStudioShuffleIcon}>🔀</Text>
-                    <Text style={styles.speechTrainerStudioAnotherLabel}>Another</Text>
+              <View style={styles.TipDetailModalActions}>
+                <Pressable style={styles.TipDetailModalActionButton} onPress={onAnother}>
+                  <View style={styles.TipDetailModalAnotherButton}>
+                    <Text style={styles.TipDetailModalShuffleIcon}>🔀</Text>
+                    <Text style={styles.TipDetailModalAnotherLabel}>Another</Text>
                   </View>
                 </Pressable>
-                <Pressable style={styles.speechTrainerStudioActionButton} onPress={onClose}>
+                <Pressable style={styles.TipDetailModalActionButton} onPress={onClose}>
                   <LinearGradient
                     colors={[
                       colors.buttonGradientStart,
@@ -95,8 +95,8 @@ export function TipDetailModal({tip, onClose, onAnother}: Props) {
                     ]}
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
-                    style={styles.speechTrainerStudioGotItButton}>
-                    <Text style={styles.speechTrainerStudioGotItLabel}>Got it!</Text>
+                    style={styles.TipDetailModalGotItButton}>
+                    <Text style={styles.TipDetailModalGotItLabel}>Got it!</Text>
                   </LinearGradient>
                 </Pressable>
               </View>
@@ -109,12 +109,12 @@ export function TipDetailModal({tip, onClose, onAnother}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioBackdrop: {
+  TipDetailModalBackdrop: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.65)',
     justifyContent: 'flex-end',
   },
-  speechTrainerStudioSheet: {
+  TipDetailModalSheet: {
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
     overflow: 'hidden',
@@ -122,8 +122,8 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(139, 92, 246, 0.25)',
     borderBottomWidth: 0,
   },
-  speechTrainerStudioSheetGradient: {},
-  speechTrainerStudioHandle: {
+  TipDetailModalSheetGradient: {},
+  TipDetailModalHandle: {
     width: 40,
     height: 4,
     borderRadius: 2,
@@ -131,13 +131,13 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  speechTrainerStudioSheetHeader: {
+  TipDetailModalSheetHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-  speechTrainerStudioCategoryBadge: {
+  TipDetailModalCategoryBadge: {
     backgroundColor: 'rgba(139, 92, 246, 0.25)',
     borderRadius: 20,
     paddingHorizontal: 12,
@@ -145,12 +145,12 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     marginRight: 12,
   },
-  speechTrainerStudioCategoryBadgeText: {
+  TipDetailModalCategoryBadgeText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     color: colors.textAccent,
   },
-  speechTrainerStudioShareButton: {
+  TipDetailModalShareButton: {
     width: 32,
     height: 32,
     borderRadius: 16,
@@ -158,24 +158,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioShareIcon: {
-    fontSize: 14,
-    color: colors.textAccent,
+  TipDetailModalShareIcon: {
+    width: 16,
+    height: 16,
+    tintColor: colors.textAccent,
   },
-  speechTrainerStudioTitle: {
+  TipDetailModalTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 22,
     color: colors.textPrimary,
     marginBottom: 12,
   },
-  speechTrainerStudioDescription: {
+  TipDetailModalDescription: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 15,
     lineHeight: 25,
     color: colors.textPrimary,
     marginBottom: 16,
   },
-  speechTrainerStudioPracticeBox: {
+  TipDetailModalPracticeBox: {
     backgroundColor: 'rgba(139, 92, 246, 0.1)',
     borderRadius: 16,
     borderWidth: 1,
@@ -183,7 +184,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 16,
   },
-  speechTrainerStudioPracticeLabel: {
+  TipDetailModalPracticeLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     color: colors.textAccent,
@@ -191,27 +192,27 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 8,
   },
-  speechTrainerStudioPracticeText: {
+  TipDetailModalPracticeText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 23,
     color: colors.textSecondary,
   },
-  speechTrainerStudioOrigin: {
+  TipDetailModalOrigin: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     fontStyle: 'italic',
     color: colors.textSecondary,
     marginBottom: 24,
   },
-  speechTrainerStudioActions: {
+  TipDetailModalActions: {
     flexDirection: 'row',
     gap: 12,
   },
-  speechTrainerStudioActionButton: {
+  TipDetailModalActionButton: {
     flex: 1,
   },
-  speechTrainerStudioAnotherButton: {
+  TipDetailModalAnotherButton: {
     height: 45,
     borderRadius: 16,
     backgroundColor: 'rgba(139, 92, 246, 0.15)',
@@ -220,21 +221,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  speechTrainerStudioShuffleIcon: {
+  TipDetailModalShuffleIcon: {
     fontSize: 14,
   },
-  speechTrainerStudioAnotherLabel: {
+  TipDetailModalAnotherLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textAccent,
   },
-  speechTrainerStudioGotItButton: {
+  TipDetailModalGotItButton: {
     height: 45,
     borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioGotItLabel: {
+  TipDetailModalGotItLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.white,

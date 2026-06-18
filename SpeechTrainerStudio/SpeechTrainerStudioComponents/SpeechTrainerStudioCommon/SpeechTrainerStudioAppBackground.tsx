@@ -1,15 +1,14 @@
 import React, {PropsWithChildren} from 'react';
 import {StyleSheet, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
-
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 export function AppBackground({children}: PropsWithChildren) {
   return (
-    <View style={styles.speechTrainerStudioContainer}>
+    <View style={styles.AppBackgroundContainer}>
       <LinearGradient
         colors={['rgba(109, 40, 217, 0.12)', 'rgba(0, 0, 0, 0)']}
-        style={styles.speechTrainerStudioGlow}
+        style={styles.AppBackgroundGlow}
       />
       {children}
     </View>
@@ -17,11 +16,11 @@ export function AppBackground({children}: PropsWithChildren) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContainer: {
+  AppBackgroundContainer: {
     flex: 1,
     backgroundColor: colors.background,
   },
-  speechTrainerStudioGlow: {
+  AppBackgroundGlow: {
     ...StyleSheet.absoluteFillObject,
   },
 });

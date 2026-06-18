@@ -11,9 +11,8 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {icons} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioAssets';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 import {
   SessionConfig,
   SessionResult,
@@ -110,19 +109,19 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
   };
 
   return (
-    <View style={styles.speechTrainerStudioContainer}>
+    <View style={styles.PrompterSessionScreenContainer}>
       <StatusBar
         barStyle="light-content"
         backgroundColor={colors.sessionBackground}
       />
 
-      <View style={styles.speechTrainerStudioProgressTrack}>
+      <View style={styles.PrompterSessionScreenProgressTrack}>
         <LinearGradient
           colors={[colors.buttonGradientStart, colors.tabActive]}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
           style={[
-            styles.speechTrainerStudioProgressFill,
+            styles.PrompterSessionScreenProgressFill,
             {width: `${progress}%`},
           ]}
         />
@@ -130,68 +129,66 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
 
       <View
         style={[
-          styles.speechTrainerStudioTopBar,
+          styles.PrompterSessionScreenTopBar,
           {paddingTop: insets.top + 8},
         ]}>
-        <View style={styles.speechTrainerStudioTimerRow}>
-          <Text style={styles.speechTrainerStudioMetaIcon}>🕐</Text>
-          <Text style={styles.speechTrainerStudioMetaText}>
+        <View style={styles.PrompterSessionScreenTimerRow}>
+          <Text style={styles.PrompterSessionScreenMetaIcon}>🕐</Text>
+          <Text style={styles.PrompterSessionScreenMetaText}>
             {formatTimer(elapsedMs)}
           </Text>
         </View>
-        <Text style={styles.speechTrainerStudioMetaText}>{progress}%</Text>
+        <Text style={styles.PrompterSessionScreenMetaText}>{progress}%</Text>
       </View>
 
       <View
-        style={styles.speechTrainerStudioTextViewport}
+        style={styles.PrompterSessionScreenTextViewport}
         onLayout={event => setViewportHeight(event.nativeEvent.layout.height)}>
         <ScrollView
           ref={scrollRef}
           scrollEnabled={false}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.speechTrainerStudioScrollContent}
+          contentContainerStyle={styles.PrompterSessionScreenScrollContent}
           onContentSizeChange={(_, height) => setContentHeight(height)}>
-          <View style={styles.speechTrainerStudioTopFade} />
+          <View style={styles.PrompterSessionScreenTopFade} />
           <Text
             style={[
-              styles.speechTrainerStudioPrompterText,
+              styles.PrompterSessionScreenPrompterText,
               {fontSize, lineHeight},
             ]}>
             {config.text.body}
           </Text>
-          <View style={styles.speechTrainerStudioBottomSpacer} />
+          <View style={styles.PrompterSessionScreenBottomSpacer} />
         </ScrollView>
         <LinearGradient
           colors={['transparent', colors.sessionBackground]}
-          style={styles.speechTrainerStudioBottomFade}
+          style={styles.PrompterSessionScreenBottomFade}
           pointerEvents="none"
         />
       </View>
 
       <View
         style={[
-          styles.speechTrainerStudioControls,
+          styles.PrompterSessionScreenControls,
           {paddingBottom: insets.bottom + 90},
         ]}>
         <Pressable
           onPress={onClose}
-          style={styles.speechTrainerStudioCloseButton}>
-          <Text style={styles.speechTrainerStudioCloseIcon}>✕</Text>
+          style={styles.PrompterSessionScreenCloseButton}>
+          <Text style={styles.PrompterSessionScreenCloseIcon}>✕</Text>
         </Pressable>
 
         <Pressable
           onPress={() => setPlaying(prev => !prev)}
-          style={styles.speechTrainerStudioPlayWrapper}>
+          style={styles.PrompterSessionScreenPlayWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
-            style={styles.speechTrainerStudioPlayButton}>
+            style={styles.PrompterSessionScreenPlayButton}>
             <Image
               source={
-                playing
-                  ? require('../../../SpeechTrainerStudioAssets/images/pause.png')
-                  : require('../../../SpeechTrainerStudioAssets/images/start.png')
+                playing ? icons.pause : icons.start
               }
-              style={styles.speechTrainerStudioPlayIcon}
+              style={styles.PrompterSessionScreenPlayIcon}
               resizeMode="contain"
             />
           </LinearGradient>
@@ -199,8 +196,8 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
 
         <Pressable
           onPress={handleReset}
-          style={styles.speechTrainerStudioResetButton}>
-          <Text style={styles.speechTrainerStudioResetIcon}>↺</Text>
+          style={styles.PrompterSessionScreenResetButton}>
+          <Text style={styles.PrompterSessionScreenResetIcon}>↺</Text>
         </Pressable>
       </View>
     </View>
@@ -208,65 +205,65 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContainer: {
+  PrompterSessionScreenContainer: {
     flex: 1,
     backgroundColor: colors.sessionBackground,
   },
-  speechTrainerStudioProgressTrack: {
+  PrompterSessionScreenProgressTrack: {
     height: 4,
     backgroundColor: 'rgba(139, 92, 246, 0.15)',
   },
-  speechTrainerStudioProgressFill: {
+  PrompterSessionScreenProgressFill: {
     height: 4,
     borderRadius: 999,
   },
-  speechTrainerStudioTopBar: {
+  PrompterSessionScreenTopBar: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingHorizontal: 20,
     paddingBottom: 12,
   },
-  speechTrainerStudioTimerRow: {
+  PrompterSessionScreenTimerRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  speechTrainerStudioMetaIcon: {
+  PrompterSessionScreenMetaIcon: {
     fontSize: 14,
   },
-  speechTrainerStudioMetaText: {
+  PrompterSessionScreenMetaText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
   },
-  speechTrainerStudioTextViewport: {
+  PrompterSessionScreenTextViewport: {
     flex: 1,
     overflow: 'hidden',
   },
-  speechTrainerStudioScrollContent: {
+  PrompterSessionScreenScrollContent: {
     paddingHorizontal: 32,
     paddingTop: 120,
   },
-  speechTrainerStudioTopFade: {
+  PrompterSessionScreenTopFade: {
     height: 0,
   },
-  speechTrainerStudioPrompterText: {
+  PrompterSessionScreenPrompterText: {
     fontFamily: fonts.dmSansRegular,
     color: colors.textPrimary,
     textAlign: 'center',
   },
-  speechTrainerStudioBottomSpacer: {
+  PrompterSessionScreenBottomSpacer: {
     height: 240,
   },
-  speechTrainerStudioBottomFade: {
+  PrompterSessionScreenBottomFade: {
     position: 'absolute',
     left: 0,
     right: 0,
     bottom: 0,
     height: 96,
   },
-  speechTrainerStudioControls: {
+  PrompterSessionScreenControls: {
     position: 'absolute',
     left: 0,
     right: 0,
@@ -280,7 +277,7 @@ const styles = StyleSheet.create({
     borderTopColor: 'rgba(139, 92, 246, 0.1)',
     backgroundColor: 'rgba(5, 2, 18, 0.95)',
   },
-  speechTrainerStudioCloseButton: {
+  PrompterSessionScreenCloseButton: {
     width: 48,
     height: 48,
     borderRadius: 24,
@@ -290,11 +287,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioCloseIcon: {
+  PrompterSessionScreenCloseIcon: {
     color: colors.white,
     fontSize: 16,
   },
-  speechTrainerStudioPlayWrapper: {
+  PrompterSessionScreenPlayWrapper: {
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
       shadowOffset: {width: 0, height: 0},
@@ -303,19 +300,19 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioPlayButton: {
+  PrompterSessionScreenPlayButton: {
     width: 64,
     height: 64,
     borderRadius: 32,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioPlayIcon: {
+  PrompterSessionScreenPlayIcon: {
     width: 24,
     height: 24,
     tintColor: colors.white,
   },
-  speechTrainerStudioResetButton: {
+  PrompterSessionScreenResetButton: {
     width: 48,
     height: 48,
     borderRadius: 24,
@@ -325,7 +322,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioResetIcon: {
+  PrompterSessionScreenResetIcon: {
     color: colors.textPrimary,
     fontSize: 20,
   },

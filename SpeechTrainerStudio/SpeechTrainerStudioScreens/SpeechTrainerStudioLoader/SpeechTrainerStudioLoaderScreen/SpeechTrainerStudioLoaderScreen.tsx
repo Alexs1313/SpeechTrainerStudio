@@ -8,6 +8,8 @@ import {
   View,
 } from 'react-native';
 
+import {icons} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioAssets';
+
 const LOADER_DURATION_MS = 5000;
 
 type Props = {
@@ -21,21 +23,19 @@ export function SpeechTrainerStudioLoaderScreen({onComplete}: Props) {
   }, [onComplete]);
 
   return (
-    <View style={styles.speechTrainerStudioContainer}>
+    <View style={styles.SpeechTrainerStudioLoaderScreenContainer}>
       <StatusBar barStyle="light-content" backgroundColor="#07031a" />
       <ImageBackground
-        source={require('../../../SpeechTrainerStudioAssets/images/loaderbg.png')}
-        style={styles.speechTrainerStudioBackground}
+        source={icons.loaderBg}
+        style={styles.SpeechTrainerStudioLoaderScreenBackground}
         resizeMode="cover">
-        <View style={styles.speechTrainerStudioLogoContainer}>
+        <View style={styles.SpeechTrainerStudioLoaderScreenLogoContainer}>
           <Image
             source={
-              Platform.OS === 'ios'
-                ? require('../../../SpeechTrainerStudioAssets/images/loaderlogo.png')
-                : require('../../../SpeechTrainerStudioAssets/images/icn.png')
+              Platform.OS === 'ios' ? icons.loaderLogo : icons.loaderIcon
             }
             style={[
-              styles.speechTrainerStudioLogo,
+              styles.SpeechTrainerStudioLoaderScreenLogo,
               Platform.OS === 'android' && {
                 width: 200,
                 height: 200,
@@ -51,19 +51,19 @@ export function SpeechTrainerStudioLoaderScreen({onComplete}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContainer: {
+  SpeechTrainerStudioLoaderScreenContainer: {
     flex: 1,
     backgroundColor: '#07031a',
   },
-  speechTrainerStudioBackground: {
+  SpeechTrainerStudioLoaderScreenBackground: {
     flex: 1,
     width: '100%',
     height: '100%',
   },
-  speechTrainerStudioLogoContainer: {
+  SpeechTrainerStudioLoaderScreenLogoContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioLogo: {},
+  SpeechTrainerStudioLoaderScreenLogo: {},
 });

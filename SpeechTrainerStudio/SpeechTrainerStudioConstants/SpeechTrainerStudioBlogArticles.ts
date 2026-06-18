@@ -1,4 +1,5 @@
 import {BlogArticle} from '../SpeechTrainerStudioTypes/SpeechTrainerStudioBlog/SpeechTrainerStudioBlog/SpeechTrainerStudioBlog';
+import {blogArticleImages} from './SpeechTrainerStudioAssets';
 import {estimateReadMinutes} from '../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioEstimateReadTime/SpeechTrainerStudioEstimateReadTime';
 
 const AUTHOR = 'Coach Marcus';
@@ -22,7 +23,7 @@ export const BLOG_ARTICLES: BlogArticle[] = [
     category: 'Public Speaking',
     summary:
       'Effective speaking is a skill developed through consistent practice — not an innate talent waiting to be discovered.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-public-speaking.jpg'),
+    image: blogArticleImages.publicSpeaking,
     publishedAt: 'May 15, 2025',
     tags: ['Practice', 'Growth', 'Confidence'],
     body: `Public speaking is often viewed as a talent that some people naturally possess. In reality, effective speaking is a skill developed through consistent practice and deliberate effort. The best speakers in the world did not become confident overnight. They spent countless hours refining their delivery, improving their communication techniques, and learning how to connect with audiences.
@@ -44,7 +45,7 @@ Ultimately, becoming a skilled speaker requires patience, persistence, and a wil
     category: 'Diction',
     summary:
       'Clear diction ensures your message is understood without confusion — because how you say it matters as much as what you say.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-vocal-variety.jpg'),
+    image: blogArticleImages.vocalVariety,
     publishedAt: 'May 18, 2025',
     tags: ['Articulation', 'Clarity', 'Professionalism'],
     body: `Diction refers to the clarity and accuracy of speech. While many people focus on what they say, successful communicators also pay close attention to how they say it. Clear diction ensures that your message is understood without confusion or misunderstanding.
@@ -66,7 +67,7 @@ Clear diction enhances professionalism, credibility, and confidence. Whether spe
     category: 'Confidence',
     summary:
       'Confidence is built through preparation and repetition — not personality. Explore what research reveals about speaking with assurance.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-confidence.jpg'),
+    image: blogArticleImages.confidence,
     publishedAt: 'May 22, 2025',
     tags: ['Psychology', 'Preparation', 'Body Language'],
     body: `Confidence is often misunderstood as a personality trait that people either have or do not have. However, research suggests that confidence is largely developed through preparation, experience, and repetition.
@@ -90,7 +91,7 @@ Building confidence is a process. Every successful speaking experience strengthe
     category: 'Technique',
     summary:
       'Excessive fillers like "um" and "like" distract listeners and weaken your message. Learn to replace them with confident pauses.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-filler-words.jpg'),
+    image: blogArticleImages.fillerWords,
     publishedAt: 'May 25, 2025',
     tags: ['Fluency', 'Pauses', 'Awareness'],
     body: `Filler words such as "um," "uh," "like," and "you know" are common in everyday conversations. While occasional use is normal, excessive fillers can distract listeners and reduce the effectiveness of communication.
@@ -114,7 +115,7 @@ Over time, consistent practice can significantly improve fluency and create a cl
     category: 'Storytelling',
     summary:
       'Stories create emotional connections that facts alone cannot. Master the structure that keeps audiences engaged and remembering.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-storytelling.jpg'),
+    image: blogArticleImages.storytelling,
     publishedAt: 'May 28, 2025',
     tags: ['Engagement', 'Structure', 'Retention'],
     body: `Facts and statistics are important, but stories are often what people remember most. Storytelling has been used for thousands of years to educate, entertain, and inspire audiences.
@@ -138,7 +139,7 @@ Strong storytelling transforms ordinary presentations into lasting experiences a
     category: 'Voice & Breath',
     summary:
       'Changes in tone, pitch, pace, and volume keep speech engaging. Learn why a dynamic voice holds attention longer than words alone.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-voice-breath.jpg'),
+    image: blogArticleImages.voiceBreath,
     publishedAt: 'June 1, 2025',
     tags: ['Expression', 'Pace', 'Emotion'],
     body: `Many speakers focus on the words they use while overlooking the way those words sound. Vocal variety refers to changes in tone, pitch, pace, and volume that make speech more engaging and expressive.
@@ -162,7 +163,7 @@ Improving vocal variety requires conscious practice. Recording yourself and expe
     category: 'Habits',
     summary:
       'Small actions performed regularly produce the greatest long-term gains. Build stronger speaking skills through simple daily routines.',
-    image: require('../SpeechTrainerStudioAssets/images/blog/article-confidence.jpg'),
+    image: blogArticleImages.confidence,
     publishedAt: 'June 5, 2025',
     tags: ['Routine', 'Listening', 'Vocabulary'],
     body: `Strong communication skills are built through consistent daily habits rather than occasional bursts of effort. Small actions performed regularly often produce the greatest long-term improvements.

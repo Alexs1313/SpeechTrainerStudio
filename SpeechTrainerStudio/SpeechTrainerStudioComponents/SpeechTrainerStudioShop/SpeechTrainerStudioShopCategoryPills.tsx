@@ -2,9 +2,8 @@ import React from 'react';
 import {Pressable, ScrollView, StyleSheet, Text} from 'react-native';
 
 import {ShopCategoryOption} from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioShopTexts';
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {ShopFilterId} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioShop/SpeechTrainerStudioShop/SpeechTrainerStudioShop';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   categories: ShopCategoryOption[];
@@ -19,15 +18,15 @@ export function ShopCategoryPills({categories, selectedId, onSelect}: Props) {
       directionalLockEnabled
       nestedScrollEnabled
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.speechTrainerStudioRow}>
+      contentContainerStyle={styles.ShopCategoryPillsRow}>
       {categories.map(category => {
         const active = category.id === selectedId;
         return (
           <Pressable
             key={category.id}
             onPress={() => onSelect(category.id)}
-            style={[styles.speechTrainerStudioPill, active ? styles.speechTrainerStudioPillActive : styles.speechTrainerStudioPillInactive]}>
-            <Text style={[styles.speechTrainerStudioLabel, active ? styles.speechTrainerStudioLabelActive : styles.speechTrainerStudioLabelInactive]}>
+            style={[styles.ShopCategoryPillsPill, active ? styles.ShopCategoryPillsPillActive : styles.ShopCategoryPillsPillInactive]}>
+            <Text style={[styles.ShopCategoryPillsLabel, active ? styles.ShopCategoryPillsLabelActive : styles.ShopCategoryPillsLabelInactive]}>
               {category.label}
             </Text>
           </Pressable>
@@ -38,34 +37,34 @@ export function ShopCategoryPills({categories, selectedId, onSelect}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioRow: {
+  ShopCategoryPillsRow: {
     gap: 8,
     paddingRight: 20,
   },
-  speechTrainerStudioPill: {
+  ShopCategoryPillsPill: {
     height: 32,
     borderRadius: 999,
     borderWidth: 1,
     justifyContent: 'center',
     paddingHorizontal: 12,
   },
-  speechTrainerStudioPillActive: {
+  ShopCategoryPillsPillActive: {
     backgroundColor: 'rgba(139, 92, 246, 0.35)',
     borderColor: 'rgba(139, 92, 246, 0.5)',
   },
-  speechTrainerStudioPillInactive: {
+  ShopCategoryPillsPillInactive: {
     backgroundColor: 'rgba(139, 92, 246, 0.08)',
     borderColor: 'rgba(139, 92, 246, 0.15)',
   },
-  speechTrainerStudioLabel: {
+  ShopCategoryPillsLabel: {
     fontSize: 12,
     lineHeight: 18,
   },
-  speechTrainerStudioLabelActive: {
+  ShopCategoryPillsLabelActive: {
     fontFamily: fonts.dmSansSemiBold,
     color: colors.textPrimary,
   },
-  speechTrainerStudioLabelInactive: {
+  ShopCategoryPillsLabelInactive: {
     fontFamily: fonts.dmSansRegular,
     color: colors.textSecondary,
   },

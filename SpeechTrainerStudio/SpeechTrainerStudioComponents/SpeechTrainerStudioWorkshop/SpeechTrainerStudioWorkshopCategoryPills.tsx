@@ -5,9 +5,8 @@ import {
   WorkshopCategoryOption,
   WORKSHOP_FILTER_CATEGORIES,
 } from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioWorkshopCategories';
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {WorkshopFilterId} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   selectedId: WorkshopFilterId;
@@ -26,22 +25,22 @@ export function WorkshopCategoryPills({
       directionalLockEnabled
       nestedScrollEnabled
       showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.speechTrainerStudioRow}>
+      contentContainerStyle={styles.WorkshopCategoryPillsRow}>
       {categories.map(category => {
         const active = category.id === selectedId;
         return (
           <Pressable
             key={category.id}
             onPress={() => onSelect(category.id)}
-            style={[styles.speechTrainerStudioPill, active ? styles.speechTrainerStudioPillActive : styles.speechTrainerStudioPillInactive]}>
-            <View style={styles.speechTrainerStudioPillInner}>
+            style={[styles.WorkshopCategoryPillsPill, active ? styles.WorkshopCategoryPillsPillActive : styles.WorkshopCategoryPillsPillInactive]}>
+            <View style={styles.WorkshopCategoryPillsPillInner}>
               {category.emoji ? (
-                <Text style={[styles.speechTrainerStudioEmoji, active && styles.speechTrainerStudioEmojiActive]}>
+                <Text style={[styles.WorkshopCategoryPillsEmoji, active && styles.WorkshopCategoryPillsEmojiActive]}>
                   {category.emoji}
                 </Text>
               ) : null}
               <Text
-                style={[styles.speechTrainerStudioLabel, active ? styles.speechTrainerStudioLabelActive : styles.speechTrainerStudioLabelInactive]}>
+                style={[styles.WorkshopCategoryPillsLabel, active ? styles.WorkshopCategoryPillsLabelActive : styles.WorkshopCategoryPillsLabelInactive]}>
                 {category.label}
               </Text>
             </View>
@@ -53,48 +52,48 @@ export function WorkshopCategoryPills({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioRow: {
+  WorkshopCategoryPillsRow: {
     gap: 8,
     paddingRight: 20,
   },
-  speechTrainerStudioPill: {
+  WorkshopCategoryPillsPill: {
     height: 32,
     borderRadius: 999,
     borderWidth: 1,
     justifyContent: 'center',
   },
-  speechTrainerStudioPillActive: {
+  WorkshopCategoryPillsPillActive: {
     backgroundColor: 'rgba(139, 92, 246, 0.35)',
     borderColor: 'rgba(139, 92, 246, 0.5)',
   },
-  speechTrainerStudioPillInactive: {
+  WorkshopCategoryPillsPillInactive: {
     backgroundColor: 'rgba(139, 92, 246, 0.08)',
     borderColor: 'rgba(139, 92, 246, 0.15)',
   },
-  speechTrainerStudioPillInner: {
+  WorkshopCategoryPillsPillInner: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,
     gap: 6,
     height: 32,
   },
-  speechTrainerStudioEmoji: {
+  WorkshopCategoryPillsEmoji: {
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
   },
-  speechTrainerStudioEmojiActive: {
+  WorkshopCategoryPillsEmojiActive: {
     color: colors.textPrimary,
   },
-  speechTrainerStudioLabel: {
+  WorkshopCategoryPillsLabel: {
     fontSize: 12,
     lineHeight: 18,
   },
-  speechTrainerStudioLabelActive: {
+  WorkshopCategoryPillsLabelActive: {
     fontFamily: fonts.dmSansSemiBold,
     color: colors.textPrimary,
   },
-  speechTrainerStudioLabelInactive: {
+  WorkshopCategoryPillsLabelInactive: {
     fontFamily: fonts.dmSansRegular,
     color: colors.textSecondary,
   },

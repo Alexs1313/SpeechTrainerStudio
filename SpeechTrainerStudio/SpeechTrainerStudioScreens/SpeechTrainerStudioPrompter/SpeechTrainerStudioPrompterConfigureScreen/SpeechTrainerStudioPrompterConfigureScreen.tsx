@@ -12,9 +12,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {SegmentedControl} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioSegmentedControl';
 import {getCategoryById} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioPrompterTexts';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 import {
   PrompterText,
   SessionConfig,
@@ -38,28 +36,28 @@ export function PrompterConfigureScreen({text, onBack, onBegin}: Props) {
     <AppBackground>
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.PrompterConfigureScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <View style={styles.speechTrainerStudioHeader}>
-          <Pressable onPress={onBack} style={styles.speechTrainerStudioBackButton}>
-            <Text style={styles.speechTrainerStudioBackIcon}>‹</Text>
+        <View style={styles.PrompterConfigureScreenHeader}>
+          <Pressable onPress={onBack} style={styles.PrompterConfigureScreenBackButton}>
+            <Text style={styles.PrompterConfigureScreenBackIcon}>‹</Text>
           </Pressable>
           <View>
-            <Text style={styles.speechTrainerStudioEyebrow}>Configure</Text>
-            <Text style={styles.speechTrainerStudioTitle}>{text.title}</Text>
+            <Text style={styles.PrompterConfigureScreenEyebrow}>Configure</Text>
+            <Text style={styles.PrompterConfigureScreenTitle}>{text.title}</Text>
           </View>
         </View>
 
-        <View style={styles.speechTrainerStudioSummaryCard}>
-          <View style={styles.speechTrainerStudioSummaryMeta}>
-            <Text style={styles.speechTrainerStudioSummaryEmoji}>{category.emoji}</Text>
-            <Text style={styles.speechTrainerStudioSummaryCategory}>
+        <View style={styles.PrompterConfigureScreenSummaryCard}>
+          <View style={styles.PrompterConfigureScreenSummaryMeta}>
+            <Text style={styles.PrompterConfigureScreenSummaryEmoji}>{category.emoji}</Text>
+            <Text style={styles.PrompterConfigureScreenSummaryCategory}>
               {category.title} · {text.wordCount} words
             </Text>
           </View>
-          <Text style={styles.speechTrainerStudioSummaryDescription}>{text.description}</Text>
+          <Text style={styles.PrompterConfigureScreenSummaryDescription}>{text.description}</Text>
         </View>
 
         <SettingCard
@@ -78,9 +76,9 @@ export function PrompterConfigureScreen({text, onBack, onBegin}: Props) {
           onChange={setSize}
         />
 
-        <View style={styles.speechTrainerStudioTipCard}>
-          <Text style={styles.speechTrainerStudioTipText}>
-            <Text style={styles.speechTrainerStudioTipLabel}>💡 Coach Marcus: </Text>
+        <View style={styles.PrompterConfigureScreenTipCard}>
+          <Text style={styles.PrompterConfigureScreenTipText}>
+            <Text style={styles.PrompterConfigureScreenTipLabel}>💡 Coach Marcus: </Text>
             If this is your first time with this text, start on Slow. Speed
             increases comprehension only after you know the material.
           </Text>
@@ -88,12 +86,12 @@ export function PrompterConfigureScreen({text, onBack, onBegin}: Props) {
 
         <Pressable
           onPress={() => onBegin({text, speed, size})}
-          style={styles.speechTrainerStudioBeginWrapper}>
+          style={styles.PrompterConfigureScreenBeginWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
-            style={styles.speechTrainerStudioBeginButton}>
-            <Text style={styles.speechTrainerStudioBeginIcon}>▶</Text>
-            <Text style={styles.speechTrainerStudioBeginText}>Begin Session</Text>
+            style={styles.PrompterConfigureScreenBeginButton}>
+            <Text style={styles.PrompterConfigureScreenBeginIcon}>▶</Text>
+            <Text style={styles.PrompterConfigureScreenBeginText}>Begin Session</Text>
           </LinearGradient>
         </Pressable>
       </ScrollView>
@@ -115,14 +113,14 @@ function SettingCard<T extends string>({
   onChange: (value: T) => void;
 }) {
   return (
-    <View style={styles.speechTrainerStudioSettingCard}>
-      <View style={styles.speechTrainerStudioSettingHeader}>
-        <View style={styles.speechTrainerStudioSettingLabelRow}>
-          <Text style={styles.speechTrainerStudioSettingIcon}>{icon}</Text>
-          <Text style={styles.speechTrainerStudioSettingLabel}>{label}</Text>
+    <View style={styles.PrompterConfigureScreenSettingCard}>
+      <View style={styles.PrompterConfigureScreenSettingHeader}>
+        <View style={styles.PrompterConfigureScreenSettingLabelRow}>
+          <Text style={styles.PrompterConfigureScreenSettingIcon}>{icon}</Text>
+          <Text style={styles.PrompterConfigureScreenSettingLabel}>{label}</Text>
         </View>
-        <View style={styles.speechTrainerStudioValuePill}>
-          <Text style={styles.speechTrainerStudioValuePillText}>{value}</Text>
+        <View style={styles.PrompterConfigureScreenValuePill}>
+          <Text style={styles.PrompterConfigureScreenValuePillText}>{value}</Text>
         </View>
       </View>
       <SegmentedControl options={options} value={value} onChange={onChange} />
@@ -131,16 +129,16 @@ function SettingCard<T extends string>({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContent: {
+  PrompterConfigureScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioHeader: {
+  PrompterConfigureScreenHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
     marginBottom: 24,
   },
-  speechTrainerStudioBackButton: {
+  PrompterConfigureScreenBackButton: {
     width: 36,
     height: 36,
     borderRadius: 18,
@@ -148,22 +146,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioBackIcon: {
+  PrompterConfigureScreenBackIcon: {
     fontSize: 24,
     color: colors.textPrimary,
     marginTop: -2,
   },
-  speechTrainerStudioEyebrow: {
+  PrompterConfigureScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     color: colors.textSecondary,
   },
-  speechTrainerStudioTitle: {
+  PrompterConfigureScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 20,
     color: colors.textPrimary,
   },
-  speechTrainerStudioSummaryCard: {
+  PrompterConfigureScreenSummaryCard: {
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
     borderWidth: 1,
@@ -171,27 +169,27 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 20,
   },
-  speechTrainerStudioSummaryMeta: {
+  PrompterConfigureScreenSummaryMeta: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     marginBottom: 12,
   },
-  speechTrainerStudioSummaryEmoji: {
+  PrompterConfigureScreenSummaryEmoji: {
     fontSize: 16,
   },
-  speechTrainerStudioSummaryCategory: {
+  PrompterConfigureScreenSummaryCategory: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     color: colors.textSecondary,
   },
-  speechTrainerStudioSummaryDescription: {
+  PrompterConfigureScreenSummaryDescription: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 22,
     color: colors.textSecondary,
   },
-  speechTrainerStudioSettingCard: {
+  PrompterConfigureScreenSettingCard: {
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
     borderWidth: 1,
@@ -199,39 +197,39 @@ const styles = StyleSheet.create({
     padding: 20,
     marginBottom: 16,
   },
-  speechTrainerStudioSettingHeader: {
+  PrompterConfigureScreenSettingHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
   },
-  speechTrainerStudioSettingLabelRow: {
+  PrompterConfigureScreenSettingLabelRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
   },
-  speechTrainerStudioSettingIcon: {
+  PrompterConfigureScreenSettingIcon: {
     fontSize: 16,
     color: colors.textPrimary,
   },
-  speechTrainerStudioSettingLabel: {
+  PrompterConfigureScreenSettingLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textPrimary,
   },
-  speechTrainerStudioValuePill: {
+  PrompterConfigureScreenValuePill: {
     backgroundColor: 'rgba(139, 92, 246, 0.2)',
     borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 4,
   },
-  speechTrainerStudioValuePillText: {
+  PrompterConfigureScreenValuePillText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     color: colors.textAccent,
     textTransform: 'capitalize',
   },
-  speechTrainerStudioTipCard: {
+  PrompterConfigureScreenTipCard: {
     backgroundColor: colors.coachTipBackground,
     borderRadius: 16,
     borderWidth: 1,
@@ -239,17 +237,17 @@ const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 24,
   },
-  speechTrainerStudioTipText: {
+  PrompterConfigureScreenTipText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textPrimary,
   },
-  speechTrainerStudioTipLabel: {
+  PrompterConfigureScreenTipLabel: {
     fontFamily: fonts.dmSansSemiBold,
     color: colors.coachTipText,
   },
-  speechTrainerStudioBeginWrapper: {
+  PrompterConfigureScreenBeginWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -259,7 +257,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioBeginButton: {
+  PrompterConfigureScreenBeginButton: {
     height: 56,
     borderRadius: 16,
     flexDirection: 'row',
@@ -267,11 +265,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  speechTrainerStudioBeginIcon: {
+  PrompterConfigureScreenBeginIcon: {
     color: colors.white,
     fontSize: 14,
   },
-  speechTrainerStudioBeginText: {
+  PrompterConfigureScreenBeginText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 16,
     color: colors.white,

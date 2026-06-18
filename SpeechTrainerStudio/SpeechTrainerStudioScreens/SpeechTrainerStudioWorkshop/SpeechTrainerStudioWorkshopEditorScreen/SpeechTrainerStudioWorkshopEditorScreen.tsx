@@ -14,11 +14,10 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {WorkshopCategoryPills} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshopCategoryPills';
 import {WORKSHOP_EDITOR_CATEGORIES} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioWorkshopCategories';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {PrompterCategoryId} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
 import {WorkshopText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop';
 import {countWords} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioWordCount/SpeechTrainerStudioWordCount';
+import {colors, fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 export type WorkshopEditorDraft = {
   categoryId: PrompterCategoryId;
@@ -60,12 +59,12 @@ export function WorkshopEditorScreen({editingText, onClose, onSave}: Props) {
   return (
     <AppBackground>
       <KeyboardAvoidingView
-        style={styles.speechTrainerStudioFlex}
+        style={styles.WorkshopEditorScreenFlex}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
         <ScrollView
-          style={styles.speechTrainerStudioFlex}
+          style={styles.WorkshopEditorScreenFlex}
           contentContainerStyle={[
-            styles.speechTrainerStudioContent,
+            styles.WorkshopEditorScreenContent,
             {
               paddingTop: insets.top + 16,
               paddingBottom: insets.bottom + 100,
@@ -73,30 +72,30 @@ export function WorkshopEditorScreen({editingText, onClose, onSave}: Props) {
           ]}
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}>
-          <View style={styles.speechTrainerStudioHeader}>
-            <Pressable onPress={onClose} style={styles.speechTrainerStudioCloseButton} hitSlop={8}>
-              <Text style={styles.speechTrainerStudioCloseIcon}>✕</Text>
+          <View style={styles.WorkshopEditorScreenHeader}>
+            <Pressable onPress={onClose} style={styles.WorkshopEditorScreenCloseButton} hitSlop={8}>
+              <Text style={styles.WorkshopEditorScreenCloseIcon}>✕</Text>
             </Pressable>
-            <Text style={styles.speechTrainerStudioHeaderTitle}>
+            <Text style={styles.WorkshopEditorScreenHeaderTitle}>
               {editingText ? 'Edit Text' : 'New Text'}
             </Text>
             <Pressable
               onPress={handleSave}
               disabled={!canSave}
-              style={[styles.speechTrainerStudioSaveButton, !canSave && styles.speechTrainerStudioSaveButtonDisabled]}>
+              style={[styles.WorkshopEditorScreenSaveButton, !canSave && styles.WorkshopEditorScreenSaveButtonDisabled]}>
               <Text
-                style={[styles.speechTrainerStudioSaveIcon, !canSave && styles.speechTrainerStudioSaveTextDisabled]}>
+                style={[styles.WorkshopEditorScreenSaveIcon, !canSave && styles.WorkshopEditorScreenSaveTextDisabled]}>
                 ✓
               </Text>
               <Text
-                style={[styles.speechTrainerStudioSaveText, !canSave && styles.speechTrainerStudioSaveTextDisabled]}>
+                style={[styles.WorkshopEditorScreenSaveText, !canSave && styles.WorkshopEditorScreenSaveTextDisabled]}>
                 Save
               </Text>
             </Pressable>
           </View>
 
-          <Text style={styles.speechTrainerStudioLabel}>Category</Text>
-          <View style={styles.speechTrainerStudioCategoryPills}>
+          <Text style={styles.WorkshopEditorScreenLabel}>Category</Text>
+          <View style={styles.WorkshopEditorScreenCategoryPills}>
             <WorkshopCategoryPills
               categories={WORKSHOP_EDITOR_CATEGORIES}
               selectedId={categoryId}
@@ -104,41 +103,41 @@ export function WorkshopEditorScreen({editingText, onClose, onSave}: Props) {
             />
           </View>
 
-          <Text style={styles.speechTrainerStudioLabel}>Title *</Text>
-          <View style={styles.speechTrainerStudioInputWrapper}>
+          <Text style={styles.WorkshopEditorScreenLabel}>Title *</Text>
+          <View style={styles.WorkshopEditorScreenInputWrapper}>
             <TextInput
               value={title}
               onChangeText={setTitle}
               placeholder="Enter text title..."
               placeholderTextColor={colors.textSecondary}
-              style={styles.speechTrainerStudioInput}
+              style={styles.WorkshopEditorScreenInput}
             />
           </View>
 
-          <Text style={styles.speechTrainerStudioLabel}>Short Description</Text>
-          <View style={styles.speechTrainerStudioInputWrapper}>
+          <Text style={styles.WorkshopEditorScreenLabel}>Short Description</Text>
+          <View style={styles.WorkshopEditorScreenInputWrapper}>
             <TextInput
               value={description}
               onChangeText={setDescription}
               placeholder="Brief description of this text..."
               placeholderTextColor={colors.textSecondary}
-              style={styles.speechTrainerStudioInput}
+              style={styles.WorkshopEditorScreenInput}
             />
           </View>
 
-          <View style={styles.speechTrainerStudioContentHeader}>
-            <Text style={styles.speechTrainerStudioLabel}>Content *</Text>
-            <Text style={styles.speechTrainerStudioWordCount}>
+          <View style={styles.WorkshopEditorScreenContentHeader}>
+            <Text style={styles.WorkshopEditorScreenLabel}>Content *</Text>
+            <Text style={styles.WorkshopEditorScreenWordCount}>
               {wordCount} {wordCount === 1 ? 'word' : 'words'}
             </Text>
           </View>
-          <View style={styles.speechTrainerStudioTextAreaWrapper}>
+          <View style={styles.WorkshopEditorScreenTextAreaWrapper}>
             <TextInput
               value={body}
               onChangeText={setBody}
               placeholder="Write or paste your teleprompter text here. Use double line breaks to separate paragraphs..."
               placeholderTextColor={colors.textSecondary}
-              style={styles.speechTrainerStudioTextArea}
+              style={styles.WorkshopEditorScreenTextArea}
               multiline
               textAlignVertical="top"
             />
@@ -150,15 +149,15 @@ export function WorkshopEditorScreen({editingText, onClose, onSave}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioFlex: {
+  WorkshopEditorScreenFlex: {
     flex: 1,
   },
-  speechTrainerStudioHeader: {
+  WorkshopEditorScreenHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 16,
   },
-  speechTrainerStudioCloseButton: {
+  WorkshopEditorScreenCloseButton: {
     width: 36,
     height: 36,
     borderRadius: 999,
@@ -166,19 +165,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioCloseIcon: {
+  WorkshopEditorScreenCloseIcon: {
     fontSize: 16,
     color: colors.textSecondary,
     lineHeight: 18,
   },
-  speechTrainerStudioHeaderTitle: {
+  WorkshopEditorScreenHeaderTitle: {
     flex: 1,
     fontFamily: fonts.outfitBold,
     fontSize: 18,
     color: colors.textPrimary,
     textAlign: 'center',
   },
-  speechTrainerStudioSaveButton: {
+  WorkshopEditorScreenSaveButton: {
     flexDirection: 'row',
     alignItems: 'center',
     height: 36,
@@ -187,28 +186,28 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(139, 92, 246, 0.4)',
     gap: 4,
   },
-  speechTrainerStudioSaveButtonDisabled: {
+  WorkshopEditorScreenSaveButtonDisabled: {
     backgroundColor: 'rgba(139, 92, 246, 0.1)',
     opacity: 0.5,
   },
-  speechTrainerStudioSaveIcon: {
+  WorkshopEditorScreenSaveIcon: {
     fontSize: 12,
     color: colors.textPrimary,
     lineHeight: 14,
   },
-  speechTrainerStudioSaveText: {
+  WorkshopEditorScreenSaveText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     color: colors.textPrimary,
     lineHeight: 20,
   },
-  speechTrainerStudioSaveTextDisabled: {
+  WorkshopEditorScreenSaveTextDisabled: {
     color: colors.textSecondary,
   },
-  speechTrainerStudioContent: {
+  WorkshopEditorScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioLabel: {
+  WorkshopEditorScreenLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     lineHeight: 18,
@@ -217,19 +216,19 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 8,
   },
-  speechTrainerStudioCategoryPills: {
+  WorkshopEditorScreenCategoryPills: {
     marginBottom: 16,
     marginHorizontal: -20,
     paddingLeft: 20,
   },
-  speechTrainerStudioInputWrapper: {
+  WorkshopEditorScreenInputWrapper: {
     borderRadius: 20,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     backgroundColor: 'rgba(139, 92, 246, 0.08)',
     marginBottom: 16,
   },
-  speechTrainerStudioInput: {
+  WorkshopEditorScreenInput: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 15,
     lineHeight: 23,
@@ -237,26 +236,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
   },
-  speechTrainerStudioContentHeader: {
+  WorkshopEditorScreenContentHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 8,
   },
-  speechTrainerStudioWordCount: {
+  WorkshopEditorScreenWordCount: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 11,
     lineHeight: 17,
     color: colors.textSecondary,
   },
-  speechTrainerStudioTextAreaWrapper: {
+  WorkshopEditorScreenTextAreaWrapper: {
     borderRadius: 20,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     backgroundColor: 'rgba(139, 92, 246, 0.08)',
     minHeight: 274,
   },
-  speechTrainerStudioTextArea: {
+  WorkshopEditorScreenTextArea: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 15,
     lineHeight: 25,

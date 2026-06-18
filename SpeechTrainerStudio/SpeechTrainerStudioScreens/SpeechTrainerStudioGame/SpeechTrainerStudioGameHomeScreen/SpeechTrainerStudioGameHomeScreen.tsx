@@ -4,9 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Step = {
   emoji: string;
@@ -55,25 +53,25 @@ export function GameHomeScreen({onStart}: Props) {
   return (
     <AppBackground>
       <ScrollView
-        style={styles.speechTrainerStudioScroll}
+        style={styles.GameHomeScreenScroll}
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.GameHomeScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.speechTrainerStudioEyebrow}>Speaking Challenge</Text>
-        <Text style={styles.speechTrainerStudioTitle}>Mini Game</Text>
+        <Text style={styles.GameHomeScreenEyebrow}>Speaking Challenge</Text>
+        <Text style={styles.GameHomeScreenTitle}>Mini Game</Text>
 
-        <View style={styles.speechTrainerStudioHeroCard}>
+        <View style={styles.GameHomeScreenHeroCard}>
           <LinearGradient
             colors={['#1a0845', '#2d1070', '#1a0845']}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
-            style={styles.speechTrainerStudioHeroGradient}>
-            <View style={styles.speechTrainerStudioHeroInner}>
-              <Text style={styles.speechTrainerStudioHeroEmoji}>🎮</Text>
-              <Text style={styles.speechTrainerStudioHeroTitle}>The 60-Second Challenge</Text>
-              <Text style={styles.speechTrainerStudioHeroBody}>
+            style={styles.GameHomeScreenHeroGradient}>
+            <View style={styles.GameHomeScreenHeroInner}>
+              <Text style={styles.GameHomeScreenHeroEmoji}>🎮</Text>
+              <Text style={styles.GameHomeScreenHeroTitle}>The 60-Second Challenge</Text>
+              <Text style={styles.GameHomeScreenHeroBody}>
                 You will receive a shuffled speaking topic. Write a short speech or
                 mini-essay in just 60 seconds. I will evaluate your performance.
               </Text>
@@ -81,32 +79,32 @@ export function GameHomeScreen({onStart}: Props) {
           </LinearGradient>
         </View>
 
-        <Text style={styles.speechTrainerStudioSectionTitle}>How it works</Text>
+        <Text style={styles.GameHomeScreenSectionTitle}>How it works</Text>
 
-        <View style={styles.speechTrainerStudioSteps}>
+        <View style={styles.GameHomeScreenSteps}>
           {STEPS.map(step => (
             <View
               key={step.title}
-              style={[styles.speechTrainerStudioStepCard, step.highlight && styles.speechTrainerStudioStepHighlight]}>
-              <View style={styles.speechTrainerStudioStepInner}>
-                <Text style={styles.speechTrainerStudioStepEmoji}>{step.emoji}</Text>
-                <View style={styles.speechTrainerStudioStepBody}>
-                  <Text style={styles.speechTrainerStudioStepTitle}>{step.title}</Text>
-                  <Text style={styles.speechTrainerStudioStepDescription}>{step.description}</Text>
+              style={[styles.GameHomeScreenStepCard, step.highlight && styles.GameHomeScreenStepHighlight]}>
+              <View style={styles.GameHomeScreenStepInner}>
+                <Text style={styles.GameHomeScreenStepEmoji}>{step.emoji}</Text>
+                <View style={styles.GameHomeScreenStepBody}>
+                  <Text style={styles.GameHomeScreenStepTitle}>{step.title}</Text>
+                  <Text style={styles.GameHomeScreenStepDescription}>{step.description}</Text>
                 </View>
               </View>
             </View>
           ))}
         </View>
 
-        <Pressable onPress={onStart} style={styles.speechTrainerStudioStartWrapper}>
+        <Pressable onPress={onStart} style={styles.GameHomeScreenStartWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
             start={{x: 0, y: 0}}
             end={{x: 0, y: 1}}
-            style={styles.speechTrainerStudioStartButton}>
-            <Text style={styles.speechTrainerStudioStartText}>Start Challenge</Text>
-            <Text style={styles.speechTrainerStudioStartChevron}>›</Text>
+            style={styles.GameHomeScreenStartButton}>
+            <Text style={styles.GameHomeScreenStartText}>Start Challenge</Text>
+            <Text style={styles.GameHomeScreenStartChevron}>›</Text>
           </LinearGradient>
         </Pressable>
       </ScrollView>
@@ -115,22 +113,22 @@ export function GameHomeScreen({onStart}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioScroll: {flex: 1},
-  speechTrainerStudioContent: {paddingHorizontal: 20},
-  speechTrainerStudioEyebrow: {
+  GameHomeScreenScroll: {flex: 1},
+  GameHomeScreenContent: {paddingHorizontal: 20},
+  GameHomeScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioTitle: {
+  GameHomeScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     lineHeight: 34,
     color: colors.textPrimary,
     marginBottom: 24,
   },
-  speechTrainerStudioHeroCard: {
+  GameHomeScreenHeroCard: {
     borderRadius: 24,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.25)',
@@ -144,17 +142,17 @@ const styles = StyleSheet.create({
       elevation: 6,
     }),
   },
-  speechTrainerStudioHeroGradient: {borderRadius: 24},
-  speechTrainerStudioHeroInner: {
+  GameHomeScreenHeroGradient: {borderRadius: 24},
+  GameHomeScreenHeroInner: {
     padding: 24,
     alignItems: 'center',
   },
-  speechTrainerStudioHeroEmoji: {
+  GameHomeScreenHeroEmoji: {
     fontSize: 64,
     lineHeight: 72,
     marginBottom: 8,
   },
-  speechTrainerStudioHeroTitle: {
+  GameHomeScreenHeroTitle: {
     fontFamily: fonts.outfitExtraBold,
     fontSize: 24,
     lineHeight: 31,
@@ -162,53 +160,53 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 8,
   },
-  speechTrainerStudioHeroBody: {
+  GameHomeScreenHeroBody: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 22,
     color: colors.textSecondary,
     textAlign: 'center',
   },
-  speechTrainerStudioSectionTitle: {
+  GameHomeScreenSectionTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 16,
     color: colors.textPrimary,
     marginBottom: 12,
   },
-  speechTrainerStudioSteps: {gap: 12, marginBottom: 24},
-  speechTrainerStudioStepCard: {
+  GameHomeScreenSteps: {gap: 12, marginBottom: 24},
+  GameHomeScreenStepCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     backgroundColor: colors.cardBackground,
     overflow: 'hidden',
   },
-  speechTrainerStudioStepHighlight: {
+  GameHomeScreenStepHighlight: {
     borderColor: colors.coachTipBorder,
     backgroundColor: colors.coachTipBackground,
   },
-  speechTrainerStudioStepInner: {
+  GameHomeScreenStepInner: {
     padding: 16,
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
   },
-  speechTrainerStudioStepEmoji: {fontSize: 24, lineHeight: 36},
-  speechTrainerStudioStepBody: {flex: 1},
-  speechTrainerStudioStepTitle: {
+  GameHomeScreenStepEmoji: {fontSize: 24, lineHeight: 36},
+  GameHomeScreenStepBody: {flex: 1},
+  GameHomeScreenStepTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     lineHeight: 21,
     color: colors.textPrimary,
     marginBottom: 2,
   },
-  speechTrainerStudioStepDescription: {
+  GameHomeScreenStepDescription: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
   },
-  speechTrainerStudioStartWrapper: {
+  GameHomeScreenStartWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -218,7 +216,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioStartButton: {
+  GameHomeScreenStartButton: {
     height: 56,
     borderRadius: 16,
     flexDirection: 'row',
@@ -226,12 +224,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  speechTrainerStudioStartText: {
+  GameHomeScreenStartText: {
     fontFamily: fonts.dmSansBold,
     fontSize: 16,
     color: colors.white,
   },
-  speechTrainerStudioStartChevron: {
+  GameHomeScreenStartChevron: {
     fontSize: 18,
     color: colors.white,
     marginTop: -2,

@@ -1,8 +1,6 @@
 import React from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
-
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props<T extends string> = {
   options: T[];
@@ -16,15 +14,15 @@ export function SegmentedControl<T extends string>({
   onChange,
 }: Props<T>) {
   return (
-    <View style={styles.speechTrainerStudioRow}>
+    <View style={styles.SegmentedControlRow}>
       {options.map(option => {
         const active = option === value;
         return (
           <Pressable
             key={option}
             onPress={() => onChange(option)}
-            style={[styles.speechTrainerStudioOption, active && styles.speechTrainerStudioOptionActive]}>
-            <Text style={[styles.speechTrainerStudioLabel, active && styles.speechTrainerStudioLabelActive]}>
+            style={[styles.SegmentedControlOption, active && styles.SegmentedControlOptionActive]}>
+            <Text style={[styles.SegmentedControlLabel, active && styles.SegmentedControlLabelActive]}>
               {option}
             </Text>
           </Pressable>
@@ -35,11 +33,11 @@ export function SegmentedControl<T extends string>({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioRow: {
+  SegmentedControlRow: {
     flexDirection: 'row',
     gap: 4,
   },
-  speechTrainerStudioOption: {
+  SegmentedControlOption: {
     flex: 1,
     height: 38,
     borderRadius: 20,
@@ -49,17 +47,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'transparent',
   },
-  speechTrainerStudioOptionActive: {
+  SegmentedControlOptionActive: {
     backgroundColor: 'rgba(139, 92, 246, 0.4)',
     borderColor: 'rgba(139, 92, 246, 0.5)',
   },
-  speechTrainerStudioLabel: {
+  SegmentedControlLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     textTransform: 'capitalize',
   },
-  speechTrainerStudioLabelActive: {
+  SegmentedControlLabelActive: {
     fontFamily: fonts.dmSansSemiBold,
     color: colors.white,
   },

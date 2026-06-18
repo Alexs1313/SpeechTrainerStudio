@@ -5,10 +5,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {PROMPTER_CATEGORIES} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioPrompterTexts';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {PrompterCategoryId, PrompterText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   selectedCategoryId: PrompterCategoryId;
@@ -36,18 +34,18 @@ export function PrompterChooseScreen({
     <AppBackground>
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.PrompterChooseScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.speechTrainerStudioEyebrow}>Teleprompter Training</Text>
-        <Text style={styles.speechTrainerStudioTitle}>Choose a Text</Text>
+        <Text style={styles.PrompterChooseScreenEyebrow}>Teleprompter Training</Text>
+        <Text style={styles.PrompterChooseScreenTitle}>Choose a Text</Text>
 
         <LinearGradient
           colors={['rgba(109, 40, 217, 0.3)', 'rgba(139, 92, 246, 0.15)']}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          style={styles.speechTrainerStudioCoachCard}>
+          style={styles.PrompterChooseScreenCoachCard}>
           <View
             style={{
               padding: 15,
@@ -55,17 +53,17 @@ export function PrompterChooseScreen({
               gap: 12,
               alignItems: 'center',
             }}>
-            <Text style={styles.speechTrainerStudioCoachEmoji}>🎙️</Text>
-            <Text style={styles.speechTrainerStudioCoachText}>
-              <Text style={styles.speechTrainerStudioCoachBold}>Coach Marcus says: </Text>
+            <Text style={styles.PrompterChooseScreenCoachEmoji}>🎙️</Text>
+            <Text style={styles.PrompterChooseScreenCoachText}>
+              <Text style={styles.PrompterChooseScreenCoachBold}>Coach Marcus says: </Text>
               Start with a text just above your comfort level. That is where
               growth happens.
             </Text>
           </View>
         </LinearGradient>
 
-        <Text style={styles.speechTrainerStudioSectionTitle}>Select Category</Text>
-        <View style={styles.speechTrainerStudioCategoryList}>
+        <Text style={styles.PrompterChooseScreenSectionTitle}>Select Category</Text>
+        <View style={styles.PrompterChooseScreenCategoryList}>
           {PROMPTER_CATEGORIES.map(category => {
             const active = category.id === selectedCategoryId;
             const categoryTextCount =
@@ -81,7 +79,7 @@ export function PrompterChooseScreen({
                       'rgba(109, 40, 217, 0.4)',
                       'rgba(139, 92, 246, 0.2)',
                     ]}
-                    style={[styles.speechTrainerStudioCategoryCard, styles.speechTrainerStudioCategoryCardActive]}>
+                    style={[styles.PrompterChooseScreenCategoryCard, styles.PrompterChooseScreenCategoryCardActive]}>
                     <View
                       style={{
                         padding: 15,
@@ -99,7 +97,7 @@ export function PrompterChooseScreen({
                 ) : (
                   <View
                     style={[
-                      styles.speechTrainerStudioCategoryCard,
+                      styles.PrompterChooseScreenCategoryCard,
                       {
                         padding: 15,
                         flexDirection: 'row',
@@ -119,19 +117,19 @@ export function PrompterChooseScreen({
           })}
         </View>
 
-        <Text style={styles.speechTrainerStudioSectionTitle}>Available Texts</Text>
-        <View style={styles.speechTrainerStudioTextList}>
+        <Text style={styles.PrompterChooseScreenSectionTitle}>Available Texts</Text>
+        <View style={styles.PrompterChooseScreenTextList}>
           {availableTexts.map(item => (
             <Pressable
               key={item.id}
               onPress={() => onSelectText(item)}
-              style={styles.speechTrainerStudioTextCard}>
-              <View style={styles.speechTrainerStudioTextCardBody}>
-                <Text style={styles.speechTrainerStudioTextTitle}>{item.title}</Text>
-                <Text style={styles.speechTrainerStudioTextDescription}>{item.description}</Text>
-                <Text style={styles.speechTrainerStudioWordCount}>{item.wordCount} words</Text>
+              style={styles.PrompterChooseScreenTextCard}>
+              <View style={styles.PrompterChooseScreenTextCardBody}>
+                <Text style={styles.PrompterChooseScreenTextTitle}>{item.title}</Text>
+                <Text style={styles.PrompterChooseScreenTextDescription}>{item.description}</Text>
+                <Text style={styles.PrompterChooseScreenWordCount}>{item.wordCount} words</Text>
               </View>
-              <Text style={styles.speechTrainerStudioChevron}>›</Text>
+              <Text style={styles.PrompterChooseScreenChevron}>›</Text>
             </Pressable>
           ))}
         </View>
@@ -151,18 +149,18 @@ function CategoryContent({
 }) {
   return (
     <>
-      <View style={styles.speechTrainerStudioCategoryIcon}>
-        <Text style={styles.speechTrainerStudioCategoryEmoji}>{category.emoji}</Text>
+      <View style={styles.PrompterChooseScreenCategoryIcon}>
+        <Text style={styles.PrompterChooseScreenCategoryEmoji}>{category.emoji}</Text>
       </View>
-      <View style={styles.speechTrainerStudioCategoryInfo}>
-        <Text style={styles.speechTrainerStudioCategoryTitle}>{category.title}</Text>
-        <Text style={styles.speechTrainerStudioCategoryCount}>
+      <View style={styles.PrompterChooseScreenCategoryInfo}>
+        <Text style={styles.PrompterChooseScreenCategoryTitle}>{category.title}</Text>
+        <Text style={styles.PrompterChooseScreenCategoryCount}>
           {textCount} texts available
         </Text>
       </View>
       {active && (
-        <View style={styles.speechTrainerStudioCheckBadge}>
-          <Text style={styles.speechTrainerStudioCheckMark}>✓</Text>
+        <View style={styles.PrompterChooseScreenCheckBadge}>
+          <Text style={styles.PrompterChooseScreenCheckMark}>✓</Text>
         </View>
       )}
     </>
@@ -170,60 +168,60 @@ function CategoryContent({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContent: {
+  PrompterChooseScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioEyebrow: {
+  PrompterChooseScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioTitle: {
+  PrompterChooseScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     color: colors.textPrimary,
     marginBottom: 24,
   },
-  speechTrainerStudioCoachCard: {
+  PrompterChooseScreenCoachCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
 
     marginBottom: 24,
   },
-  speechTrainerStudioCoachEmoji: {
+  PrompterChooseScreenCoachEmoji: {
     fontSize: 36,
     lineHeight: 40,
   },
-  speechTrainerStudioCoachText: {
+  PrompterChooseScreenCoachText: {
     flex: 1,
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textPrimary,
   },
-  speechTrainerStudioCoachBold: {
+  PrompterChooseScreenCoachBold: {
     fontFamily: fonts.dmSansSemiBold,
   },
-  speechTrainerStudioSectionTitle: {
+  PrompterChooseScreenSectionTitle: {
     fontFamily: fonts.outfitSemiBold,
     fontSize: 14,
     color: colors.textPrimary,
     marginBottom: 12,
     marginTop: 8,
   },
-  speechTrainerStudioCategoryList: {
+  PrompterChooseScreenCategoryList: {
     gap: 12,
     marginBottom: 24,
   },
-  speechTrainerStudioCategoryCard: {
+  PrompterChooseScreenCategoryCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     backgroundColor: 'rgba(17, 8, 48, 0.6)',
   },
-  speechTrainerStudioCategoryCardActive: {
+  PrompterChooseScreenCategoryCardActive: {
     borderColor: colors.cardBorderActive,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -233,7 +231,7 @@ const styles = StyleSheet.create({
       elevation: 4,
     }),
   },
-  speechTrainerStudioCategoryIcon: {
+  PrompterChooseScreenCategoryIcon: {
     width: 48,
     height: 48,
     borderRadius: 20,
@@ -242,24 +240,24 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginRight: 16,
   },
-  speechTrainerStudioCategoryEmoji: {
+  PrompterChooseScreenCategoryEmoji: {
     fontSize: 22,
   },
-  speechTrainerStudioCategoryInfo: {
+  PrompterChooseScreenCategoryInfo: {
     flex: 1,
   },
-  speechTrainerStudioCategoryTitle: {
+  PrompterChooseScreenCategoryTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioCategoryCount: {
+  PrompterChooseScreenCategoryCount: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     color: colors.textSecondary,
   },
-  speechTrainerStudioCheckBadge: {
+  PrompterChooseScreenCheckBadge: {
     width: 24,
     height: 24,
     borderRadius: 12,
@@ -267,15 +265,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioCheckMark: {
+  PrompterChooseScreenCheckMark: {
     color: colors.white,
     fontSize: 12,
     fontWeight: '700',
   },
-  speechTrainerStudioTextList: {
+  PrompterChooseScreenTextList: {
     gap: 12,
   },
-  speechTrainerStudioTextCard: {
+  PrompterChooseScreenTextCard: {
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
     borderWidth: 1,
@@ -284,28 +282,28 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'flex-start',
   },
-  speechTrainerStudioTextCardBody: {
+  PrompterChooseScreenTextCardBody: {
     flex: 1,
   },
-  speechTrainerStudioTextTitle: {
+  PrompterChooseScreenTextTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioTextDescription: {
+  PrompterChooseScreenTextDescription: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
     marginBottom: 12,
   },
-  speechTrainerStudioWordCount: {
+  PrompterChooseScreenWordCount: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     color: colors.textSecondary,
   },
-  speechTrainerStudioChevron: {
+  PrompterChooseScreenChevron: {
     fontSize: 22,
     color: colors.textSecondary,
     marginLeft: 8,

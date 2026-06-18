@@ -3,9 +3,8 @@ import {Pressable, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import {getCategoryById} from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioDictionTips';
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {DictionTip} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioTips/SpeechTrainerStudioTips/SpeechTrainerStudioTips';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   tip: DictionTip;
@@ -17,26 +16,26 @@ export function TipCard({tip, expanded, onPress}: Props) {
   const category = getCategoryById(tip.categoryId);
 
   const content = (
-    <View style={styles.speechTrainerStudioCardInner}>
-      <View style={styles.speechTrainerStudioIconBadge}>
-        <Text style={styles.speechTrainerStudioIconEmoji}>{category.emoji}</Text>
+    <View style={styles.TipCardCardInner}>
+      <View style={styles.TipCardIconBadge}>
+        <Text style={styles.TipCardIconEmoji}>{category.emoji}</Text>
       </View>
-      <View style={styles.speechTrainerStudioBody}>
-        <Text style={styles.speechTrainerStudioTitle}>{tip.title}</Text>
-        <Text style={styles.speechTrainerStudioSummary}>{tip.summary}</Text>
+      <View style={styles.TipCardBody}>
+        <Text style={styles.TipCardTitle}>{tip.title}</Text>
+        <Text style={styles.TipCardSummary}>{tip.summary}</Text>
         {expanded && (
-          <View style={styles.speechTrainerStudioExpandedSection}>
-            <View style={styles.speechTrainerStudioDivider} />
+          <View style={styles.TipCardExpandedSection}>
+            <View style={styles.TipCardDivider} />
             {tip.howToPractice && (
-              <View style={styles.speechTrainerStudioPracticeBlock}>
-                <Text style={styles.speechTrainerStudioSectionLabel}>How to Practice</Text>
-                <Text style={styles.speechTrainerStudioPracticeText}>{tip.howToPractice}</Text>
+              <View style={styles.TipCardPracticeBlock}>
+                <Text style={styles.TipCardSectionLabel}>How to Practice</Text>
+                <Text style={styles.TipCardPracticeText}>{tip.howToPractice}</Text>
               </View>
             )}
             {tip.origin && (
-              <View style={styles.speechTrainerStudioOriginBlock}>
-                <Text style={styles.speechTrainerStudioOriginLabel}>Origin</Text>
-                <Text style={styles.speechTrainerStudioOriginText}>{tip.origin}</Text>
+              <View style={styles.TipCardOriginBlock}>
+                <Text style={styles.TipCardOriginLabel}>Origin</Text>
+                <Text style={styles.TipCardOriginText}>{tip.origin}</Text>
               </View>
             )}
           </View>
@@ -52,7 +51,7 @@ export function TipCard({tip, expanded, onPress}: Props) {
           colors={['rgba(109, 40, 217, 0.25)', 'rgba(139, 92, 246, 0.12)']}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          style={[styles.speechTrainerStudioCard, styles.speechTrainerStudioCardExpanded]}>
+          style={[styles.TipCardCard, styles.TipCardCardExpanded]}>
           {content}
         </LinearGradient>
       </Pressable>
@@ -60,29 +59,29 @@ export function TipCard({tip, expanded, onPress}: Props) {
   }
 
   return (
-    <Pressable onPress={onPress} style={styles.speechTrainerStudioCard}>
+    <Pressable onPress={onPress} style={styles.TipCardCard}>
       {content}
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioCard: {
+  TipCardCard: {
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     padding: 16,
   },
-  speechTrainerStudioCardExpanded: {
+  TipCardCardExpanded: {
     borderColor: 'rgba(139, 92, 246, 0.35)',
   },
-  speechTrainerStudioCardInner: {
+  TipCardCardInner: {
     flexDirection: 'row',
     gap: 12,
     alignItems: 'flex-start',
   },
-  speechTrainerStudioIconBadge: {
+  TipCardIconBadge: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -90,38 +89,38 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioIconEmoji: {
+  TipCardIconEmoji: {
     fontSize: 20,
     lineHeight: 28,
   },
-  speechTrainerStudioBody: {
+  TipCardBody: {
     flex: 1,
   },
-  speechTrainerStudioTitle: {
+  TipCardTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioSummary: {
+  TipCardSummary: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textSecondary,
   },
-  speechTrainerStudioExpandedSection: {
+  TipCardExpandedSection: {
     marginTop: 8,
   },
-  speechTrainerStudioDivider: {
+  TipCardDivider: {
     borderTopWidth: 1,
     borderTopColor: 'rgba(139, 92, 246, 0.2)',
     marginTop: 8,
     paddingTop: 16,
   },
-  speechTrainerStudioPracticeBlock: {
+  TipCardPracticeBlock: {
     marginBottom: 12,
   },
-  speechTrainerStudioSectionLabel: {
+  TipCardSectionLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     color: colors.textAccent,
@@ -129,16 +128,16 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 6,
   },
-  speechTrainerStudioPracticeText: {
+  TipCardPracticeText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     lineHeight: 21,
     color: colors.textSecondary,
   },
-  speechTrainerStudioOriginBlock: {
+  TipCardOriginBlock: {
     marginTop: 4,
   },
-  speechTrainerStudioOriginLabel: {
+  TipCardOriginLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     color: colors.textSecondary,
@@ -146,7 +145,7 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 4,
   },
-  speechTrainerStudioOriginText: {
+  TipCardOriginText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 12,
     fontStyle: 'italic',

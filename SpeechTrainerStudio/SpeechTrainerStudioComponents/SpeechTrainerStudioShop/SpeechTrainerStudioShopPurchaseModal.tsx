@@ -3,9 +3,8 @@ import {Modal, Pressable, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {ShopText} from '../../SpeechTrainerStudioTypes/SpeechTrainerStudioShop/SpeechTrainerStudioShop/SpeechTrainerStudioShop';
+import {colors, fonts} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   text: ShopText | null;
@@ -25,36 +24,36 @@ export function ShopPurchaseModal({text, balance, onCancel, onConfirm}: Props) {
 
   return (
     <Modal visible transparent animationType="slide" onRequestClose={onCancel}>
-      <Pressable style={styles.speechTrainerStudioBackdrop} onPress={onCancel}>
+      <Pressable style={styles.ShopPurchaseModalBackdrop} onPress={onCancel}>
         <Pressable
-          style={[styles.speechTrainerStudioSheet, {paddingBottom: insets.bottom + 24}]}
+          style={[styles.ShopPurchaseModalSheet, {paddingBottom: insets.bottom + 24}]}
           onPress={e => e.stopPropagation()}>
-          <View style={styles.speechTrainerStudioHandle} />
-          <Text style={styles.speechTrainerStudioTitle}>Confirm Purchase</Text>
+          <View style={styles.ShopPurchaseModalHandle} />
+          <Text style={styles.ShopPurchaseModalTitle}>Confirm Purchase</Text>
 
-          <Text style={styles.speechTrainerStudioMessage}>
+          <Text style={styles.ShopPurchaseModalMessage}>
             Unlock{' '}
-            <Text style={styles.speechTrainerStudioMessageBold}>{text.title}</Text>
+            <Text style={styles.ShopPurchaseModalMessageBold}>{text.title}</Text>
             {' for '}
-            <Text style={styles.speechTrainerStudioMessagePrice}>🎤 {text.price} Microphones</Text>
+            <Text style={styles.ShopPurchaseModalMessagePrice}>🎤 {text.price} Microphones</Text>
             ?
           </Text>
 
-          <Text style={styles.speechTrainerStudioBalanceNote}>
+          <Text style={styles.ShopPurchaseModalBalanceNote}>
             You have {balance} Microphones. After this purchase: {afterPurchase}.
           </Text>
 
-          <View style={styles.speechTrainerStudioActions}>
-            <Pressable onPress={onCancel} style={styles.speechTrainerStudioCancelButton}>
-              <Text style={styles.speechTrainerStudioCancelText}>Cancel</Text>
+          <View style={styles.ShopPurchaseModalActions}>
+            <Pressable onPress={onCancel} style={styles.ShopPurchaseModalCancelButton}>
+              <Text style={styles.ShopPurchaseModalCancelText}>Cancel</Text>
             </Pressable>
-            <Pressable onPress={onConfirm} style={styles.speechTrainerStudioBuyWrapper}>
+            <Pressable onPress={onConfirm} style={styles.ShopPurchaseModalBuyWrapper}>
               <LinearGradient
                 colors={['#d97706', colors.coachTipText]}
                 start={{x: 0, y: 0}}
                 end={{x: 1, y: 1}}
-                style={styles.speechTrainerStudioBuyButton}>
-                <Text style={styles.speechTrainerStudioBuyText}>🎤 Buy Now</Text>
+                style={styles.ShopPurchaseModalBuyButton}>
+                <Text style={styles.ShopPurchaseModalBuyText}>🎤 Buy Now</Text>
               </LinearGradient>
             </Pressable>
           </View>
@@ -65,12 +64,12 @@ export function ShopPurchaseModal({text, balance, onCancel, onConfirm}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioBackdrop: {
+  ShopPurchaseModalBackdrop: {
     flex: 1,
     backgroundColor: 'rgba(0, 0, 0, 0.65)',
     justifyContent: 'flex-end',
   },
-  speechTrainerStudioSheet: {
+  ShopPurchaseModalSheet: {
     backgroundColor: '#1a0f3c',
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
@@ -79,7 +78,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 24,
     paddingTop: 24,
   },
-  speechTrainerStudioHandle: {
+  ShopPurchaseModalHandle: {
     width: 40,
     height: 4,
     borderRadius: 999,
@@ -87,40 +86,40 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 20,
   },
-  speechTrainerStudioTitle: {
+  ShopPurchaseModalTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 20,
     lineHeight: 28,
     color: colors.textPrimary,
     marginBottom: 16,
   },
-  speechTrainerStudioMessage: {
+  ShopPurchaseModalMessage: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 22,
     color: colors.textSecondary,
     marginBottom: 8,
   },
-  speechTrainerStudioMessageBold: {
+  ShopPurchaseModalMessageBold: {
     fontFamily: fonts.dmSansBold,
     color: colors.textPrimary,
   },
-  speechTrainerStudioMessagePrice: {
+  ShopPurchaseModalMessagePrice: {
     fontFamily: fonts.dmSansBold,
     color: colors.coachTipText,
   },
-  speechTrainerStudioBalanceNote: {
+  ShopPurchaseModalBalanceNote: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textSecondary,
     marginBottom: 24,
   },
-  speechTrainerStudioActions: {
+  ShopPurchaseModalActions: {
     flexDirection: 'row',
     gap: 12,
   },
-  speechTrainerStudioCancelButton: {
+  ShopPurchaseModalCancelButton: {
     flex: 1,
     height: 46,
     borderRadius: 20,
@@ -128,22 +127,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioCancelText: {
+  ShopPurchaseModalCancelText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textAccent,
   },
-  speechTrainerStudioBuyWrapper: {
+  ShopPurchaseModalBuyWrapper: {
     flex: 1,
     borderRadius: 20,
     overflow: 'hidden',
   },
-  speechTrainerStudioBuyButton: {
+  ShopPurchaseModalBuyButton: {
     height: 46,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioBuyText: {
+  ShopPurchaseModalBuyText: {
     fontFamily: fonts.dmSansBold,
     fontSize: 15,
     color: '#000000',

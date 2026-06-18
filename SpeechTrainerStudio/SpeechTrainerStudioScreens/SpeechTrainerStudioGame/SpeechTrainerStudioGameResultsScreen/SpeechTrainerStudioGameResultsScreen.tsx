@@ -4,11 +4,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {GameChallengeResult} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioGame/SpeechTrainerStudioGame/SpeechTrainerStudioGame';
 import {formatGameTime} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioGame/SpeechTrainerStudioGameEvaluation/SpeechTrainerStudioGameEvaluation';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   result: GameChallengeResult;
@@ -23,21 +21,21 @@ export function GameResultsScreen({result, onBack, onPlayAgain}: Props) {
   return (
     <AppBackground>
       <ScrollView
-        style={styles.speechTrainerStudioScroll}
+        style={styles.GameResultsScreenScroll}
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.GameResultsScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <View style={styles.speechTrainerStudioHeader}>
-          <Pressable onPress={onBack} style={styles.speechTrainerStudioBackButton} hitSlop={8}>
-            <Text style={styles.speechTrainerStudioBackIcon}>‹</Text>
+        <View style={styles.GameResultsScreenHeader}>
+          <Pressable onPress={onBack} style={styles.GameResultsScreenBackButton} hitSlop={8}>
+            <Text style={styles.GameResultsScreenBackIcon}>‹</Text>
           </Pressable>
-          <Text style={styles.speechTrainerStudioHeaderTitle}>Results</Text>
-          <View style={styles.speechTrainerStudioHeaderSpacer} />
+          <Text style={styles.GameResultsScreenHeaderTitle}>Results</Text>
+          <View style={styles.GameResultsScreenHeaderSpacer} />
         </View>
 
-        <View style={styles.speechTrainerStudioHeroCard}>
+        <View style={styles.GameResultsScreenHeroCard}>
           <LinearGradient
             colors={
               isGood
@@ -47,62 +45,62 @@ export function GameResultsScreen({result, onBack, onPlayAgain}: Props) {
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
             style={[
-              styles.speechTrainerStudioHeroGradient,
-              isGood ? styles.speechTrainerStudioHeroGood : styles.speechTrainerStudioHeroBad,
+              styles.GameResultsScreenHeroGradient,
+              isGood ? styles.GameResultsScreenHeroGood : styles.GameResultsScreenHeroBad,
             ]}>
-            <View style={styles.speechTrainerStudioHeroInner}>
-              <Text style={styles.speechTrainerStudioHeroEmoji}>{isGood ? '🏆' : '😤'}</Text>
+            <View style={styles.GameResultsScreenHeroInner}>
+              <Text style={styles.GameResultsScreenHeroEmoji}>{isGood ? '🏆' : '😤'}</Text>
               <Text
-                style={[styles.speechTrainerStudioHeroTitle, isGood ? styles.speechTrainerStudioGoodText : styles.speechTrainerStudioBadText]}>
+                style={[styles.GameResultsScreenHeroTitle, isGood ? styles.GameResultsScreenGoodText : styles.GameResultsScreenBadText]}>
                 {isGood ? 'Great Job!' : 'Keep Going!'}
               </Text>
               {isGood && (
-                <View style={styles.speechTrainerStudioRewardBadge}>
-                  <Text style={styles.speechTrainerStudioRewardEmoji}>🎤</Text>
-                  <Text style={styles.speechTrainerStudioRewardText}>+3 Microphones earned!</Text>
+                <View style={styles.GameResultsScreenRewardBadge}>
+                  <Text style={styles.GameResultsScreenRewardEmoji}>🎤</Text>
+                  <Text style={styles.GameResultsScreenRewardText}>+3 Microphones earned!</Text>
                 </View>
               )}
             </View>
           </LinearGradient>
         </View>
 
-        <View style={styles.speechTrainerStudioStatsRow}>
+        <View style={styles.GameResultsScreenStatsRow}>
           <StatCard label="Words" value={String(result.wordCount)} />
           <StatCard label="Time" value={formatGameTime(result.durationMs)} />
           <StatCard label="Balance" value={`${result.balance} 🎤`} />
         </View>
 
-        <View style={styles.speechTrainerStudioTopicCard}>
-          <View style={styles.speechTrainerStudioTopicInner}>
-            <Text style={styles.speechTrainerStudioTopicLabel}>Topic</Text>
-            <Text style={styles.speechTrainerStudioTopicText}>{result.topic}</Text>
+        <View style={styles.GameResultsScreenTopicCard}>
+          <View style={styles.GameResultsScreenTopicInner}>
+            <Text style={styles.GameResultsScreenTopicLabel}>Topic</Text>
+            <Text style={styles.GameResultsScreenTopicText}>{result.topic}</Text>
           </View>
         </View>
 
-        <View style={styles.speechTrainerStudioFeedbackCard}>
+        <View style={styles.GameResultsScreenFeedbackCard}>
           <LinearGradient
             colors={['rgba(109, 40, 217, 0.2)', 'rgba(139, 92, 246, 0.1)']}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
-            style={styles.speechTrainerStudioFeedbackGradient}>
-            <View style={styles.speechTrainerStudioFeedbackInner}>
-              <View style={styles.speechTrainerStudioFeedbackHeader}>
-                <Text style={styles.speechTrainerStudioFeedbackEmoji}>🎙️</Text>
-                <Text style={styles.speechTrainerStudioFeedbackName}>Coach Marcus</Text>
+            style={styles.GameResultsScreenFeedbackGradient}>
+            <View style={styles.GameResultsScreenFeedbackInner}>
+              <View style={styles.GameResultsScreenFeedbackHeader}>
+                <Text style={styles.GameResultsScreenFeedbackEmoji}>🎙️</Text>
+                <Text style={styles.GameResultsScreenFeedbackName}>Coach Marcus</Text>
               </View>
-              <Text style={styles.speechTrainerStudioFeedbackText}>{result.coachFeedback}</Text>
+              <Text style={styles.GameResultsScreenFeedbackText}>{result.coachFeedback}</Text>
             </View>
           </LinearGradient>
         </View>
 
-        <Pressable onPress={onPlayAgain} style={styles.speechTrainerStudioPlayWrapper}>
+        <Pressable onPress={onPlayAgain} style={styles.GameResultsScreenPlayWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
             start={{x: 0, y: 0}}
             end={{x: 0, y: 1}}
-            style={styles.speechTrainerStudioPlayButton}>
-            <Text style={styles.speechTrainerStudioPlayIcon}>↻</Text>
-            <Text style={styles.speechTrainerStudioPlayText}>Play Again</Text>
+            style={styles.GameResultsScreenPlayButton}>
+            <Text style={styles.GameResultsScreenPlayIcon}>↻</Text>
+            <Text style={styles.GameResultsScreenPlayText}>Play Again</Text>
           </LinearGradient>
         </Pressable>
       </ScrollView>
@@ -112,22 +110,22 @@ export function GameResultsScreen({result, onBack, onPlayAgain}: Props) {
 
 function StatCard({label, value}: {label: string; value: string}) {
   return (
-    <View style={styles.speechTrainerStudioStatCard}>
-      <Text style={styles.speechTrainerStudioStatValue}>{value}</Text>
-      <Text style={styles.speechTrainerStudioStatLabel}>{label}</Text>
+    <View style={styles.GameResultsScreenStatCard}>
+      <Text style={styles.GameResultsScreenStatValue}>{value}</Text>
+      <Text style={styles.GameResultsScreenStatLabel}>{label}</Text>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioScroll: {flex: 1},
-  speechTrainerStudioContent: {paddingHorizontal: 20},
-  speechTrainerStudioHeader: {
+  GameResultsScreenScroll: {flex: 1},
+  GameResultsScreenContent: {paddingHorizontal: 20},
+  GameResultsScreenHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 24,
   },
-  speechTrainerStudioBackButton: {
+  GameResultsScreenBackButton: {
     width: 36,
     height: 36,
     borderRadius: 999,
@@ -135,46 +133,46 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioBackIcon: {
+  GameResultsScreenBackIcon: {
     fontSize: 24,
     color: colors.textSecondary,
     lineHeight: 26,
     marginTop: -2,
   },
-  speechTrainerStudioHeaderTitle: {
+  GameResultsScreenHeaderTitle: {
     flex: 1,
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     color: colors.textPrimary,
     textAlign: 'center',
   },
-  speechTrainerStudioHeaderSpacer: {width: 36},
-  speechTrainerStudioHeroCard: {
+  GameResultsScreenHeaderSpacer: {width: 36},
+  GameResultsScreenHeroCard: {
     borderRadius: 24,
     overflow: 'hidden',
     marginBottom: 20,
   },
-  speechTrainerStudioHeroGradient: {borderRadius: 24, borderWidth: 1},
-  speechTrainerStudioHeroGood: {borderColor: 'rgba(22, 163, 74, 0.3)'},
-  speechTrainerStudioHeroBad: {borderColor: 'rgba(239, 68, 68, 0.25)'},
-  speechTrainerStudioHeroInner: {
+  GameResultsScreenHeroGradient: {borderRadius: 24, borderWidth: 1},
+  GameResultsScreenHeroGood: {borderColor: 'rgba(22, 163, 74, 0.3)'},
+  GameResultsScreenHeroBad: {borderColor: 'rgba(239, 68, 68, 0.25)'},
+  GameResultsScreenHeroInner: {
     padding: 28,
     alignItems: 'center',
   },
-  speechTrainerStudioHeroEmoji: {
+  GameResultsScreenHeroEmoji: {
     fontSize: 64,
     lineHeight: 72,
     marginBottom: 8,
   },
-  speechTrainerStudioHeroTitle: {
+  GameResultsScreenHeroTitle: {
     fontFamily: fonts.outfitExtraBold,
     fontSize: 32,
     lineHeight: 42,
     marginBottom: 12,
   },
-  speechTrainerStudioGoodText: {color: colors.success},
-  speechTrainerStudioBadText: {color: colors.danger},
-  speechTrainerStudioRewardBadge: {
+  GameResultsScreenGoodText: {color: colors.success},
+  GameResultsScreenBadText: {color: colors.danger},
+  GameResultsScreenRewardBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
@@ -185,18 +183,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
-  speechTrainerStudioRewardEmoji: {fontSize: 18},
-  speechTrainerStudioRewardText: {
+  GameResultsScreenRewardEmoji: {fontSize: 18},
+  GameResultsScreenRewardText: {
     fontFamily: fonts.dmSansBold,
     fontSize: 16,
     color: colors.coachTipText,
   },
-  speechTrainerStudioStatsRow: {
+  GameResultsScreenStatsRow: {
     flexDirection: 'row',
     gap: 12,
     marginBottom: 20,
   },
-  speechTrainerStudioStatCard: {
+  GameResultsScreenStatCard: {
     flex: 1,
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
@@ -205,7 +203,7 @@ const styles = StyleSheet.create({
     padding: 12,
     alignItems: 'center',
   },
-  speechTrainerStudioStatValue: {
+  GameResultsScreenStatValue: {
     fontFamily: fonts.dmSansBold,
     fontSize: 18,
     lineHeight: 27,
@@ -213,13 +211,13 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     textAlign: 'center',
   },
-  speechTrainerStudioStatLabel: {
+  GameResultsScreenStatLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 11,
     lineHeight: 17,
     color: colors.textSecondary,
   },
-  speechTrainerStudioTopicCard: {
+  GameResultsScreenTopicCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
@@ -227,8 +225,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     overflow: 'hidden',
   },
-  speechTrainerStudioTopicInner: {padding: 16},
-  speechTrainerStudioTopicLabel: {
+  GameResultsScreenTopicInner: {padding: 16},
+  GameResultsScreenTopicLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 11,
     lineHeight: 17,
@@ -237,40 +235,40 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
     marginBottom: 8,
   },
-  speechTrainerStudioTopicText: {
+  GameResultsScreenTopicText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     lineHeight: 21,
     color: colors.textPrimary,
   },
-  speechTrainerStudioFeedbackCard: {
+  GameResultsScreenFeedbackCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     overflow: 'hidden',
     marginBottom: 24,
   },
-  speechTrainerStudioFeedbackGradient: {borderRadius: 16},
-  speechTrainerStudioFeedbackInner: {padding: 20},
-  speechTrainerStudioFeedbackHeader: {
+  GameResultsScreenFeedbackGradient: {borderRadius: 16},
+  GameResultsScreenFeedbackInner: {padding: 20},
+  GameResultsScreenFeedbackHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     marginBottom: 12,
   },
-  speechTrainerStudioFeedbackEmoji: {fontSize: 20},
-  speechTrainerStudioFeedbackName: {
+  GameResultsScreenFeedbackEmoji: {fontSize: 20},
+  GameResultsScreenFeedbackName: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textPrimary,
   },
-  speechTrainerStudioFeedbackText: {
+  GameResultsScreenFeedbackText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 23,
     color: colors.textSecondary,
   },
-  speechTrainerStudioPlayWrapper: {
+  GameResultsScreenPlayWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -280,7 +278,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioPlayButton: {
+  GameResultsScreenPlayButton: {
     height: 55,
     borderRadius: 16,
     flexDirection: 'row',
@@ -288,11 +286,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  speechTrainerStudioPlayIcon: {
+  GameResultsScreenPlayIcon: {
     fontSize: 16,
     color: colors.white,
   },
-  speechTrainerStudioPlayText: {
+  GameResultsScreenPlayText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.white,

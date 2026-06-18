@@ -12,6 +12,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
+import {icons} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioAssets';
 import {ShopCategoryPills} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioShop/SpeechTrainerStudioShopCategoryPills';
 import {getCategoryById} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioPrompterTexts';
 import {
@@ -19,8 +20,7 @@ import {
   getTextPreview,
   SHOP_TEXTS,
 } from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioShopTexts';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 import {
   ShopFilterId,
   ShopText,
@@ -66,8 +66,8 @@ export function ShopListScreen({
     return (
       <View
         style={[
-          styles.speechTrainerStudioCard,
-          owned && styles.speechTrainerStudioCardOwned,
+          styles.ShopListScreenCard,
+          owned && styles.ShopListScreenCardOwned,
         ]}>
         {owned ? (
           <LinearGradient
@@ -80,56 +80,54 @@ export function ShopListScreen({
 
         <View
           style={[
-            styles.speechTrainerStudioCardHeader,
-            owned && styles.speechTrainerStudioCardHeaderOwned,
+            styles.ShopListScreenCardHeader,
+            owned && styles.ShopListScreenCardHeaderOwned,
           ]}>
-          <Text style={styles.speechTrainerStudioCardHeaderEmoji}>
+          <Text style={styles.ShopListScreenCardHeaderEmoji}>
             {category.emoji}
           </Text>
-          <Text style={styles.speechTrainerStudioCardHeaderTitle}>
+          <Text style={styles.ShopListScreenCardHeaderTitle}>
             {category.title}
           </Text>
           {owned ? (
-            <View style={styles.speechTrainerStudioOwnedBadge}>
-              <Text style={styles.speechTrainerStudioOwnedCheck}>✓</Text>
-              <Text style={styles.speechTrainerStudioOwnedText}>Owned</Text>
+            <View style={styles.ShopListScreenOwnedBadge}>
+              <Text style={styles.ShopListScreenOwnedCheck}>✓</Text>
+              <Text style={styles.ShopListScreenOwnedText}>Owned</Text>
             </View>
           ) : null}
         </View>
 
-        <View style={styles.speechTrainerStudioCardBody}>
-          <View style={styles.speechTrainerStudioCardTopRow}>
-            <View style={styles.speechTrainerStudioCardTextBlock}>
-              <Text style={styles.speechTrainerStudioCardTitle}>
+        <View style={styles.ShopListScreenCardBody}>
+          <View style={styles.ShopListScreenCardTopRow}>
+            <View style={styles.ShopListScreenCardTextBlock}>
+              <Text style={styles.ShopListScreenCardTitle}>
                 {text.title}
               </Text>
-              <Text style={styles.speechTrainerStudioCardDescription}>
+              <Text style={styles.ShopListScreenCardDescription}>
                 {text.description}
               </Text>
             </View>
             <View
               style={[
-                styles.speechTrainerStudioLockButton,
-                owned && styles.speechTrainerStudioLockButtonOwned,
+                styles.ShopListScreenLockButton,
+                owned && styles.ShopListScreenLockButtonOwned,
               ]}>
               <Image
                 source={
-                  !owned
-                    ? require('../../../SpeechTrainerStudioAssets/images/lock.png')
-                    : require('../../../SpeechTrainerStudioAssets/images/unlocked.png')
+                  !owned ? icons.lock : icons.unlocked
                 }
               />
             </View>
           </View>
 
-          <View style={styles.speechTrainerStudioCardFooter}>
-            <Text style={styles.speechTrainerStudioWordCount}>
+          <View style={styles.ShopListScreenCardFooter}>
+            <Text style={styles.ShopListScreenWordCount}>
               {text.wordCount} words
             </Text>
             {owned ? (
-              <View style={styles.speechTrainerStudioAvailableBadge}>
-                <Text style={styles.speechTrainerStudioAvailableCheck}>✓</Text>
-                <Text style={styles.speechTrainerStudioAvailableText}>
+              <View style={styles.ShopListScreenAvailableBadge}>
+                <Text style={styles.ShopListScreenAvailableCheck}>✓</Text>
+                <Text style={styles.ShopListScreenAvailableText}>
                   Available
                 </Text>
               </View>
@@ -137,28 +135,28 @@ export function ShopListScreen({
               <Pressable
                 onPress={() => canAfford && onPurchasePress(text)}
                 disabled={!canAfford}
-                style={styles.speechTrainerStudioPriceWrapper}>
+                style={styles.ShopListScreenPriceWrapper}>
                 {canAfford ? (
                   <LinearGradient
                     colors={['#d97706', colors.coachTipText]}
                     start={{x: 0, y: 0}}
                     end={{x: 1, y: 1}}
-                    style={styles.speechTrainerStudioPriceButton}>
-                    <Text style={styles.speechTrainerStudioPriceMic}>🎤</Text>
-                    <Text style={styles.speechTrainerStudioPriceValue}>
+                    style={styles.ShopListScreenPriceButton}>
+                    <Text style={styles.ShopListScreenPriceMic}>🎤</Text>
+                    <Text style={styles.ShopListScreenPriceValue}>
                       {text.price}
                     </Text>
                   </LinearGradient>
                 ) : (
                   <View
                     style={[
-                      styles.speechTrainerStudioPriceButton,
-                      styles.speechTrainerStudioPriceButtonDisabled,
+                      styles.ShopListScreenPriceButton,
+                      styles.ShopListScreenPriceButtonDisabled,
                     ]}>
-                    <Text style={styles.speechTrainerStudioPriceMicDisabled}>
+                    <Text style={styles.ShopListScreenPriceMicDisabled}>
                       🎤
                     </Text>
-                    <Text style={styles.speechTrainerStudioPriceValueDisabled}>
+                    <Text style={styles.ShopListScreenPriceValueDisabled}>
                       {text.price}
                     </Text>
                   </View>
@@ -168,7 +166,7 @@ export function ShopListScreen({
           </View>
 
           {owned ? (
-            <Text style={styles.speechTrainerStudioPreview}>
+            <Text style={styles.ShopListScreenPreview}>
               {getTextPreview(text.body)}
             </Text>
           ) : null}
@@ -184,23 +182,23 @@ export function ShopListScreen({
         keyExtractor={item => item.id}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
-        style={styles.speechTrainerStudioList}
+        style={styles.ShopListScreenList}
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.ShopListScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         ItemSeparatorComponent={ListSeparator}
         ListHeaderComponent={
           <>
-            <Text style={styles.speechTrainerStudioEyebrow}>
+            <Text style={styles.ShopListScreenEyebrow}>
               Premium Content
             </Text>
 
-            <View style={styles.speechTrainerStudioHeaderRow}>
-              <Text style={styles.speechTrainerStudioTitle}>Text Shop</Text>
-              <View style={styles.speechTrainerStudioBalanceBadge}>
-                <Text style={styles.speechTrainerStudioBalanceMic}>🎤</Text>
-                <Text style={styles.speechTrainerStudioBalanceValue}>
+            <View style={styles.ShopListScreenHeaderRow}>
+              <Text style={styles.ShopListScreenTitle}>Text Shop</Text>
+              <View style={styles.ShopListScreenBalanceBadge}>
+                <Text style={styles.ShopListScreenBalanceMic}>🎤</Text>
+                <Text style={styles.ShopListScreenBalanceValue}>
                   {balance}
                 </Text>
               </View>
@@ -210,14 +208,14 @@ export function ShopListScreen({
               colors={['rgba(109, 40, 217, 0.25)', 'rgba(139, 92, 246, 0.12)']}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 1}}
-              style={styles.speechTrainerStudioInfoCard}>
-              <View style={styles.speechTrainerStudioInfoCardInner}>
-                <Text style={styles.speechTrainerStudioInfoEmoji}>🛍️</Text>
-                <View style={styles.speechTrainerStudioInfoTextWrap}>
-                  <Text style={styles.speechTrainerStudioInfoTitle}>
+              style={styles.ShopListScreenInfoCard}>
+              <View style={styles.ShopListScreenInfoCardInner}>
+                <Text style={styles.ShopListScreenInfoEmoji}>🛍️</Text>
+                <View style={styles.ShopListScreenInfoTextWrap}>
+                  <Text style={styles.ShopListScreenInfoTitle}>
                     Premium Teleprompter Texts
                   </Text>
-                  <Text style={styles.speechTrainerStudioInfoSubtitle}>
+                  <Text style={styles.ShopListScreenInfoSubtitle}>
                     Unlock advanced texts with Microphone coins. Earn them by
                     playing the Mini Game. Unlocked texts appear in Teleprompter
                     Training and your Workshop.
@@ -226,7 +224,7 @@ export function ShopListScreen({
               </View>
             </LinearGradient>
 
-            <View style={styles.speechTrainerStudioFilters}>
+            <View style={styles.ShopListScreenFilters}>
               <ShopCategoryPills
                 categories={getShopFilterCategories()}
                 selectedId={filterId}
@@ -235,9 +233,9 @@ export function ShopListScreen({
             </View>
 
             {showEarnHint ? (
-              <View style={styles.speechTrainerStudioHintBar}>
-                <Text style={styles.speechTrainerStudioHintEmoji}>💡</Text>
-                <Text style={styles.speechTrainerStudioHintText}>
+              <View style={styles.ShopListScreenHintBar}>
+                <Text style={styles.ShopListScreenHintEmoji}>💡</Text>
+                <Text style={styles.ShopListScreenHintText}>
                   Play the Mini Game to earn more Microphones!
                 </Text>
               </View>
@@ -249,10 +247,10 @@ export function ShopListScreen({
       {toastMessage ? (
         <View
           style={[
-            styles.speechTrainerStudioToast,
+            styles.ShopListScreenToast,
             {bottom: insets.bottom + 90},
           ]}>
-          <Text style={styles.speechTrainerStudioToastText}>
+          <Text style={styles.ShopListScreenToastText}>
             {toastMessage}
           </Text>
         </View>
@@ -262,39 +260,39 @@ export function ShopListScreen({
 }
 
 function ListSeparator() {
-  return <View style={styles.speechTrainerStudioSeparator} />;
+  return <View style={styles.ShopListScreenSeparator} />;
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioList: {
+  ShopListScreenList: {
     flex: 1,
   },
-  speechTrainerStudioContent: {
+  ShopListScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioSeparator: {
+  ShopListScreenSeparator: {
     height: 16,
   },
-  speechTrainerStudioEyebrow: {
+  ShopListScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioHeaderRow: {
+  ShopListScreenHeaderRow: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-  speechTrainerStudioTitle: {
+  ShopListScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     lineHeight: 34,
     color: colors.textPrimary,
     flex: 1,
   },
-  speechTrainerStudioBalanceBadge: {
+  ShopListScreenBalanceBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
@@ -305,54 +303,54 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(245, 158, 11, 0.25)',
   },
-  speechTrainerStudioBalanceMic: {
+  ShopListScreenBalanceMic: {
     fontSize: 16,
     lineHeight: 24,
   },
-  speechTrainerStudioBalanceValue: {
+  ShopListScreenBalanceValue: {
     fontFamily: fonts.dmSansBold,
     fontSize: 15,
     lineHeight: 22,
     color: colors.coachTipText,
   },
-  speechTrainerStudioInfoCard: {
+  ShopListScreenInfoCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     marginBottom: 16,
   },
-  speechTrainerStudioInfoCardInner: {
+  ShopListScreenInfoCardInner: {
     padding: 16,
     flexDirection: 'row',
     gap: 12,
     alignItems: 'flex-start',
   },
-  speechTrainerStudioInfoEmoji: {
+  ShopListScreenInfoEmoji: {
     fontSize: 22,
     lineHeight: 24,
   },
-  speechTrainerStudioInfoTextWrap: {
+  ShopListScreenInfoTextWrap: {
     flex: 1,
     gap: 4,
   },
-  speechTrainerStudioInfoTitle: {
+  ShopListScreenInfoTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     lineHeight: 21,
     color: colors.textPrimary,
   },
-  speechTrainerStudioInfoSubtitle: {
+  ShopListScreenInfoSubtitle: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
   },
-  speechTrainerStudioFilters: {
+  ShopListScreenFilters: {
     marginBottom: 16,
     marginHorizontal: -20,
     paddingLeft: 20,
   },
-  speechTrainerStudioHintBar: {
+  ShopListScreenHintBar: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
@@ -364,28 +362,28 @@ const styles = StyleSheet.create({
     borderColor: colors.coachTipBorder,
     marginBottom: 16,
   },
-  speechTrainerStudioHintEmoji: {
+  ShopListScreenHintEmoji: {
     fontSize: 14,
     lineHeight: 21,
   },
-  speechTrainerStudioHintText: {
+  ShopListScreenHintText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
     flex: 1,
   },
-  speechTrainerStudioCard: {
+  ShopListScreenCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     backgroundColor: colors.cardBackground,
     overflow: 'hidden',
   },
-  speechTrainerStudioCardOwned: {
+  ShopListScreenCardOwned: {
     borderColor: 'rgba(22, 163, 74, 0.3)',
   },
-  speechTrainerStudioCardHeader: {
+  ShopListScreenCardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
@@ -395,62 +393,62 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(139, 92, 246, 0.1)',
   },
-  speechTrainerStudioCardHeaderOwned: {
+  ShopListScreenCardHeaderOwned: {
     backgroundColor: 'rgba(22, 163, 74, 0.1)',
     borderBottomColor: 'rgba(22, 163, 74, 0.15)',
   },
-  speechTrainerStudioCardHeaderEmoji: {
+  ShopListScreenCardHeaderEmoji: {
     fontSize: 14,
     lineHeight: 21,
   },
-  speechTrainerStudioCardHeaderTitle: {
+  ShopListScreenCardHeaderTitle: {
     flex: 1,
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     lineHeight: 17,
     color: colors.textSecondary,
   },
-  speechTrainerStudioOwnedBadge: {
+  ShopListScreenOwnedBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
   },
-  speechTrainerStudioOwnedCheck: {
+  ShopListScreenOwnedCheck: {
     fontSize: 12,
     color: colors.success,
   },
-  speechTrainerStudioOwnedText: {
+  ShopListScreenOwnedText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     lineHeight: 17,
     color: colors.success,
   },
-  speechTrainerStudioCardBody: {
+  ShopListScreenCardBody: {
     padding: 16,
     gap: 12,
   },
-  speechTrainerStudioCardTopRow: {
+  ShopListScreenCardTopRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     gap: 12,
   },
-  speechTrainerStudioCardTextBlock: {
+  ShopListScreenCardTextBlock: {
     flex: 1,
   },
-  speechTrainerStudioCardTitle: {
+  ShopListScreenCardTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 16,
     lineHeight: 22,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioCardDescription: {
+  ShopListScreenCardDescription: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textSecondary,
   },
-  speechTrainerStudioLockButton: {
+  ShopListScreenLockButton: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -458,28 +456,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioLockButtonOwned: {
+  ShopListScreenLockButtonOwned: {
     backgroundColor: 'rgba(22, 163, 74, 0.15)',
   },
-  speechTrainerStudioLockIcon: {
+  ShopListScreenLockIcon: {
     fontSize: 16,
   },
-  speechTrainerStudioCardFooter: {
+  ShopListScreenCardFooter: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  speechTrainerStudioWordCount: {
+  ShopListScreenWordCount: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
   },
-  speechTrainerStudioPriceWrapper: {
+  ShopListScreenPriceWrapper: {
     borderRadius: 999,
     overflow: 'hidden',
   },
-  speechTrainerStudioPriceButton: {
+  ShopListScreenPriceButton: {
     flexDirection: 'row',
     alignItems: 'center',
     paddingHorizontal: 12,
@@ -487,31 +485,31 @@ const styles = StyleSheet.create({
     gap: 6,
     borderRadius: 999,
   },
-  speechTrainerStudioPriceButtonDisabled: {
+  ShopListScreenPriceButtonDisabled: {
     backgroundColor: 'rgba(139, 92, 246, 0.1)',
     opacity: 0.6,
   },
-  speechTrainerStudioPriceMic: {
+  ShopListScreenPriceMic: {
     fontFamily: fonts.dmSansBold,
     fontSize: 14,
     color: '#000000',
   },
-  speechTrainerStudioPriceValue: {
+  ShopListScreenPriceValue: {
     fontFamily: fonts.dmSansBold,
     fontSize: 13,
     color: '#000000',
   },
-  speechTrainerStudioPriceMicDisabled: {
+  ShopListScreenPriceMicDisabled: {
     fontFamily: fonts.dmSansBold,
     fontSize: 14,
     color: colors.textSecondary,
   },
-  speechTrainerStudioPriceValueDisabled: {
+  ShopListScreenPriceValueDisabled: {
     fontFamily: fonts.dmSansBold,
     fontSize: 13,
     color: colors.textSecondary,
   },
-  speechTrainerStudioAvailableBadge: {
+  ShopListScreenAvailableBadge: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
@@ -520,24 +518,24 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     backgroundColor: 'rgba(22, 163, 74, 0.15)',
   },
-  speechTrainerStudioAvailableCheck: {
+  ShopListScreenAvailableCheck: {
     fontSize: 12,
     color: colors.success,
   },
-  speechTrainerStudioAvailableText: {
+  ShopListScreenAvailableText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     lineHeight: 20,
     color: colors.success,
   },
-  speechTrainerStudioPreview: {
+  ShopListScreenPreview: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 19,
     fontStyle: 'italic',
     color: colors.textSecondary,
   },
-  speechTrainerStudioToast: {
+  ShopListScreenToast: {
     position: 'absolute',
     left: 20,
     right: 20,
@@ -547,7 +545,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.success,
     alignItems: 'center',
   },
-  speechTrainerStudioToastText: {
+  ShopListScreenToastText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     lineHeight: 20,

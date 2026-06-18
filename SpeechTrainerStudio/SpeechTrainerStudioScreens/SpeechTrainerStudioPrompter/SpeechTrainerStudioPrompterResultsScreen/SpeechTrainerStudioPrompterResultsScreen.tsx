@@ -4,11 +4,9 @@ import LinearGradient from 'react-native-linear-gradient';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {SessionResult} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter/SpeechTrainerStudioPrompter';
 import {formatDuration} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioFormatting/SpeechTrainerStudioFormatDuration/SpeechTrainerStudioFormatDuration';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   result: SessionResult;
@@ -29,32 +27,32 @@ export function PrompterResultsScreen({
     <AppBackground>
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.PrompterResultsScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <View style={styles.speechTrainerStudioHeader}>
-          <Pressable onPress={onBack} style={styles.speechTrainerStudioBackButton}>
-            <Text style={styles.speechTrainerStudioBackIcon}>‹</Text>
+        <View style={styles.PrompterResultsScreenHeader}>
+          <Pressable onPress={onBack} style={styles.PrompterResultsScreenBackButton}>
+            <Text style={styles.PrompterResultsScreenBackIcon}>‹</Text>
           </Pressable>
-          <Text style={styles.speechTrainerStudioHeaderTitle}>Session Results</Text>
+          <Text style={styles.PrompterResultsScreenHeaderTitle}>Session Results</Text>
         </View>
 
         <LinearGradient
           colors={['rgba(17, 8, 48, 0.9)', 'rgba(30, 16, 72, 0.7)']}
-          style={styles.speechTrainerStudioHeroCard}>
+          style={styles.PrompterResultsScreenHeroCard}>
           <View
             style={{
               padding: 25,
               alignItems: 'center',
             }}>
-            <Text style={styles.speechTrainerStudioTrophy}>🏆</Text>
-            <Text style={styles.speechTrainerStudioRating}>Excellent</Text>
-            <Text style={styles.speechTrainerStudioSubtitle}>Text completed!</Text>
+            <Text style={styles.PrompterResultsScreenTrophy}>🏆</Text>
+            <Text style={styles.PrompterResultsScreenRating}>Excellent</Text>
+            <Text style={styles.PrompterResultsScreenSubtitle}>Text completed!</Text>
           </View>
         </LinearGradient>
 
-        <View style={styles.speechTrainerStudioStatsGrid}>
+        <View style={styles.PrompterResultsScreenStatsGrid}>
           <StatCard
             label="Duration"
             value={`⏱️ ${formatDuration(result.durationMs)}`}
@@ -69,29 +67,29 @@ export function PrompterResultsScreen({
 
         <LinearGradient
           colors={['rgba(109, 40, 217, 0.2)', 'rgba(139, 92, 246, 0.1)']}
-          style={styles.speechTrainerStudioFeedbackCard}>
-          <View style={styles.speechTrainerStudioFeedbackHeader}>
-            <Text style={styles.speechTrainerStudioFeedbackEmoji}>🎙️</Text>
-            <Text style={styles.speechTrainerStudioFeedbackName}>Coach Marcus</Text>
+          style={styles.PrompterResultsScreenFeedbackCard}>
+          <View style={styles.PrompterResultsScreenFeedbackHeader}>
+            <Text style={styles.PrompterResultsScreenFeedbackEmoji}>🎙️</Text>
+            <Text style={styles.PrompterResultsScreenFeedbackName}>Coach Marcus</Text>
           </View>
-          <Text style={styles.speechTrainerStudioFeedbackText}>
+          <Text style={styles.PrompterResultsScreenFeedbackText}>
             Outstanding work! Your pace was confident and well-controlled. I
             could see the months of practice paying off in every paragraph. This
             is exactly the level of fluency I want you to bring to the stage.
           </Text>
         </LinearGradient>
 
-        <Pressable onPress={onPracticeAgain} style={styles.speechTrainerStudioPrimaryWrapper}>
+        <Pressable onPress={onPracticeAgain} style={styles.PrompterResultsScreenPrimaryWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
-            style={styles.speechTrainerStudioPrimaryButton}>
-            <Text style={styles.speechTrainerStudioPrimaryIcon}>▶</Text>
-            <Text style={styles.speechTrainerStudioPrimaryText}>Practice Again</Text>
+            style={styles.PrompterResultsScreenPrimaryButton}>
+            <Text style={styles.PrompterResultsScreenPrimaryIcon}>▶</Text>
+            <Text style={styles.PrompterResultsScreenPrimaryText}>Practice Again</Text>
           </LinearGradient>
         </Pressable>
 
-        <Pressable onPress={onChooseDifferent} style={styles.speechTrainerStudioSecondaryButton}>
-          <Text style={styles.speechTrainerStudioSecondaryText}>Choose Different Text</Text>
+        <Pressable onPress={onChooseDifferent} style={styles.PrompterResultsScreenSecondaryButton}>
+          <Text style={styles.PrompterResultsScreenSecondaryText}>Choose Different Text</Text>
         </Pressable>
       </ScrollView>
     </AppBackground>
@@ -108,9 +106,9 @@ function StatCard({
   tall?: boolean;
 }) {
   return (
-    <View style={[styles.speechTrainerStudioStatCard, tall && styles.speechTrainerStudioStatCardTall]}>
-      <Text style={styles.speechTrainerStudioStatLabel}>{label}</Text>
-      <Text style={[styles.speechTrainerStudioStatValue, tall && styles.speechTrainerStudioStatValueSmall]}>
+    <View style={[styles.PrompterResultsScreenStatCard, tall && styles.PrompterResultsScreenStatCardTall]}>
+      <Text style={styles.PrompterResultsScreenStatLabel}>{label}</Text>
+      <Text style={[styles.PrompterResultsScreenStatValue, tall && styles.PrompterResultsScreenStatValueSmall]}>
         {value}
       </Text>
     </View>
@@ -118,16 +116,16 @@ function StatCard({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContent: {
+  PrompterResultsScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioHeader: {
+  PrompterResultsScreenHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
     marginBottom: 24,
   },
-  speechTrainerStudioBackButton: {
+  PrompterResultsScreenBackButton: {
     width: 36,
     height: 36,
     borderRadius: 18,
@@ -135,17 +133,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioBackIcon: {
+  PrompterResultsScreenBackIcon: {
     fontSize: 24,
     color: colors.textPrimary,
     marginTop: -2,
   },
-  speechTrainerStudioHeaderTitle: {
+  PrompterResultsScreenHeaderTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 22,
     color: colors.textPrimary,
   },
-  speechTrainerStudioHeroCard: {
+  PrompterResultsScreenHeroCard: {
     borderRadius: 24,
     borderWidth: 1,
     borderColor: 'rgba(34, 197, 94, 0.2)',
@@ -160,29 +158,29 @@ const styles = StyleSheet.create({
       elevation: 4,
     }),
   },
-  speechTrainerStudioTrophy: {
+  PrompterResultsScreenTrophy: {
     fontSize: 60,
     lineHeight: 64,
     marginBottom: 8,
   },
-  speechTrainerStudioRating: {
+  PrompterResultsScreenRating: {
     fontFamily: fonts.outfitExtraBold,
     fontSize: 28,
     color: colors.success,
     marginBottom: 4,
   },
-  speechTrainerStudioSubtitle: {
+  PrompterResultsScreenSubtitle: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     color: colors.textSecondary,
   },
-  speechTrainerStudioStatsGrid: {
+  PrompterResultsScreenStatsGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,
     marginBottom: 20,
   },
-  speechTrainerStudioStatCard: {
+  PrompterResultsScreenStatCard: {
     width: '48%',
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
@@ -191,52 +189,52 @@ const styles = StyleSheet.create({
     padding: 16,
     minHeight: 82,
   },
-  speechTrainerStudioStatCardTall: {
+  PrompterResultsScreenStatCardTall: {
     minHeight: 94,
   },
-  speechTrainerStudioStatLabel: {
+  PrompterResultsScreenStatLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 11,
     color: colors.textSecondary,
     marginBottom: 8,
   },
-  speechTrainerStudioStatValue: {
+  PrompterResultsScreenStatValue: {
     fontFamily: fonts.dmSansBold,
     fontSize: 18,
     color: colors.textPrimary,
   },
-  speechTrainerStudioStatValueSmall: {
+  PrompterResultsScreenStatValueSmall: {
     fontSize: 13,
     lineHeight: 20,
   },
-  speechTrainerStudioFeedbackCard: {
+  PrompterResultsScreenFeedbackCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     padding: 20,
     marginBottom: 24,
   },
-  speechTrainerStudioFeedbackHeader: {
+  PrompterResultsScreenFeedbackHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     marginBottom: 12,
   },
-  speechTrainerStudioFeedbackEmoji: {
+  PrompterResultsScreenFeedbackEmoji: {
     fontSize: 20,
   },
-  speechTrainerStudioFeedbackName: {
+  PrompterResultsScreenFeedbackName: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textPrimary,
   },
-  speechTrainerStudioFeedbackText: {
+  PrompterResultsScreenFeedbackText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 14,
     lineHeight: 23,
     color: colors.textSecondary,
   },
-  speechTrainerStudioPrimaryWrapper: {
+  PrompterResultsScreenPrimaryWrapper: {
     borderRadius: 16,
     marginBottom: 12,
     ...speechTrainerStudioShadow({
@@ -247,7 +245,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioPrimaryButton: {
+  PrompterResultsScreenPrimaryButton: {
     height: 55,
     borderRadius: 16,
     flexDirection: 'row',
@@ -255,16 +253,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  speechTrainerStudioPrimaryIcon: {
+  PrompterResultsScreenPrimaryIcon: {
     color: colors.white,
     fontSize: 14,
   },
-  speechTrainerStudioPrimaryText: {
+  PrompterResultsScreenPrimaryText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.white,
   },
-  speechTrainerStudioSecondaryButton: {
+  PrompterResultsScreenSecondaryButton: {
     height: 57,
     borderRadius: 16,
     borderWidth: 1,
@@ -273,7 +271,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioSecondaryText: {
+  PrompterResultsScreenSecondaryText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textAccent,

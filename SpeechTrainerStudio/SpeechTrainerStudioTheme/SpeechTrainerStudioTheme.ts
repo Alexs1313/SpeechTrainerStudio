@@ -1,0 +1,33 @@
+import {Platform} from 'react-native';
+
+import {fonts} from './SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {speechTrainerStudioShadow} from './SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
+
+export {colors} from './SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+export {fonts};
+
+export const spacing = {
+  s: 8,
+  m: 12,
+  l: 16,
+  xl: 20,
+  xxl: 28,
+};
+
+export const radius = {
+  card: 16,
+  button: 16,
+  chip: 8,
+  pill: 999,
+};
+
+export const layout = {
+  screenPadding: 20,
+  tabHeight: 66,
+  buttonHeight: 56,
+};
+
+export const topInset = (value: number) =>
+  Platform.OS === 'android' ? Math.max(value, 30) : value;
+
+export {speechTrainerStudioShadow};

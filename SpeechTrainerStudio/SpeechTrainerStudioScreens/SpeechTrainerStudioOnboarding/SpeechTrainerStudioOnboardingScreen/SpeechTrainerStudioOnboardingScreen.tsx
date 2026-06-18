@@ -13,9 +13,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {OnboardingPagination} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioOnboarding/SpeechTrainerStudioOnboardingPagination';
 import {ONBOARDING_STEPS} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioOnboardingSteps';
-import {speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioShadow/SpeechTrainerStudioShadow';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
+import {colors, fonts, speechTrainerStudioShadow} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   onComplete: () => void;
@@ -42,7 +40,7 @@ export function SpeechTrainerStudioOnboardingScreen({onComplete}: Props) {
   }, [onComplete]);
 
   return (
-    <View style={styles.speechTrainerStudioContainer}>
+    <View style={styles.SpeechTrainerStudioOnboardingScreenContainer}>
       <StatusBar barStyle="light-content" backgroundColor={colors.background} />
       <LinearGradient
         colors={step.gradient}
@@ -53,7 +51,7 @@ export function SpeechTrainerStudioOnboardingScreen({onComplete}: Props) {
 
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioScrollContent,
+          styles.SpeechTrainerStudioOnboardingScreenScrollContent,
           {
             paddingTop: insets.top + 16,
             paddingBottom: insets.bottom + 24,
@@ -63,44 +61,44 @@ export function SpeechTrainerStudioOnboardingScreen({onComplete}: Props) {
         {showSkip && (
           <Pressable
             onPress={handleSkip}
-            style={styles.speechTrainerStudioSkipButton}
+            style={styles.SpeechTrainerStudioOnboardingScreenSkipButton}
             hitSlop={12}>
-            <Text style={styles.speechTrainerStudioSkipText}>Skip</Text>
+            <Text style={styles.SpeechTrainerStudioOnboardingScreenSkipText}>Skip</Text>
           </Pressable>
         )}
 
-        {!showSkip && <View style={styles.speechTrainerStudioSkipPlaceholder} />}
+        {!showSkip && <View style={styles.SpeechTrainerStudioOnboardingScreenSkipPlaceholder} />}
 
-        <View style={styles.speechTrainerStudioImageFrame}>
-          <View style={styles.speechTrainerStudioImageInner}>
+        <View style={styles.SpeechTrainerStudioOnboardingScreenImageFrame}>
+          <View style={styles.SpeechTrainerStudioOnboardingScreenImageInner}>
             <LinearGradient
               colors={['rgba(139, 92, 246, 0.2)', 'rgba(139, 92, 246, 0.133)']}
               start={{x: 0, y: 0}}
               end={{x: 1, y: 1}}
-              style={styles.speechTrainerStudioImageGradient}>
-              <Image source={step.image} style={styles.speechTrainerStudioImage} />
+              style={styles.SpeechTrainerStudioOnboardingScreenImageGradient}>
+              <Image source={step.image} style={styles.SpeechTrainerStudioOnboardingScreenImage} />
             </LinearGradient>
           </View>
         </View>
 
-        <View style={styles.speechTrainerStudioTextBlock}>
-          <Text style={[styles.speechTrainerStudioLabel, {color: step.labelColor}]}>
+        <View style={styles.SpeechTrainerStudioOnboardingScreenTextBlock}>
+          <Text style={[styles.SpeechTrainerStudioOnboardingScreenLabel, {color: step.labelColor}]}>
             {step.label.toUpperCase()}
           </Text>
-          <Text style={styles.speechTrainerStudioTitle}>{step.title}</Text>
-          <Text style={styles.speechTrainerStudioBody}>{step.body}</Text>
+          <Text style={styles.SpeechTrainerStudioOnboardingScreenTitle}>{step.title}</Text>
+          <Text style={styles.SpeechTrainerStudioOnboardingScreenBody}>{step.body}</Text>
         </View>
 
-        <View style={styles.speechTrainerStudioFooter}>
+        <View style={styles.SpeechTrainerStudioOnboardingScreenFooter}>
           <OnboardingPagination activeIndex={stepIndex} />
 
-          <Pressable onPress={goNext} style={styles.speechTrainerStudioButtonWrapper}>
+          <Pressable onPress={goNext} style={styles.SpeechTrainerStudioOnboardingScreenButtonWrapper}>
             <LinearGradient
               colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
               start={{x: 0, y: 0}}
               end={{x: 0, y: 1}}
-              style={styles.speechTrainerStudioButton}>
-              <Text style={styles.speechTrainerStudioButtonText}>
+              style={styles.SpeechTrainerStudioOnboardingScreenButton}>
+              <Text style={styles.SpeechTrainerStudioOnboardingScreenButtonText}>
                 {step.buttonText ?? 'Continue'}
                 {!step.buttonText && '  ›'}
               </Text>
@@ -113,28 +111,28 @@ export function SpeechTrainerStudioOnboardingScreen({onComplete}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContainer: {
+  SpeechTrainerStudioOnboardingScreenContainer: {
     flex: 1,
     backgroundColor: colors.background,
   },
-  speechTrainerStudioScrollContent: {
+  SpeechTrainerStudioOnboardingScreenScrollContent: {
     flexGrow: 1,
     paddingHorizontal: 32,
   },
-  speechTrainerStudioSkipButton: {
+  SpeechTrainerStudioOnboardingScreenSkipButton: {
     alignSelf: 'flex-end',
     marginBottom: 32,
   },
-  speechTrainerStudioSkipPlaceholder: {
+  SpeechTrainerStudioOnboardingScreenSkipPlaceholder: {
     height: 21,
     marginBottom: 32,
   },
-  speechTrainerStudioSkipText: {
+  SpeechTrainerStudioOnboardingScreenSkipText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textSecondary,
   },
-  speechTrainerStudioImageFrame: {
+  SpeechTrainerStudioOnboardingScreenImageFrame: {
     alignSelf: 'center',
     width: 288,
     height: 288,
@@ -151,31 +149,31 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioImageInner: {
+  SpeechTrainerStudioOnboardingScreenImageInner: {
     flex: 1,
   },
-  speechTrainerStudioImageGradient: {
+  SpeechTrainerStudioOnboardingScreenImageGradient: {
     flex: 1,
     borderRadius: 14,
     overflow: 'hidden',
   },
-  speechTrainerStudioImage: {
+  SpeechTrainerStudioOnboardingScreenImage: {
     flex: 1,
     width: '100%',
     resizeMode: 'contain',
   },
-  speechTrainerStudioTextBlock: {
+  SpeechTrainerStudioOnboardingScreenTextBlock: {
     alignItems: 'center',
     marginBottom: 32,
   },
-  speechTrainerStudioLabel: {
+  SpeechTrainerStudioOnboardingScreenLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     letterSpacing: 1.44,
     textAlign: 'center',
     marginBottom: 12,
   },
-  speechTrainerStudioTitle: {
+  SpeechTrainerStudioOnboardingScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 26,
     lineHeight: 33,
@@ -183,18 +181,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 16,
   },
-  speechTrainerStudioBody: {
+  SpeechTrainerStudioOnboardingScreenBody: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 15,
     lineHeight: 25,
     color: colors.textSecondary,
     textAlign: 'center',
   },
-  speechTrainerStudioFooter: {
+  SpeechTrainerStudioOnboardingScreenFooter: {
     marginTop: 'auto',
     gap: 32,
   },
-  speechTrainerStudioButtonWrapper: {
+  SpeechTrainerStudioOnboardingScreenButtonWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -204,13 +202,13 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  speechTrainerStudioButton: {
+  SpeechTrainerStudioOnboardingScreenButton: {
     height: 56,
     borderRadius: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioButtonText: {
+  SpeechTrainerStudioOnboardingScreenButtonText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 16,
     color: colors.white,

@@ -1,7 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
 import {WorkshopFilterId, WorkshopScreen, WorkshopText} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop/SpeechTrainerStudioWorkshop';
 import {
   createWorkshopText,
@@ -14,6 +13,7 @@ import {
   WorkshopEditorScreen,
 } from '../SpeechTrainerStudioWorkshopEditorScreen/SpeechTrainerStudioWorkshopEditorScreen';
 import {WorkshopListScreen} from '../SpeechTrainerStudioWorkshopListScreen/SpeechTrainerStudioWorkshopListScreen';
+import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 export function WorkshopStack() {
   const [screen, setScreen] = useState<WorkshopScreen>('list');
@@ -71,7 +71,7 @@ export function WorkshopStack() {
 
   if (loading) {
     return (
-      <View style={styles.speechTrainerStudioLoading}>
+      <View style={styles.WorkshopStackLoading}>
         <ActivityIndicator color={colors.tabActive} />
       </View>
     );
@@ -100,7 +100,7 @@ export function WorkshopStack() {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioLoading: {
+  WorkshopStackLoading: {
     flex: 1,
     backgroundColor: colors.background,
     alignItems: 'center',

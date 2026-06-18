@@ -12,9 +12,8 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../../../SpeechTrainerStudioComponents/SpeechTrainerStudioCommon/SpeechTrainerStudioAppBackground';
 import {BLOG_ARTICLES, BLOG_AUTHOR} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioBlogArticles';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {BlogArticle} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioBlog/SpeechTrainerStudioBlog/SpeechTrainerStudioBlog';
+import {colors, fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   favoriteIds: string[];
@@ -45,68 +44,68 @@ export function BlogListScreen({
     <AppBackground>
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.BlogListScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.speechTrainerStudioEyebrow}>Speaking Coach Blog</Text>
-        <Text style={styles.speechTrainerStudioTitle}>Articles</Text>
+        <Text style={styles.BlogListScreenEyebrow}>Speaking Coach Blog</Text>
+        <Text style={styles.BlogListScreenTitle}>Articles</Text>
 
         <LinearGradient
           colors={['rgba(109, 40, 217, 0.3)', 'rgba(139, 92, 246, 0.15)']}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
-          style={styles.speechTrainerStudioInfoCard}>
-          <View style={styles.speechTrainerStudioInfoCardInner}>
-            <Text style={styles.speechTrainerStudioInfoEmoji}>📚</Text>
-            <View style={styles.speechTrainerStudioInfoTextWrap}>
-              <Text style={styles.speechTrainerStudioInfoTitle}>
+          style={styles.BlogListScreenInfoCard}>
+          <View style={styles.BlogListScreenInfoCardInner}>
+            <Text style={styles.BlogListScreenInfoEmoji}>📚</Text>
+            <View style={styles.BlogListScreenInfoTextWrap}>
+              <Text style={styles.BlogListScreenInfoTitle}>
                 {BLOG_ARTICLES.length} articles from {BLOG_AUTHOR}
               </Text>
-              <Text style={styles.speechTrainerStudioInfoSubtitle}>
+              <Text style={styles.BlogListScreenInfoSubtitle}>
                 Tap ⭐ to add to favorites — they appear at the top
               </Text>
             </View>
           </View>
         </LinearGradient>
 
-        <View style={styles.speechTrainerStudioArticleList}>
+        <View style={styles.BlogListScreenArticleList}>
           {sortedArticles.map(article => {
             const isFavorite = favoriteIds.includes(article.id);
             return (
               <Pressable
                 key={article.id}
                 onPress={() => onSelectArticle(article)}
-                style={styles.speechTrainerStudioArticleCard}>
-                <View style={styles.speechTrainerStudioImageWrap}>
+                style={styles.BlogListScreenArticleCard}>
+                <View style={styles.BlogListScreenImageWrap}>
                   <Image
                     source={article.image}
-                    style={styles.speechTrainerStudioArticleImage}
+                    style={styles.BlogListScreenArticleImage}
                     resizeMode="cover"
                   />
                   <LinearGradient
                     colors={['rgba(0,0,0,0)', 'rgba(17,8,48,0.8)']}
                     locations={[0.4, 1]}
-                    style={styles.speechTrainerStudioImageGradient}
+                    style={styles.BlogListScreenImageGradient}
                   />
-                  <View style={styles.speechTrainerStudioCategoryBadge}>
-                    <Text style={styles.speechTrainerStudioCategoryText}>{article.category}</Text>
+                  <View style={styles.BlogListScreenCategoryBadge}>
+                    <Text style={styles.BlogListScreenCategoryText}>{article.category}</Text>
                   </View>
                   {isFavorite && (
-                    <Text style={styles.speechTrainerStudioImageFavorite}>⭐</Text>
+                    <Text style={styles.BlogListScreenImageFavorite}>⭐</Text>
                   )}
                 </View>
 
-                <View style={styles.speechTrainerStudioCardBody}>
-                  <Text style={styles.speechTrainerStudioArticleTitle}>{article.title}</Text>
-                  <Text style={styles.speechTrainerStudioArticleSummary}>{article.summary}</Text>
+                <View style={styles.BlogListScreenCardBody}>
+                  <Text style={styles.BlogListScreenArticleTitle}>{article.title}</Text>
+                  <Text style={styles.BlogListScreenArticleSummary}>{article.summary}</Text>
 
-                  <View style={styles.speechTrainerStudioCardFooter}>
-                    <View style={styles.speechTrainerStudioMetaRow}>
-                      <Text style={styles.speechTrainerStudioMetaText}>{BLOG_AUTHOR}</Text>
-                      <Text style={styles.speechTrainerStudioMetaDot}>·</Text>
-                      <Text style={styles.speechTrainerStudioMetaClock}>🕐</Text>
-                      <Text style={styles.speechTrainerStudioMetaText}>
+                  <View style={styles.BlogListScreenCardFooter}>
+                    <View style={styles.BlogListScreenMetaRow}>
+                      <Text style={styles.BlogListScreenMetaText}>{BLOG_AUTHOR}</Text>
+                      <Text style={styles.BlogListScreenMetaDot}>·</Text>
+                      <Text style={styles.BlogListScreenMetaClock}>🕐</Text>
+                      <Text style={styles.BlogListScreenMetaText}>
                         {article.readMinutes} min
                       </Text>
                     </View>
@@ -115,13 +114,13 @@ export function BlogListScreen({
                       onPress={() => onToggleFavorite(article.id)}
                       hitSlop={8}
                       style={[
-                        styles.speechTrainerStudioFavoriteButton,
-                        isFavorite && styles.speechTrainerStudioFavoriteButtonActive,
+                        styles.BlogListScreenFavoriteButton,
+                        isFavorite && styles.BlogListScreenFavoriteButtonActive,
                       ]}>
                       <Text
                         style={[
-                          styles.speechTrainerStudioFavoriteIcon,
-                          isFavorite && styles.speechTrainerStudioFavoriteIconActive,
+                          styles.BlogListScreenFavoriteIcon,
+                          isFavorite && styles.BlogListScreenFavoriteIconActive,
                         ]}>
                         {isFavorite ? '★' : '☆'}
                       </Text>
@@ -138,74 +137,74 @@ export function BlogListScreen({
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContent: {
+  BlogListScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioEyebrow: {
+  BlogListScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioTitle: {
+  BlogListScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     color: colors.textPrimary,
     marginBottom: 24,
   },
-  speechTrainerStudioInfoCard: {
+  BlogListScreenInfoCard: {
     borderRadius: 16,
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.2)',
     marginBottom: 24,
   },
-  speechTrainerStudioInfoCardInner: {
+  BlogListScreenInfoCardInner: {
     padding: 16,
     flexDirection: 'row',
     gap: 12,
     alignItems: 'center',
   },
-  speechTrainerStudioInfoEmoji: {
+  BlogListScreenInfoEmoji: {
     fontSize: 28,
     lineHeight: 32,
   },
-  speechTrainerStudioInfoTextWrap: {
+  BlogListScreenInfoTextWrap: {
     flex: 1,
   },
-  speechTrainerStudioInfoTitle: {
+  BlogListScreenInfoTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textPrimary,
     marginBottom: 4,
   },
-  speechTrainerStudioInfoSubtitle: {
+  BlogListScreenInfoSubtitle: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     lineHeight: 18,
     color: colors.textSecondary,
   },
-  speechTrainerStudioArticleList: {
+  BlogListScreenArticleList: {
     gap: 16,
   },
-  speechTrainerStudioArticleCard: {
+  BlogListScreenArticleCard: {
     backgroundColor: colors.cardBackground,
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
     overflow: 'hidden',
   },
-  speechTrainerStudioImageWrap: {
+  BlogListScreenImageWrap: {
     height: 160,
     position: 'relative',
   },
-  speechTrainerStudioArticleImage: {
+  BlogListScreenArticleImage: {
     width: '100%',
     height: '100%',
   },
-  speechTrainerStudioImageGradient: {
+  BlogListScreenImageGradient: {
     ...StyleSheet.absoluteFillObject,
   },
-  speechTrainerStudioCategoryBadge: {
+  BlogListScreenCategoryBadge: {
     position: 'absolute',
     top: 12,
     left: 12,
@@ -214,59 +213,59 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 4,
   },
-  speechTrainerStudioCategoryText: {
+  BlogListScreenCategoryText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 11,
     color: colors.white,
   },
-  speechTrainerStudioImageFavorite: {
+  BlogListScreenImageFavorite: {
     position: 'absolute',
     top: 10,
     right: 12,
     fontSize: 18,
   },
-  speechTrainerStudioCardBody: {
+  BlogListScreenCardBody: {
     padding: 16,
   },
-  speechTrainerStudioArticleTitle: {
+  BlogListScreenArticleTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 16,
     lineHeight: 22,
     color: colors.textPrimary,
     marginBottom: 8,
   },
-  speechTrainerStudioArticleSummary: {
+  BlogListScreenArticleSummary: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 13,
     lineHeight: 20,
     color: colors.textSecondary,
     marginBottom: 16,
   },
-  speechTrainerStudioCardFooter: {
+  BlogListScreenCardFooter: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  speechTrainerStudioMetaRow: {
+  BlogListScreenMetaRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
     flex: 1,
   },
-  speechTrainerStudioMetaText: {
+  BlogListScreenMetaText: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     color: colors.textSecondary,
   },
-  speechTrainerStudioMetaDot: {
+  BlogListScreenMetaDot: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 10,
     color: colors.textSecondary,
   },
-  speechTrainerStudioMetaClock: {
+  BlogListScreenMetaClock: {
     fontSize: 11,
   },
-  speechTrainerStudioFavoriteButton: {
+  BlogListScreenFavoriteButton: {
     width: 32,
     height: 32,
     borderRadius: 16,
@@ -274,15 +273,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  speechTrainerStudioFavoriteButtonActive: {
+  BlogListScreenFavoriteButtonActive: {
     backgroundColor: 'rgba(245, 158, 11, 0.2)',
   },
-  speechTrainerStudioFavoriteIcon: {
+  BlogListScreenFavoriteIcon: {
     fontSize: 16,
     color: colors.textAccent,
     lineHeight: 18,
   },
-  speechTrainerStudioFavoriteIconActive: {
+  BlogListScreenFavoriteIconActive: {
     color: colors.coachTipText,
   },
 });

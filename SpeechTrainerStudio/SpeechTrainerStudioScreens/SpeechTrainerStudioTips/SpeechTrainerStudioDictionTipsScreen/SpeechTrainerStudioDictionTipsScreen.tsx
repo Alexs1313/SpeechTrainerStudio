@@ -11,14 +11,13 @@ import {
   getTipsByCategory,
   TIP_CATEGORIES,
 } from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioDictionTips';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
-import {fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioFonts/SpeechTrainerStudioFonts';
 import {
   DictionTip,
   TipCategoryId,
 } from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioTips/SpeechTrainerStudioTips/SpeechTrainerStudioTips';
 import Orientation from 'react-native-orientation-locker';
 import {useFocusEffect} from '@react-navigation/native';
+import {colors, fonts} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 export function DictionTipsScreen() {
   const insets = useSafeAreaInsets();
@@ -61,29 +60,29 @@ export function DictionTipsScreen() {
     <AppBackground>
       <ScrollView
         contentContainerStyle={[
-          styles.speechTrainerStudioContent,
+          styles.DictionTipsScreenContent,
           {paddingTop: insets.top + 16, paddingBottom: insets.bottom + 100},
         ]}
         showsVerticalScrollIndicator={false}>
-        <Text style={styles.speechTrainerStudioEyebrow}>
+        <Text style={styles.DictionTipsScreenEyebrow}>
           Speaking Coach Tips
         </Text>
-        <Text style={styles.speechTrainerStudioTitle}>Diction Tips</Text>
+        <Text style={styles.DictionTipsScreenTitle}>Diction Tips</Text>
 
         <Pressable onPress={handleShuffleTip}>
           <LinearGradient
             colors={['rgba(109, 40, 217, 0.3)', 'rgba(139, 92, 246, 0.2)']}
             start={{x: 0, y: 0}}
             end={{x: 1, y: 1}}
-            style={styles.speechTrainerStudioShuffleButton}>
-            <Text style={styles.speechTrainerStudioShuffleIcon}>🔀</Text>
-            <Text style={styles.speechTrainerStudioShuffleLabel}>
+            style={styles.DictionTipsScreenShuffleButton}>
+            <Text style={styles.DictionTipsScreenShuffleIcon}>🔀</Text>
+            <Text style={styles.DictionTipsScreenShuffleLabel}>
               Shuffle Tip
             </Text>
           </LinearGradient>
         </Pressable>
 
-        <View style={styles.speechTrainerStudioFilterRow}>
+        <View style={styles.DictionTipsScreenFilterRow}>
           {TIP_CATEGORIES.map(cat => {
             const active = cat.id === selectedCategory;
             return (
@@ -91,13 +90,13 @@ export function DictionTipsScreen() {
                 key={cat.id}
                 onPress={() => handleCategoryChange(cat.id)}
                 style={[
-                  styles.speechTrainerStudioFilterChip,
-                  active && styles.speechTrainerStudioFilterChipActive,
+                  styles.DictionTipsScreenFilterChip,
+                  active && styles.DictionTipsScreenFilterChipActive,
                 ]}>
                 <Text
                   style={[
-                    styles.speechTrainerStudioFilterLabel,
-                    active && styles.speechTrainerStudioFilterLabelActive,
+                    styles.DictionTipsScreenFilterLabel,
+                    active && styles.DictionTipsScreenFilterLabelActive,
                   ]}>
                   {cat.emoji} {cat.shortLabel}
                 </Text>
@@ -106,16 +105,16 @@ export function DictionTipsScreen() {
           })}
         </View>
 
-        <View style={styles.speechTrainerStudioSectionHeader}>
-          <Text style={styles.speechTrainerStudioSectionEmoji}>
+        <View style={styles.DictionTipsScreenSectionHeader}>
+          <Text style={styles.DictionTipsScreenSectionEmoji}>
             {category.emoji}
           </Text>
-          <Text style={styles.speechTrainerStudioSectionTitle}>
+          <Text style={styles.DictionTipsScreenSectionTitle}>
             {category.title}
           </Text>
         </View>
 
-        <View style={styles.speechTrainerStudioTipList}>
+        <View style={styles.DictionTipsScreenTipList}>
           {tips.map(tip => (
             <TipCard
               key={tip.id}
@@ -137,22 +136,22 @@ export function DictionTipsScreen() {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContent: {
+  DictionTipsScreenContent: {
     paddingHorizontal: 20,
   },
-  speechTrainerStudioEyebrow: {
+  DictionTipsScreenEyebrow: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 13,
     color: colors.textSecondary,
     marginBottom: 4,
   },
-  speechTrainerStudioTitle: {
+  DictionTipsScreenTitle: {
     fontFamily: fonts.outfitBold,
     fontSize: 28,
     color: colors.textPrimary,
     marginBottom: 16,
   },
-  speechTrainerStudioShuffleButton: {
+  DictionTipsScreenShuffleButton: {
     height: 47,
     borderRadius: 16,
     borderWidth: 1,
@@ -163,20 +162,20 @@ const styles = StyleSheet.create({
     gap: 8,
     marginBottom: 16,
   },
-  speechTrainerStudioShuffleIcon: {
+  DictionTipsScreenShuffleIcon: {
     fontSize: 16,
   },
-  speechTrainerStudioShuffleLabel: {
+  DictionTipsScreenShuffleLabel: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,
     color: colors.textAccent,
   },
-  speechTrainerStudioFilterRow: {
+  DictionTipsScreenFilterRow: {
     flexDirection: 'row',
     gap: 8,
     marginBottom: 16,
   },
-  speechTrainerStudioFilterChip: {
+  DictionTipsScreenFilterChip: {
     paddingHorizontal: 14,
     paddingVertical: 6,
     borderRadius: 20,
@@ -184,36 +183,36 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(139, 92, 246, 0.15)',
   },
-  speechTrainerStudioFilterChipActive: {
+  DictionTipsScreenFilterChipActive: {
     backgroundColor: 'rgba(139, 92, 246, 0.35)',
     borderColor: 'rgba(139, 92, 246, 0.5)',
   },
-  speechTrainerStudioFilterLabel: {
+  DictionTipsScreenFilterLabel: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
     color: colors.textSecondary,
   },
-  speechTrainerStudioFilterLabelActive: {
+  DictionTipsScreenFilterLabelActive: {
     fontFamily: fonts.dmSansSemiBold,
     color: colors.textPrimary,
   },
-  speechTrainerStudioSectionHeader: {
+  DictionTipsScreenSectionHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
     marginBottom: 12,
   },
-  speechTrainerStudioSectionEmoji: {
+  DictionTipsScreenSectionEmoji: {
     fontSize: 18,
     lineHeight: 27,
   },
-  speechTrainerStudioSectionTitle: {
+  DictionTipsScreenSectionTitle: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.textPrimary,
     flex: 1,
   },
-  speechTrainerStudioTipList: {
+  DictionTipsScreenTipList: {
     gap: 12,
   },
 });

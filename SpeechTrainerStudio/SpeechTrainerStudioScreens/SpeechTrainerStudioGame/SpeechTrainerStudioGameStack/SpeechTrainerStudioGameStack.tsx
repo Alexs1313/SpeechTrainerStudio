@@ -2,7 +2,6 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
 import {GAME_TOPICS} from '../../../SpeechTrainerStudioConstants/SpeechTrainerStudioGameTopics';
-import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
 import {GameChallengeResult, GameScreen} from '../../../SpeechTrainerStudioTypes/SpeechTrainerStudioGame/SpeechTrainerStudioGame/SpeechTrainerStudioGame';
 import {buildGameResult, pickShuffleTopic} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStudioGame/SpeechTrainerStudioGameEvaluation/SpeechTrainerStudioGameEvaluation';
 import {
@@ -13,6 +12,7 @@ import {countWords} from '../../../../SpeechTrainerStudioUtils/SpeechTrainerStud
 import {GameChallengeScreen} from '../SpeechTrainerStudioGameChallengeScreen/SpeechTrainerStudioGameChallengeScreen';
 import {GameHomeScreen} from '../SpeechTrainerStudioGameHomeScreen/SpeechTrainerStudioGameHomeScreen';
 import {GameResultsScreen} from '../SpeechTrainerStudioGameResultsScreen/SpeechTrainerStudioGameResultsScreen';
+import {colors} from '../../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 export function GameStack() {
   const [screen, setScreen] = useState<GameScreen>('home');
@@ -67,7 +67,7 @@ export function GameStack() {
 
   if (loading) {
     return (
-      <View style={styles.speechTrainerStudioLoading}>
+      <View style={styles.GameStackLoading}>
         <ActivityIndicator color={colors.tabActive} />
       </View>
     );
@@ -91,7 +91,7 @@ export function GameStack() {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioLoading: {
+  GameStackLoading: {
     flex: 1,
     backgroundColor: colors.background,
     alignItems: 'center',

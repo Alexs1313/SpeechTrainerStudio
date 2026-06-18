@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
 import {ONBOARDING_STEPS} from '../../SpeechTrainerStudioConstants/SpeechTrainerStudioOnboardingSteps';
-import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioColors/SpeechTrainerStudioColors';
+import {colors} from '../../SpeechTrainerStudioTheme/SpeechTrainerStudioTheme';
 
 type Props = {
   activeIndex: number;
@@ -12,15 +12,15 @@ export function OnboardingPagination({activeIndex}: Props) {
   const activeColor = ONBOARDING_STEPS[activeIndex].dotColor;
 
   return (
-    <View style={styles.speechTrainerStudioContainer}>
+    <View style={styles.OnboardingPaginationContainer}>
       {ONBOARDING_STEPS.map((_, index) => {
         const isActive = index === activeIndex;
         return (
           <View
             key={index}
             style={[
-              styles.speechTrainerStudioDot,
-              isActive ? styles.speechTrainerStudioDotActive : styles.speechTrainerStudioDotInactive,
+              styles.OnboardingPaginationDot,
+              isActive ? styles.OnboardingPaginationDotActive : styles.OnboardingPaginationDotInactive,
               isActive && {backgroundColor: activeColor},
             ]}
           />
@@ -31,21 +31,21 @@ export function OnboardingPagination({activeIndex}: Props) {
 }
 
 const styles = StyleSheet.create({
-  speechTrainerStudioContainer: {
+  OnboardingPaginationContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 8,
     height: 8,
   },
-  speechTrainerStudioDot: {
+  OnboardingPaginationDot: {
     borderRadius: 999,
     height: 8,
   },
-  speechTrainerStudioDotActive: {
+  OnboardingPaginationDotActive: {
     width: 24,
   },
-  speechTrainerStudioDotInactive: {
+  OnboardingPaginationDotInactive: {
     width: 8,
     backgroundColor: colors.dotInactive,
     opacity: 0.4,
