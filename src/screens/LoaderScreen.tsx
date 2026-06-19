@@ -22,14 +22,7 @@ export function LoaderScreen({onComplete}: Props) {
         <View style={styles.SpeechTrainerStudioLoaderScreenLogoContainer}>
           <Image
             source={Platform.OS === 'ios' ? icons.loaderLogo : icons.loaderIcon}
-            style={[
-              styles.SpeechTrainerStudioLoaderScreenLogo,
-              Platform.OS === 'android' && {
-                width: 200,
-                height: 200,
-                borderRadius: 50,
-              },
-            ]}
+            style={{width: 200, height: 200, borderRadius: 50}}
             resizeMode="contain"
           />
         </View>

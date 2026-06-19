@@ -13,6 +13,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {AppBackground} from '../components/common/AppBackground';
 import {BLOG_ARTICLES, BLOG_AUTHOR} from '../constants/blogArticles';
 import {BlogArticle} from '../types/blog';
+
 import {colors, fonts} from '../constants/theme';
 
 type Props = {

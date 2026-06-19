@@ -520,6 +520,7 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     color: colors.success,
   },
+
   ShopListScreenPreview: {
     fontFamily: fonts.dmSansRegular,
     fontSize: 12,
@@ -537,6 +538,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.success,
     alignItems: 'center',
   },
+
   ShopListScreenToastText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 14,

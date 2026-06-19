@@ -1,8 +1,8 @@
 export const fonts = {
-  outfitBold: 'Outfit-Bold',
-  outfitSemiBold: 'Outfit-SemiBold',
-  outfitExtraBold: 'Outfit-ExtraBold',
-  dmSansRegular: 'DMSans-Regular',
-  dmSansSemiBold: 'DMSans-SemiBold',
-  dmSansBold: 'DMSans-Bold',
+  outfitBold: 'spch-studio-Outfit-Bold',
+  outfitSemiBold: 'spch-studio-Outfit-SemiBold',
+  outfitExtraBold: 'spch-studio-Outfit-ExtraBold',
+  dmSansRegular: 'spch-studio-DMSans-Regular',
+  dmSansSemiBold: 'spch-studio-DMSans-SemiBold',
+  dmSansBold: 'spch-studio-DMSans-Bold',
 };

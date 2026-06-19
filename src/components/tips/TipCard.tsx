@@ -29,7 +29,9 @@ export function TipCard({tip, expanded, onPress}: Props) {
             {tip.howToPractice && (
               <View style={styles.TipCardPracticeBlock}>
                 <Text style={styles.TipCardSectionLabel}>How to Practice</Text>
-                <Text style={styles.TipCardPracticeText}>{tip.howToPractice}</Text>
+                <Text style={styles.TipCardPracticeText}>
+                  {tip.howToPractice}
+                </Text>
               </View>
             )}
             {tip.origin && (
@@ -52,14 +54,14 @@ export function TipCard({tip, expanded, onPress}: Props) {
           start={{x: 0, y: 0}}
           end={{x: 1, y: 1}}
           style={[styles.TipCardCard, styles.TipCardCardExpanded]}>
-          {content}
+          <View style={{padding: 16}}>{content}</View>
         </LinearGradient>
       </Pressable>
     );
   }
 
   return (
-    <Pressable onPress={onPress} style={styles.TipCardCard}>
+    <Pressable onPress={onPress} style={[styles.TipCardCard, {padding: 16}]}>
       {content}
     </Pressable>
   );
@@ -71,7 +73,6 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderWidth: 1,
     borderColor: colors.cardBorder,
-    padding: 16,
   },
   TipCardCardExpanded: {
     borderColor: 'rgba(139, 92, 246, 0.35)',
