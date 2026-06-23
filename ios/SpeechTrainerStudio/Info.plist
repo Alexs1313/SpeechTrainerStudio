@@ -5,11 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Revolt Speech Studio</string>
+	<string>Revolte Speak With Confidence</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.dlnkfnlkda.trainerspeechstudio</string>
+	<string>com.dljkfjnqw.speakwithconfidence</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -33,21 +33,21 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>spch-studio-DMSans-Regular.ttf</string>
-		<string>spch-studio-DMSans-Medium.ttf</string>
-		<string>spch-studio-DMSans-Bold.ttf</string>
-		<string>spch-studio-Outfit-Bold.ttf</string>
-		<string>spch-studio-Outfit-Regular.ttf</string>
-		<string>spch-studio-Outfit-Black.ttf</string>
-		<string>spch-studio-Outfit-Thin.ttf</string>
-		<string>spch-studio-Outfit-SemiBold.ttf</string>
-		<string>spch-studio-Outfit-ExtraLight.ttf</string>
-		<string>spch-studio-Outfit-ExtraBold.ttf</string>
-		<string>spch-studio-DMSans-SemiBold.ttf</string>
-		<string>spch-studio-Outfit-Medium.ttf</string>
-		<string>spch-studio-DMSans-ExtraBold.ttf</string>
-		<string>spch-studio-Outfit-Light.ttf</string>
-		<string>spch-studio-DMSans-Black.ttf</string>
+		<string>speak-with-confidence-DMSans-Regular.ttf</string>
+		<string>speak-with-confidence-DMSans-Medium.ttf</string>
+		<string>speak-with-confidence-DMSans-Bold.ttf</string>
+		<string>speak-with-confidence-Outfit-Bold.ttf</string>
+		<string>speak-with-confidence-Outfit-Regular.ttf</string>
+		<string>speak-with-confidence-Outfit-Black.ttf</string>
+		<string>speak-with-confidence-Outfit-Thin.ttf</string>
+		<string>speak-with-confidence-Outfit-SemiBold.ttf</string>
+		<string>speak-with-confidence-Outfit-ExtraLight.ttf</string>
+		<string>speak-with-confidence-Outfit-ExtraBold.ttf</string>
+		<string>speak-with-confidence-DMSans-SemiBold.ttf</string>
+		<string>speak-with-confidence-Outfit-Medium.ttf</string>
+		<string>speak-with-confidence-DMSans-ExtraBold.ttf</string>
+		<string>speak-with-confidence-Outfit-Light.ttf</string>
+		<string>speak-with-confidence-DMSans-Black.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

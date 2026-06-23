@@ -1,20 +1,28 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
-import {ShopPurchaseModal} from '../../components/shop/ShopPurchaseModal';
-import {ShopListScreen} from '../../screens/ShopListScreen';
-import {ShopFilterId, ShopText} from '../../types/shop';
-import {WorkshopText} from '../../types/workshop';
+import {ShopPurchaseModal} from '../components/shop/ShopPurchaseModal';
+import {ShopListScreen} from '../screens/ShopListScreen';
+import {ShopFilterId, ShopText} from '../types/shop';
+import {WorkshopText} from '../types/workshop';
 import {
   loadMicrophoneBalance,
   spendMicrophones,
-} from '../../utils/microphoneStorage';
-import {loadUnlockedShopIds, unlockShopText} from '../../utils/shopStorage';
+} from '../utils/microphoneStorage';
+import {loadUnlockedShopIds, unlockShopText} from '../utils/shopStorage';
 import {
   createWorkshopText,
   loadWorkshopTexts,
   saveWorkshopTexts,
-} from '../../utils/workshopStorage';
-import {useAppNavigation} from '../NavigationContext';
+} from '../utils/workshopStorage';
+import {useAppNavigation} from '../navigation/NavigationContext';
 
 function shopToWorkshopDraft(
   text: ShopText,
@@ -27,7 +35,18 @@ function shopToWorkshopDraft(
   };
 }
 
-export function ShopStack() {
+type ShopContextValue = {
+  balance: number;
+  unlockedIds: string[];
+  filterId: ShopFilterId;
+  toastMessage: string | null;
+  setFilterId: (id: ShopFilterId) => void;
+  openPurchase: (text: ShopText) => void;
+};
+
+const ShopContext = createContext<ShopContextValue | null>(null);
+
+export function ShopProvider({children}: {children: React.ReactNode}) {
   const {activeTab} = useAppNavigation();
   const [balance, setBalance] = useState(0);
   const [unlockedIds, setUnlockedIds] = useState<string[]>([]);
@@ -46,7 +65,7 @@ export function ShopStack() {
   }, []);
 
   useEffect(() => {
-    if (activeTab === 'Shop') {
+    if (activeTab === 'ShopTab') {
       refresh();
     }
   }, [activeTab, refresh]);
@@ -101,22 +120,50 @@ export function ShopStack() {
     showToast(`✅ '${purchaseText.title}' unlocked!`);
   }, [purchaseText, showToast, syncToWorkshop]);
 
+  const value = useMemo(
+    () => ({
+      balance,
+      unlockedIds,
+      filterId,
+      toastMessage,
+      setFilterId,
+      openPurchase: setPurchaseText,
+    }),
+    [balance, unlockedIds, filterId, toastMessage],
+  );
+
   return (
-    <>
-      <ShopListScreen
-        balance={balance}
-        unlockedIds={unlockedIds}
-        filterId={filterId}
-        toastMessage={toastMessage}
-        onFilterChange={setFilterId}
-        onPurchasePress={setPurchaseText}
-      />
+    <ShopContext.Provider value={value}>
+      {children}
       <ShopPurchaseModal
         text={purchaseText}
         balance={balance}
         onCancel={() => setPurchaseText(null)}
         onConfirm={handleConfirmPurchase}
       />
-    </>
+    </ShopContext.Provider>
+  );
+}
+
+export function useShop() {
+  const context = useContext(ShopContext);
+  if (!context) {
+    throw new Error('useShop must be used within ShopProvider');
+  }
+  return context;
+}
+
+export function ShopTabScreen() {
+  const shop = useShop();
+
+  return (
+    <ShopListScreen
+      balance={shop.balance}
+      unlockedIds={shop.unlockedIds}
+      filterId={shop.filterId}
+      toastMessage={shop.toastMessage}
+      onFilterChange={shop.setFilterId}
+      onPurchasePress={shop.openPurchase}
+    />
   );
 }

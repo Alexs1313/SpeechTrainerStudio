@@ -1,0 +1,1 @@
+export {useAdaptive} from './useAdaptive';

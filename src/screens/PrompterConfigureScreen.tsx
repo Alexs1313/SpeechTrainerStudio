@@ -158,6 +158,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   PrompterConfigureScreenBackIcon: {
     fontSize: 24,
     color: colors.textPrimary,

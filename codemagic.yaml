@@ -1,20 +1,20 @@
 workflows:
   ios-workflow:
-    name: 'Revolt Speech Studio'
+    name: 'Revolte Speak With Confidence'
     max_build_duration: 120
     instance_type: mac_mini_m2
     integrations:
-      app_store_connect: TrainerSpeechStudioAPIKey
+      app_store_connect: SpeakWithConfidenceAPIKey
     environment:
       xcode: '26.0'
       ios_signing:
         distribution_type: app_store
-        bundle_identifier: com.dlnkfnlkda.trainerspeechstudio
+        bundle_identifier: com.dljkfjnqw.speakwithconfidence
       vars:
-        BUNDLE_ID: com.dlnkfnlkda.trainerspeechstudio
+        BUNDLE_ID: com.dljkfjnqw.speakwithconfidence
         XCODE_WORKSPACE: SpeechTrainerStudio.xcworkspace
         XCODE_SCHEME: SpeechTrainerStudio
-        APP_STORE_APPLE_ID: 6781669481
+        APP_STORE_APPLE_ID: 6783285462
     scripts:
       - name: Install npm dependencies
         script: |

@@ -184,3 +184,7 @@ By incorporating these simple habits into your daily routine, you can steadily d
     ],
   }),
 ];
+
+export function getBlogArticleById(id: string): BlogArticle | undefined {
+  return BLOG_ARTICLES.find(article => article.id === id);
+}

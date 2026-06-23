@@ -3,6 +3,9 @@ import {Platform} from 'react-native';
 import {fonts} from './fonts';
 import {speechTrainerStudioShadow} from './shadow';
 
+export const DESIGN_WIDTH = 393;
+export const DESIGN_HEIGHT = 852;
+
 export {colors} from './colors';
 export {fonts};
 
@@ -19,6 +22,15 @@ export const radius = {
   button: 16,
   chip: 8,
   pill: 999,
+};
+
+export const fontSize = {
+  caption: 9.5,
+  small: 11,
+  body: 13,
+  button: 15,
+  title: 22,
+  hero: 28,
 };
 
 export const layout = {

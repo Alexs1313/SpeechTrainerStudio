@@ -55,7 +55,7 @@ export const ONBOARDING_STEPS: OnboardingStep[] = [
     label: 'Challenges, Tips, and Rewards',
     labelColor: '#f59e0b',
     title: 'Practice Makes Perfect',
-    body: 'Every day, I challenge you. Take the Mini Game — you will get a shuffled topic and sixty seconds to write a mini-speech. Earn Microphone coins for great performance, then spend them in the Text Shop to unlock premium practice materials.',
+    body: 'Every day, I challenge you. Take the Mini Game — you will get a shuffled topic and sixty seconds to write a mini-speech. Earn Microphone coins for great performance, then spend them in the Text Shop to unlock advanced practice materials.',
     image: onboardingImages.step5,
     dotColor: '#f59e0b',
     gradient: ['#150838', '#2b1468', '#150838'],

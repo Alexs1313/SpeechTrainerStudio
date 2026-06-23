@@ -32,7 +32,7 @@ const TICK_MS = 50;
 export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
   const insets = useSafeAreaInsets();
   const scrollRef = useRef<ScrollView>(null);
-  const [playing, setPlaying] = useState(true);
+  const [isScrolling, setIsScrolling] = useState(true);
   const [elapsedMs, setElapsedMs] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
@@ -60,7 +60,7 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
   }, [config.text, elapsedMs, onComplete]);
 
   useEffect(() => {
-    if (!playing) {
+    if (!isScrolling) {
       return;
     }
 
@@ -73,7 +73,7 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
         setScrollY(maxScroll);
         scrollRef.current?.scrollTo({y: maxScroll, animated: false});
         clearInterval(interval);
-        setPlaying(false);
+        setIsScrolling(false);
         setTimeout(finishSession, 400);
         return;
       }
@@ -84,14 +84,14 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
     }, TICK_MS);
 
     return () => clearInterval(interval);
-  }, [playing, scrollSpeed, maxScroll, finishSession]);
+  }, [isScrolling, scrollSpeed, maxScroll, finishSession]);
 
   const handleReset = () => {
     scrollYRef.current = 0;
     setScrollY(0);
     setElapsedMs(0);
     scrollRef.current?.scrollTo({y: 0, animated: false});
-    setPlaying(true);
+    setIsScrolling(true);
   };
 
   return (
@@ -165,14 +165,14 @@ export function PrompterSessionScreen({config, onClose, onComplete}: Props) {
         </Pressable>
 
         <Pressable
-          onPress={() => setPlaying(prev => !prev)}
-          style={styles.PrompterSessionScreenPlayWrapper}>
+          onPress={() => setIsScrolling(prev => !prev)}
+          style={styles.PrompterSessionScreenControlWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
-            style={styles.PrompterSessionScreenPlayButton}>
+            style={styles.PrompterSessionScreenControlButton}>
             <Image
-              source={playing ? icons.pause : icons.start}
-              style={styles.PrompterSessionScreenPlayIcon}
+              source={isScrolling ? icons.pause : icons.start}
+              style={styles.PrompterSessionScreenControlIcon}
               resizeMode="contain"
             />
           </LinearGradient>
@@ -279,7 +279,7 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontSize: 16,
   },
-  PrompterSessionScreenPlayWrapper: {
+  PrompterSessionScreenControlWrapper: {
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
       shadowOffset: {width: 0, height: 0},
@@ -288,7 +288,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  PrompterSessionScreenPlayButton: {
+  PrompterSessionScreenControlButton: {
     width: 64,
     height: 64,
     borderRadius: 32,
@@ -296,7 +296,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-  PrompterSessionScreenPlayIcon: {
+  PrompterSessionScreenControlIcon: {
     width: 24,
     height: 24,
     tintColor: colors.white,

@@ -13,6 +13,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../components/common/AppBackground';
 import {icons} from '../data/assets';
+
 import {ShopCategoryPills} from '../components/shop/ShopCategoryPills';
 import {getCategoryById} from '../constants/prompterTexts';
 import {
@@ -20,6 +21,7 @@ import {
   getTextPreview,
   SHOP_TEXTS,
 } from '../constants/shopTexts';
+
 import {colors, fonts} from '../constants/theme';
 import {ShopFilterId, ShopText} from '../types/shop';
 
@@ -181,7 +183,7 @@ export function ShopListScreen({
         ItemSeparatorComponent={ListSeparator}
         ListHeaderComponent={
           <>
-            <Text style={styles.ShopListScreenEyebrow}>Premium Content</Text>
+            <Text style={styles.ShopListScreenEyebrow}>Unlocked Content</Text>
 
             <View style={styles.ShopListScreenHeaderRow}>
               <Text style={styles.ShopListScreenTitle}>Text Shop</Text>
@@ -200,12 +202,12 @@ export function ShopListScreen({
                 <Text style={styles.ShopListScreenInfoEmoji}>🛍️</Text>
                 <View style={styles.ShopListScreenInfoTextWrap}>
                   <Text style={styles.ShopListScreenInfoTitle}>
-                    Premium Teleprompter Texts
+                    Unlocked Teleprompter Texts
                   </Text>
                   <Text style={styles.ShopListScreenInfoSubtitle}>
                     Unlock advanced texts with Microphone coins. Earn them by
-                    playing the Mini Game. Unlocked texts appear in Teleprompter
-                    Training and your Workshop.
+                    completing the Mini Game. Unlocked texts appear in
+                    Teleprompter Training and your Workshop.
                   </Text>
                 </View>
               </View>
@@ -223,7 +225,7 @@ export function ShopListScreen({
               <View style={styles.ShopListScreenHintBar}>
                 <Text style={styles.ShopListScreenHintEmoji}>💡</Text>
                 <Text style={styles.ShopListScreenHintText}>
-                  Play the Mini Game to earn more Microphones!
+                  Take the Mini Game to earn more Microphones!
                 </Text>
               </View>
             ) : null}

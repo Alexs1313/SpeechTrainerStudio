@@ -1,3 +1,5 @@
+// PrompterChooseScreen.tsx
+
 import React from 'react';
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
@@ -5,19 +7,20 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../components/common/AppBackground';
 import {PROMPTER_CATEGORIES} from '../constants/prompterTexts';
+
 import {PrompterCategoryId, PrompterText} from '../types/prompter';
 import {colors, fonts, speechTrainerStudioShadow} from '../constants/theme';
 
 type Props = {
   selectedCategoryId: PrompterCategoryId;
-  premiumTexts?: PrompterText[];
+  unlockedTexts?: PrompterText[];
   onSelectCategory: (id: PrompterCategoryId) => void;
   onSelectText: (text: PrompterText) => void;
 };
 
 export function PrompterChooseScreen({
   selectedCategoryId,
-  premiumTexts = [],
+  unlockedTexts = [],
   onSelectCategory,
   onSelectText,
 }: Props) {
@@ -27,7 +30,7 @@ export function PrompterChooseScreen({
   )!;
   const availableTexts = [
     ...selectedCategory.texts,
-    ...premiumTexts.filter(t => t.categoryId === selectedCategoryId),
+    ...unlockedTexts.filter(t => t.categoryId === selectedCategoryId),
   ];
 
   return (
@@ -74,7 +77,7 @@ export function PrompterChooseScreen({
             const active = category.id === selectedCategoryId;
             const categoryTextCount =
               category.texts.length +
-              premiumTexts.filter(t => t.categoryId === category.id).length;
+              unlockedTexts.filter(t => t.categoryId === category.id).length;
             return (
               <Pressable
                 key={category.id}
@@ -281,6 +284,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.textSecondary,
   },
+
   PrompterChooseScreenCheckBadge: {
     width: 24,
     height: 24,

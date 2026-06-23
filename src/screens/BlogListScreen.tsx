@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
     gap: 12,
     alignItems: 'center',
   },
+
   BlogListScreenInfoEmoji: {
     fontSize: 28,
     lineHeight: 32,

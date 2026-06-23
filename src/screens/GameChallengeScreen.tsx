@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../components/common/AppBackground';
@@ -25,7 +26,9 @@ type Props = {
 
 export function GameChallengeScreen({topic, onSubmit}: Props) {
   const insets = useSafeAreaInsets();
+
   const [responseText, setResponseText] = useState('');
+
   const [secondsLeftQuantity, setSecondsLeftQuantity] =
     useState(GAME_DURATION_SEC);
   const startTimeRef = useRef(Date.now());
@@ -175,6 +178,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 16,
   },
+
   GameChallengeScreenTimerRow: {
     flexDirection: 'row',
     alignItems: 'center',

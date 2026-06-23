@@ -2,63 +2,63 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-Black.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-Black.ttf",
       "sha1": "928765ebc49e7c22a223052891a9b7e9c1ced790"
     },
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-Bold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-Bold.ttf",
       "sha1": "10e061ac7f01fd542e0c1956e89b12a272607f5d"
     },
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-ExtraBold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-ExtraBold.ttf",
       "sha1": "283ba20eb28248c93a2f109c6694c2aaa1107561"
     },
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-Medium.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-Medium.ttf",
       "sha1": "dad2637623defedd4720447c5bbaa3d96b1594ee"
     },
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-Regular.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-Regular.ttf",
       "sha1": "76c500a4e46a2ef4252e909109926e08272ac849"
     },
     {
-      "path": "src/assets/fonts/spch-studio-DMSans-SemiBold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-DMSans-SemiBold.ttf",
       "sha1": "d0f49c8f35f1155a2c0a945051319e134d3ba0cf"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Black.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Black.ttf",
       "sha1": "ea3a5e53fe33a31ff5c020bea83e933e380e0620"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Bold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Bold.ttf",
       "sha1": "148c9a4f145442e85509a202472f3dfc002f2359"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-ExtraBold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-ExtraBold.ttf",
       "sha1": "a46134346caa0c18b65157641be59e5973037ded"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-ExtraLight.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-ExtraLight.ttf",
       "sha1": "351d1b900b0055d0ac42069f1f6dc4f03207767d"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Light.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Light.ttf",
       "sha1": "22de7012df58897c09b4d31b963d317293237c1e"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Medium.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Medium.ttf",
       "sha1": "9d7db2e6a458135b81b68078a7f4863fa17c2024"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Regular.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Regular.ttf",
       "sha1": "06a8de7221f96cdce3e90e32444f1db7897b479a"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-SemiBold.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-SemiBold.ttf",
       "sha1": "187a51467f6faeab3853f62a38c729817a938bc0"
     },
     {
-      "path": "src/assets/fonts/spch-studio-Outfit-Thin.ttf",
+      "path": "src/assets/fonts/speak-with-confidence-Outfit-Thin.ttf",
       "sha1": "f20be5b036a2a7452d142c9947ee774988a10352"
     }
   ]

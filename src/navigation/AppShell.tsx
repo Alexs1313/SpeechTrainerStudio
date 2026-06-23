@@ -1,48 +1,208 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
+// Components
 import {TabBar} from '../components/nav/TabBar';
+import {getBlogArticleById} from '../constants/blogArticles';
 import {colors} from '../constants/theme';
-import {BlogStack} from './stacks/BlogStack';
-import {GameStack} from './stacks/GameStack';
-import {PrompterStack} from './stacks/PrompterStack';
-import {ShopStack} from './stacks/ShopStack';
-import {WorkshopStack} from './stacks/WorkshopStack';
+import {useBlog} from '../context/BlogContext';
+import {useGame} from '../context/GameContext';
+import {usePrompter} from '../context/PrompterContext';
+import {ShopTabScreen} from '../context/ShopContext';
+import {useWorkshop} from '../context/WorkshopContext';
+
+// Screens
+import {BlogArticleScreen} from '../screens/BlogArticleScreen';
+import {BlogListScreen} from '../screens/BlogListScreen';
 import {DictionTipsScreen} from '../screens/DictionTipsScreen';
+import {GameChallengeScreen} from '../screens/GameChallengeScreen';
+import {GameHomeScreen} from '../screens/GameHomeScreen';
+import {GameResultsScreen} from '../screens/GameResultsScreen';
 import {LoaderScreen} from '../screens/LoaderScreen';
 import {OnboardingScreen} from '../screens/OnboardingScreen';
+import {PrompterChooseScreen} from '../screens/PrompterChooseScreen';
+import {PrompterConfigureScreen} from '../screens/PrompterConfigureScreen';
+import {PrompterResultsScreen} from '../screens/PrompterResultsScreen';
+import {PrompterSessionScreen} from '../screens/PrompterSessionScreen';
+import {WorkshopEditorScreen} from '../screens/WorkshopEditorScreen';
+import {WorkshopListScreen} from '../screens/WorkshopListScreen';
 import {useAppNavigation} from './NavigationContext';
 
 function TabContent() {
   const {activeTab} = useAppNavigation();
+  const prompter = usePrompter();
+  const workshop = useWorkshop();
+  const blog = useBlog();
+  const game = useGame();
 
   switch (activeTab) {
-    case 'Prompter':
-      return <PrompterStack />;
-    case 'Workshop':
-      return <WorkshopStack />;
-    case 'Blog':
-      return <BlogStack />;
-    case 'Tips':
+    case 'PrompterTab':
+      return (
+        <PrompterChooseScreen
+          selectedCategoryId={prompter.selectedCategoryId}
+          unlockedTexts={prompter.unlockedTexts}
+          onSelectCategory={prompter.setSelectedCategoryId}
+          onSelectText={prompter.selectText}
+        />
+      );
+    case 'WorkshopTab':
+      if (workshop.loading) {
+        return (
+          <View style={styles.AppShellLoading}>
+            <ActivityIndicator color={colors.tabActive} />
+          </View>
+        );
+      }
+      return (
+        <WorkshopListScreen
+          texts={workshop.texts}
+          filterId={workshop.filterId}
+          onFilterChange={workshop.setFilterId}
+          onNew={workshop.startNew}
+          onEdit={workshop.startEdit}
+          onDelete={workshop.deleteText}
+        />
+      );
+    case 'BlogTab':
+      return (
+        <BlogListScreen
+          favoriteIds={blog.favoriteIds}
+          onToggleFavorite={blog.toggleFavorite}
+          onSelectArticle={blog.selectArticle}
+        />
+      );
+    case 'TipsTab':
       return <DictionTipsScreen />;
-    case 'Game':
-      return <GameStack />;
-    case 'Shop':
-      return <ShopStack />;
+    case 'GameTab':
+      if (game.loading) {
+        return (
+          <View style={styles.AppShellLoading}>
+            <ActivityIndicator color={colors.tabActive} />
+          </View>
+        );
+      }
+      return <GameHomeScreen onStart={game.startChallenge} />;
+    case 'ShopTab':
+      return <ShopTabScreen />;
     default:
-      return <PrompterStack />;
+      return null;
+  }
+}
+
+function OverlayContent() {
+  const {overlay, goBack, closeOverlay} = useAppNavigation();
+  const prompter = usePrompter();
+  const workshop = useWorkshop();
+  const blog = useBlog();
+  const game = useGame();
+
+  switch (overlay.type) {
+    case 'PrompterConfigure':
+      if (!prompter.selectedText) {
+        return null;
+      }
+      return (
+        <PrompterConfigureScreen
+          text={prompter.selectedText}
+          onBack={goBack}
+          onBegin={prompter.beginSession}
+        />
+      );
+    case 'PrompterSession':
+      if (!prompter.sessionConfig) {
+        return null;
+      }
+      return (
+        <PrompterSessionScreen
+          config={prompter.sessionConfig}
+          onClose={() => {
+            prompter.resetPrompter();
+            closeOverlay();
+          }}
+          onComplete={prompter.completeSession}
+        />
+      );
+    case 'PrompterResults':
+      if (!prompter.sessionResult) {
+        return null;
+      }
+      return (
+        <PrompterResultsScreen
+          result={prompter.sessionResult}
+          onBack={() => {
+            prompter.resetPrompter();
+            closeOverlay();
+          }}
+          onPracticeAgain={prompter.practiceAgain}
+          onChooseDifferent={() => {
+            prompter.resetPrompter();
+            closeOverlay();
+          }}
+        />
+      );
+    case 'WorkshopEditor':
+      return (
+        <WorkshopEditorScreen
+          editingText={workshop.editingText}
+          onClose={workshop.closeEditor}
+          onSave={workshop.saveDraft}
+        />
+      );
+    case 'BlogArticle': {
+      const article = getBlogArticleById(overlay.articleId);
+      if (!article) {
+        return null;
+      }
+      return (
+        <BlogArticleScreen
+          article={article}
+          isFavorite={blog.favoriteIds.includes(article.id)}
+          onBack={goBack}
+          onToggleFavorite={() => blog.toggleFavorite(article.id)}
+        />
+      );
+    }
+    case 'GameChallenge':
+      if (!game.topic) {
+        return null;
+      }
+      return (
+        <GameChallengeScreen
+          topic={game.topic}
+          onSubmit={game.submitChallenge}
+        />
+      );
+    case 'GameResults':
+      if (!game.result) {
+        return null;
+      }
+      return (
+        <GameResultsScreen
+          result={game.result}
+          onBack={game.resetToHome}
+          onTryAgain={game.tryAgain}
+        />
+      );
+    default:
+      return null;
   }
 }
 
 function MainShell() {
-  const {activeTab, selectTab} = useAppNavigation();
+  const {overlay, activeTab, selectTab} = useAppNavigation();
+  const showTabBar = overlay.type === 'none';
 
   return (
     <View style={styles.AppShellFacetChassis}>
       <View style={styles.AppShellContent}>
         <TabContent />
       </View>
-      <TabBar activeTab={activeTab} onSelectTab={selectTab} />
+      {overlay.type !== 'none' && (
+        <View style={styles.AppShellOverlay}>
+          <OverlayContent />
+        </View>
+      )}
+      {showTabBar && <TabBar activeTab={activeTab} onSelectTab={selectTab} />}
     </View>
   );
 }
@@ -50,11 +210,11 @@ function MainShell() {
 export function AppShell() {
   const {phase, finishLoader, finishOnboarding} = useAppNavigation();
 
-  if (phase === 'loading') {
+  if (phase === 'Loader') {
     return <LoaderScreen onComplete={finishLoader} />;
   }
 
-  if (phase === 'onboarding') {
+  if (phase === 'Onboarding') {
     return <OnboardingScreen onComplete={finishOnboarding} />;
   }
 
@@ -68,5 +228,15 @@ const styles = StyleSheet.create({
   },
   AppShellContent: {
     flex: 1,
+  },
+  AppShellOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: colors.background,
+  },
+  AppShellLoading: {
+    flex: 1,
+    backgroundColor: colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

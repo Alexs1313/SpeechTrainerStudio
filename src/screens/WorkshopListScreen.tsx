@@ -1,3 +1,5 @@
+// WorkshopListScreen.tsx
+
 import React from 'react';
 import {
   Alert,
@@ -16,6 +18,7 @@ import {AppBackground} from '../components/common/AppBackground';
 import {WorkshopCategoryPills} from '../components/workshop/WorkshopCategoryPills';
 import {getCategoryEmoji} from '../constants/workshopCategories';
 import {WorkshopFilterId, WorkshopText} from '../types/workshop';
+
 import {colors, fonts} from '../constants/theme';
 
 type Props = {

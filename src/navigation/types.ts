@@ -1,9 +1,19 @@
-export type AppPhase = 'loading' | 'onboarding' | 'main';
+export type AppPhase = 'Loader' | 'Onboarding' | 'Main';
 
 export type MainTab =
-  | 'Prompter'
-  | 'Workshop'
-  | 'Blog'
-  | 'Tips'
-  | 'Game'
-  | 'Shop';
+  | 'PrompterTab'
+  | 'WorkshopTab'
+  | 'BlogTab'
+  | 'TipsTab'
+  | 'GameTab'
+  | 'ShopTab';
+
+export type AppOverlay =
+  | {type: 'none'}
+  | {type: 'PrompterConfigure'}
+  | {type: 'PrompterSession'}
+  | {type: 'PrompterResults'}
+  | {type: 'WorkshopEditor'}
+  | {type: 'BlogArticle'; articleId: string}
+  | {type: 'GameChallenge'}
+  | {type: 'GameResults'};

@@ -38,7 +38,7 @@ const STEPS: Step[] = [
   {
     emoji: '🎤',
     title: 'Good result = +3 Microphones',
-    description: 'Spend Microphones in the Shop to unlock premium texts.',
+    description: 'Spend Microphones in the Shop to unlock advanced texts.',
     highlight: true,
   },
 ];

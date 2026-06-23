@@ -7,54 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0548DF7C516748978CCCAC2B /* spch-studio-Outfit-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E9152F35BC425789F21690 /* spch-studio-Outfit-ExtraBold.ttf */; };
-		0826300714294A229851319E /* spch-studio-Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 112E198ED97042D993222C33 /* spch-studio-Outfit-Bold.ttf */; };
+		0548DF7C516748978CCCAC2B /* speak-with-confidence-Outfit-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0E9152F35BC425789F21690 /* speak-with-confidence-Outfit-ExtraBold.ttf */; };
+		0826300714294A229851319E /* speak-with-confidence-Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 112E198ED97042D993222C33 /* speak-with-confidence-Outfit-Bold.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-SpeechTrainerStudio.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SpeechTrainerStudio.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		333C62AF4DAE47B8BD811286 /* spch-studio-DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 981903F578AE485F8E573196 /* spch-studio-DMSans-ExtraBold.ttf */; };
-		538E79177AB641F2BD653747 /* spch-studio-Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402DC431BB5042AFA62AC2E3 /* spch-studio-Outfit-Regular.ttf */; };
-		5D0F9114D59C4F91A156137C /* spch-studio-Outfit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B7D672FCBDF400FB4F61772 /* spch-studio-Outfit-SemiBold.ttf */; };
+		333C62AF4DAE47B8BD811286 /* speak-with-confidence-DMSans-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 981903F578AE485F8E573196 /* speak-with-confidence-DMSans-ExtraBold.ttf */; };
+		538E79177AB641F2BD653747 /* speak-with-confidence-Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 402DC431BB5042AFA62AC2E3 /* speak-with-confidence-Outfit-Regular.ttf */; };
+		5D0F9114D59C4F91A156137C /* speak-with-confidence-Outfit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B7D672FCBDF400FB4F61772 /* speak-with-confidence-Outfit-SemiBold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
-		77D5A501882043719B7D6174 /* spch-studio-Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3885390D849F4F26A074BFC2 /* spch-studio-Outfit-ExtraLight.ttf */; };
+		77D5A501882043719B7D6174 /* speak-with-confidence-Outfit-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3885390D849F4F26A074BFC2 /* speak-with-confidence-Outfit-ExtraLight.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		91DDC9F6082F4267B8EC3F58 /* spch-studio-DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01218B4D979446EFB84CA86C /* spch-studio-DMSans-Medium.ttf */; };
-		9A55DC34BFB343B688AE7421 /* spch-studio-DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA20623565484017A8CB7A4B /* spch-studio-DMSans-Black.ttf */; };
-		9EE445AFBB3C490D9335E262 /* spch-studio-Outfit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0242C6C93A1D4B44A1BD9DCE /* spch-studio-Outfit-Thin.ttf */; };
-		B0F4D2F2F6F74BEDB6283C42 /* spch-studio-Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A19F105D73440BE820820EE /* spch-studio-Outfit-Black.ttf */; };
-		C6FFF98D2FBA4F00A50E679C /* spch-studio-Outfit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2D37CDFD60471986FEA410 /* spch-studio-Outfit-Light.ttf */; };
-		CF7B5CD9082B401A8F388847 /* spch-studio-DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAE5861A88994B06861F6DA9 /* spch-studio-DMSans-Bold.ttf */; };
-		DEF4B5B58A01407494209534 /* spch-studio-Outfit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02426CD126B444E193FBDE56 /* spch-studio-Outfit-Medium.ttf */; };
-		E28B2E3691BB49FB9D3BAAE4 /* spch-studio-DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14A91122EB284E0F99BC61C2 /* spch-studio-DMSans-SemiBold.ttf */; };
+		91DDC9F6082F4267B8EC3F58 /* speak-with-confidence-DMSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01218B4D979446EFB84CA86C /* speak-with-confidence-DMSans-Medium.ttf */; };
+		9A55DC34BFB343B688AE7421 /* speak-with-confidence-DMSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA20623565484017A8CB7A4B /* speak-with-confidence-DMSans-Black.ttf */; };
+		9EE445AFBB3C490D9335E262 /* speak-with-confidence-Outfit-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0242C6C93A1D4B44A1BD9DCE /* speak-with-confidence-Outfit-Thin.ttf */; };
+		B0F4D2F2F6F74BEDB6283C42 /* speak-with-confidence-Outfit-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A19F105D73440BE820820EE /* speak-with-confidence-Outfit-Black.ttf */; };
+		C6FFF98D2FBA4F00A50E679C /* speak-with-confidence-Outfit-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1E2D37CDFD60471986FEA410 /* speak-with-confidence-Outfit-Light.ttf */; };
+		CF7B5CD9082B401A8F388847 /* speak-with-confidence-DMSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BAE5861A88994B06861F6DA9 /* speak-with-confidence-DMSans-Bold.ttf */; };
+		DEF4B5B58A01407494209534 /* speak-with-confidence-Outfit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 02426CD126B444E193FBDE56 /* speak-with-confidence-Outfit-Medium.ttf */; };
+		E28B2E3691BB49FB9D3BAAE4 /* speak-with-confidence-DMSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14A91122EB284E0F99BC61C2 /* speak-with-confidence-DMSans-SemiBold.ttf */; };
 		E410F094409376D2022CA62B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		F4573BC82E474051A39AD9A8 /* spch-studio-DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C88601D20E114E73B8321732 /* spch-studio-DMSans-Regular.ttf */; };
+		F4573BC82E474051A39AD9A8 /* speak-with-confidence-DMSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C88601D20E114E73B8321732 /* speak-with-confidence-DMSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		01218B4D979446EFB84CA86C /* spch-studio-DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-Medium.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-Medium.ttf"; sourceTree = "<group>"; };
-		02426CD126B444E193FBDE56 /* spch-studio-Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Medium.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Medium.ttf"; sourceTree = "<group>"; };
-		0242C6C93A1D4B44A1BD9DCE /* spch-studio-Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Thin.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Thin.ttf"; sourceTree = "<group>"; };
-		112E198ED97042D993222C33 /* spch-studio-Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Bold.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Bold.ttf"; sourceTree = "<group>"; };
+		01218B4D979446EFB84CA86C /* speak-with-confidence-DMSans-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-Medium.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-Medium.ttf"; sourceTree = "<group>"; };
+		02426CD126B444E193FBDE56 /* speak-with-confidence-Outfit-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Medium.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Medium.ttf"; sourceTree = "<group>"; };
+		0242C6C93A1D4B44A1BD9DCE /* speak-with-confidence-Outfit-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Thin.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Thin.ttf"; sourceTree = "<group>"; };
+		112E198ED97042D993222C33 /* speak-with-confidence-Outfit-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Bold.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Bold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* SpeechTrainerStudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechTrainerStudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SpeechTrainerStudio/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SpeechTrainerStudio/Info.plist; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SpeechTrainerStudio/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		14A91122EB284E0F99BC61C2 /* spch-studio-DMSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-SemiBold.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		1A19F105D73440BE820820EE /* spch-studio-Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Black.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Black.ttf"; sourceTree = "<group>"; };
-		1E2D37CDFD60471986FEA410 /* spch-studio-Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Light.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Light.ttf"; sourceTree = "<group>"; };
-		3885390D849F4F26A074BFC2 /* spch-studio-Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-ExtraLight.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
+		14A91122EB284E0F99BC61C2 /* speak-with-confidence-DMSans-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-SemiBold.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		1A19F105D73440BE820820EE /* speak-with-confidence-Outfit-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Black.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Black.ttf"; sourceTree = "<group>"; };
+		1E2D37CDFD60471986FEA410 /* speak-with-confidence-Outfit-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Light.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Light.ttf"; sourceTree = "<group>"; };
+		3885390D849F4F26A074BFC2 /* speak-with-confidence-Outfit-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-ExtraLight.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-ExtraLight.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-SpeechTrainerStudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTrainerStudio.debug.xcconfig"; path = "Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio.debug.xcconfig"; sourceTree = "<group>"; };
-		402DC431BB5042AFA62AC2E3 /* spch-studio-Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-Regular.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-Regular.ttf"; sourceTree = "<group>"; };
+		402DC431BB5042AFA62AC2E3 /* speak-with-confidence-Outfit-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-Regular.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-SpeechTrainerStudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechTrainerStudio.release.xcconfig"; path = "Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio.release.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-SpeechTrainerStudio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeechTrainerStudio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SpeechTrainerStudio/AppDelegate.swift; sourceTree = "<group>"; };
-		7B7D672FCBDF400FB4F61772 /* spch-studio-Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-SemiBold.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
+		7B7D672FCBDF400FB4F61772 /* speak-with-confidence-Outfit-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-SemiBold.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-SemiBold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = SpeechTrainerStudio/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		981903F578AE485F8E573196 /* spch-studio-DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-ExtraBold.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
-		BAE5861A88994B06861F6DA9 /* spch-studio-DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-Bold.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-Bold.ttf"; sourceTree = "<group>"; };
-		C88601D20E114E73B8321732 /* spch-studio-DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-Regular.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-Regular.ttf"; sourceTree = "<group>"; };
-		CA20623565484017A8CB7A4B /* spch-studio-DMSans-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-DMSans-Black.ttf"; path = "../src/assets/fonts/spch-studio-DMSans-Black.ttf"; sourceTree = "<group>"; };
+		981903F578AE485F8E573196 /* speak-with-confidence-DMSans-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-ExtraBold.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		BAE5861A88994B06861F6DA9 /* speak-with-confidence-DMSans-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-Bold.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-Bold.ttf"; sourceTree = "<group>"; };
+		C88601D20E114E73B8321732 /* speak-with-confidence-DMSans-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-Regular.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-Regular.ttf"; sourceTree = "<group>"; };
+		CA20623565484017A8CB7A4B /* speak-with-confidence-DMSans-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-DMSans-Black.ttf"; path = "../src/assets/fonts/speak-with-confidence-DMSans-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F0E9152F35BC425789F21690 /* spch-studio-Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "spch-studio-Outfit-ExtraBold.ttf"; path = "../src/assets/fonts/spch-studio-Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F0E9152F35BC425789F21690 /* speak-with-confidence-Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "speak-with-confidence-Outfit-ExtraBold.ttf"; path = "../src/assets/fonts/speak-with-confidence-Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,21 +123,21 @@
 		B2CDA1C3C7D84C84932656E9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				C88601D20E114E73B8321732 /* spch-studio-DMSans-Regular.ttf */,
-				01218B4D979446EFB84CA86C /* spch-studio-DMSans-Medium.ttf */,
-				BAE5861A88994B06861F6DA9 /* spch-studio-DMSans-Bold.ttf */,
-				112E198ED97042D993222C33 /* spch-studio-Outfit-Bold.ttf */,
-				402DC431BB5042AFA62AC2E3 /* spch-studio-Outfit-Regular.ttf */,
-				1A19F105D73440BE820820EE /* spch-studio-Outfit-Black.ttf */,
-				0242C6C93A1D4B44A1BD9DCE /* spch-studio-Outfit-Thin.ttf */,
-				7B7D672FCBDF400FB4F61772 /* spch-studio-Outfit-SemiBold.ttf */,
-				3885390D849F4F26A074BFC2 /* spch-studio-Outfit-ExtraLight.ttf */,
-				F0E9152F35BC425789F21690 /* spch-studio-Outfit-ExtraBold.ttf */,
-				14A91122EB284E0F99BC61C2 /* spch-studio-DMSans-SemiBold.ttf */,
-				02426CD126B444E193FBDE56 /* spch-studio-Outfit-Medium.ttf */,
-				981903F578AE485F8E573196 /* spch-studio-DMSans-ExtraBold.ttf */,
-				1E2D37CDFD60471986FEA410 /* spch-studio-Outfit-Light.ttf */,
-				CA20623565484017A8CB7A4B /* spch-studio-DMSans-Black.ttf */,
+				C88601D20E114E73B8321732 /* speak-with-confidence-DMSans-Regular.ttf */,
+				01218B4D979446EFB84CA86C /* speak-with-confidence-DMSans-Medium.ttf */,
+				BAE5861A88994B06861F6DA9 /* speak-with-confidence-DMSans-Bold.ttf */,
+				112E198ED97042D993222C33 /* speak-with-confidence-Outfit-Bold.ttf */,
+				402DC431BB5042AFA62AC2E3 /* speak-with-confidence-Outfit-Regular.ttf */,
+				1A19F105D73440BE820820EE /* speak-with-confidence-Outfit-Black.ttf */,
+				0242C6C93A1D4B44A1BD9DCE /* speak-with-confidence-Outfit-Thin.ttf */,
+				7B7D672FCBDF400FB4F61772 /* speak-with-confidence-Outfit-SemiBold.ttf */,
+				3885390D849F4F26A074BFC2 /* speak-with-confidence-Outfit-ExtraLight.ttf */,
+				F0E9152F35BC425789F21690 /* speak-with-confidence-Outfit-ExtraBold.ttf */,
+				14A91122EB284E0F99BC61C2 /* speak-with-confidence-DMSans-SemiBold.ttf */,
+				02426CD126B444E193FBDE56 /* speak-with-confidence-Outfit-Medium.ttf */,
+				981903F578AE485F8E573196 /* speak-with-confidence-DMSans-ExtraBold.ttf */,
+				1E2D37CDFD60471986FEA410 /* speak-with-confidence-Outfit-Light.ttf */,
+				CA20623565484017A8CB7A4B /* speak-with-confidence-DMSans-Black.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -214,21 +214,21 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E410F094409376D2022CA62B /* PrivacyInfo.xcprivacy in Resources */,
-				F4573BC82E474051A39AD9A8 /* spch-studio-DMSans-Regular.ttf in Resources */,
-				91DDC9F6082F4267B8EC3F58 /* spch-studio-DMSans-Medium.ttf in Resources */,
-				CF7B5CD9082B401A8F388847 /* spch-studio-DMSans-Bold.ttf in Resources */,
-				0826300714294A229851319E /* spch-studio-Outfit-Bold.ttf in Resources */,
-				538E79177AB641F2BD653747 /* spch-studio-Outfit-Regular.ttf in Resources */,
-				B0F4D2F2F6F74BEDB6283C42 /* spch-studio-Outfit-Black.ttf in Resources */,
-				9EE445AFBB3C490D9335E262 /* spch-studio-Outfit-Thin.ttf in Resources */,
-				5D0F9114D59C4F91A156137C /* spch-studio-Outfit-SemiBold.ttf in Resources */,
-				77D5A501882043719B7D6174 /* spch-studio-Outfit-ExtraLight.ttf in Resources */,
-				0548DF7C516748978CCCAC2B /* spch-studio-Outfit-ExtraBold.ttf in Resources */,
-				E28B2E3691BB49FB9D3BAAE4 /* spch-studio-DMSans-SemiBold.ttf in Resources */,
-				DEF4B5B58A01407494209534 /* spch-studio-Outfit-Medium.ttf in Resources */,
-				333C62AF4DAE47B8BD811286 /* spch-studio-DMSans-ExtraBold.ttf in Resources */,
-				C6FFF98D2FBA4F00A50E679C /* spch-studio-Outfit-Light.ttf in Resources */,
-				9A55DC34BFB343B688AE7421 /* spch-studio-DMSans-Black.ttf in Resources */,
+				F4573BC82E474051A39AD9A8 /* speak-with-confidence-DMSans-Regular.ttf in Resources */,
+				91DDC9F6082F4267B8EC3F58 /* speak-with-confidence-DMSans-Medium.ttf in Resources */,
+				CF7B5CD9082B401A8F388847 /* speak-with-confidence-DMSans-Bold.ttf in Resources */,
+				0826300714294A229851319E /* speak-with-confidence-Outfit-Bold.ttf in Resources */,
+				538E79177AB641F2BD653747 /* speak-with-confidence-Outfit-Regular.ttf in Resources */,
+				B0F4D2F2F6F74BEDB6283C42 /* speak-with-confidence-Outfit-Black.ttf in Resources */,
+				9EE445AFBB3C490D9335E262 /* speak-with-confidence-Outfit-Thin.ttf in Resources */,
+				5D0F9114D59C4F91A156137C /* speak-with-confidence-Outfit-SemiBold.ttf in Resources */,
+				77D5A501882043719B7D6174 /* speak-with-confidence-Outfit-ExtraLight.ttf in Resources */,
+				0548DF7C516748978CCCAC2B /* speak-with-confidence-Outfit-ExtraBold.ttf in Resources */,
+				E28B2E3691BB49FB9D3BAAE4 /* speak-with-confidence-DMSans-SemiBold.ttf in Resources */,
+				DEF4B5B58A01407494209534 /* speak-with-confidence-Outfit-Medium.ttf in Resources */,
+				333C62AF4DAE47B8BD811286 /* speak-with-confidence-DMSans-ExtraBold.ttf in Resources */,
+				C6FFF98D2FBA4F00A50E679C /* speak-with-confidence-Outfit-Light.ttf in Resources */,
+				9A55DC34BFB343B688AE7421 /* speak-with-confidence-DMSans-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,13 +259,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -302,13 +298,9 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SpeechTrainerStudio/Pods-SpeechTrainerStudio-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -349,7 +341,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlnkfnlkda.trainerspeechstudio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dljkfjnqw.speakwithconfidence;
 				PRODUCT_NAME = SpeechTrainerStudio;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -381,7 +373,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.dlnkfnlkda.trainerspeechstudio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dljkfjnqw.speakwithconfidence;
 				PRODUCT_NAME = SpeechTrainerStudio;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -462,7 +454,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
@@ -531,7 +526,10 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
-				OTHER_LDFLAGS = "$(inherited)  ";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				USE_HERMES = true;

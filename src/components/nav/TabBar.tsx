@@ -12,6 +12,7 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {colors, fonts} from '../../constants/theme';
 import {tabIcons} from '../../data/assets';
+import {useAdaptive} from '../../hooks/useAdaptive';
 import type {MainTab} from '../../navigation/types';
 
 type Props = {
@@ -20,28 +21,32 @@ type Props = {
 };
 
 type TabItem = {
-  routeName: MainTab;
+  tabId: MainTab;
   label: string;
   icon: ImageSourcePropType;
 };
 
 const TABS: TabItem[] = [
-  {routeName: 'Prompter', label: 'Prompter', icon: tabIcons.prompter},
-  {routeName: 'Workshop', label: 'Workshop', icon: tabIcons.workshop},
-  {routeName: 'Blog', label: 'Blog', icon: tabIcons.blog},
-  {routeName: 'Tips', label: 'Tips', icon: tabIcons.tips},
-  {routeName: 'Game', label: 'Game', icon: tabIcons.game},
-  {routeName: 'Shop', label: 'Shop', icon: tabIcons.shop},
+  {tabId: 'PrompterTab', label: 'Prompter', icon: tabIcons.prompter},
+  {tabId: 'WorkshopTab', label: 'Workshop', icon: tabIcons.workshop},
+  {tabId: 'BlogTab', label: 'Blog', icon: tabIcons.blog},
+  {tabId: 'TipsTab', label: 'Tips', icon: tabIcons.tips},
+  {tabId: 'GameTab', label: 'Game', icon: tabIcons.game},
+  {tabId: 'ShopTab', label: 'Shop', icon: tabIcons.shop},
 ];
 
 export function TabBar({activeTab, onSelectTab}: Props) {
   const insets = useSafeAreaInsets();
+  const adaptive = useAdaptive();
 
   return (
     <View
       style={[
         styles.TabBarWrapper,
-        {paddingBottom: insets.bottom},
+        {
+          paddingTop: adaptive.tabPaddingTop,
+          paddingBottom: Math.max(insets.bottom, adaptive.tabPaddingBottom),
+        },
       ]}>
       <LinearGradient
         colors={['rgba(7, 3, 26, 0)', 'rgba(7, 3, 26, 0.98)']}
@@ -50,11 +55,11 @@ export function TabBar({activeTab, onSelectTab}: Props) {
       />
       <View style={styles.TabBarBar}>
         {TABS.map(tab => {
-          const active = activeTab === tab.routeName;
+          const active = activeTab === tab.tabId;
           return (
             <Pressable
-              key={tab.routeName}
-              onPress={() => onSelectTab(tab.routeName)}
+              key={tab.tabId}
+              onPress={() => onSelectTab(tab.tabId)}
               style={styles.TabBarTab}>
               <View style={styles.TabBarIndicatorSlot}>
                 {active && (
@@ -70,6 +75,7 @@ export function TabBar({activeTab, onSelectTab}: Props) {
                 source={tab.icon}
                 style={[
                   styles.TabBarIcon,
+                  {width: adaptive.tabIconSize, height: adaptive.tabIconSize},
                   active && styles.TabBarIconActive,
                 ]}
                 resizeMode="contain"
@@ -104,7 +110,6 @@ const styles = StyleSheet.create({
   },
   TabBarBar: {
     flexDirection: 'row',
-    paddingTop: 8,
     paddingHorizontal: 4,
   },
   TabBarTab: {
@@ -124,8 +129,6 @@ const styles = StyleSheet.create({
     borderRadius: 999,
   },
   TabBarIcon: {
-    width: 20,
-    height: 20,
     tintColor: colors.textSecondary,
     marginBottom: 4,
   },

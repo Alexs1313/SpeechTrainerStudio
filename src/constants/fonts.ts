@@ -1,8 +1,8 @@
 export const fonts = {
-  outfitBold: 'spch-studio-Outfit-Bold',
-  outfitSemiBold: 'spch-studio-Outfit-SemiBold',
-  outfitExtraBold: 'spch-studio-Outfit-ExtraBold',
-  dmSansRegular: 'spch-studio-DMSans-Regular',
-  dmSansSemiBold: 'spch-studio-DMSans-SemiBold',
-  dmSansBold: 'spch-studio-DMSans-Bold',
+  outfitBold: 'speak-with-confidence-Outfit-Bold',
+  outfitSemiBold: 'speak-with-confidence-Outfit-SemiBold',
+  outfitExtraBold: 'speak-with-confidence-Outfit-ExtraBold',
+  dmSansRegular: 'speak-with-confidence-DMSans-Regular',
+  dmSansSemiBold: 'speak-with-confidence-DMSans-SemiBold',
+  dmSansBold: 'speak-with-confidence-DMSans-Bold',
 };

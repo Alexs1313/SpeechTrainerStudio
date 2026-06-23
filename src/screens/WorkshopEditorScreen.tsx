@@ -16,7 +16,9 @@ import {WorkshopCategoryPills} from '../components/workshop/WorkshopCategoryPill
 import {WORKSHOP_EDITOR_CATEGORIES} from '../constants/workshopCategories';
 import {PrompterCategoryId} from '../types/prompter';
 import {WorkshopText} from '../types/workshop';
+
 import {countWords} from '../utils/wordCount';
+
 import {colors, fonts} from '../constants/theme';
 
 export type WorkshopEditorDraft = {

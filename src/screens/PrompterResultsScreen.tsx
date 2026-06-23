@@ -1,9 +1,11 @@
 import React from 'react';
 import {Pressable, ScrollView, StyleSheet, Text, View} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 
 import {AppBackground} from '../components/common/AppBackground';
+
 import {SessionResult} from '../types/prompter';
 import {formatDuration} from '../utils/formatDuration';
 import {colors, fonts, speechTrainerStudioShadow} from '../constants/theme';

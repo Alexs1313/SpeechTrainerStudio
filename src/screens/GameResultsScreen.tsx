@@ -11,10 +11,10 @@ import {colors, fonts, speechTrainerStudioShadow} from '../constants/theme';
 type Props = {
   result: GameChallengeResult;
   onBack: () => void;
-  onPlayAgain: () => void;
+  onTryAgain: () => void;
 };
 
-export function GameResultsScreen({result, onBack, onPlayAgain}: Props) {
+export function GameResultsScreen({result, onBack, onTryAgain}: Props) {
   const insets = useSafeAreaInsets();
   const isGood = result.grade === 'good';
 
@@ -114,15 +114,15 @@ export function GameResultsScreen({result, onBack, onPlayAgain}: Props) {
         </View>
 
         <Pressable
-          onPress={onPlayAgain}
-          style={styles.GameResultsScreenPlayWrapper}>
+          onPress={onTryAgain}
+          style={styles.GameResultsScreenRetryWrapper}>
           <LinearGradient
             colors={[colors.buttonGradientStart, colors.buttonGradientEnd]}
             start={{x: 0, y: 0}}
             end={{x: 0, y: 1}}
-            style={styles.GameResultsScreenPlayButton}>
-            <Text style={styles.GameResultsScreenPlayIcon}>↻</Text>
-            <Text style={styles.GameResultsScreenPlayText}>Play Again</Text>
+            style={styles.GameResultsScreenRetryButton}>
+            <Text style={styles.GameResultsScreenRetryIcon}>↻</Text>
+            <Text style={styles.GameResultsScreenRetryText}>Try Again</Text>
           </LinearGradient>
         </Pressable>
       </ScrollView>
@@ -294,7 +294,7 @@ const styles = StyleSheet.create({
     lineHeight: 23,
     color: colors.textSecondary,
   },
-  GameResultsScreenPlayWrapper: {
+  GameResultsScreenRetryWrapper: {
     borderRadius: 16,
     ...speechTrainerStudioShadow({
       shadowColor: '#8b5cf6',
@@ -304,7 +304,7 @@ const styles = StyleSheet.create({
       elevation: 8,
     }),
   },
-  GameResultsScreenPlayButton: {
+  GameResultsScreenRetryButton: {
     height: 55,
     borderRadius: 16,
     flexDirection: 'row',
@@ -312,11 +312,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 8,
   },
-  GameResultsScreenPlayIcon: {
+  GameResultsScreenRetryIcon: {
     fontSize: 16,
     color: colors.white,
   },
-  GameResultsScreenPlayText: {
+  GameResultsScreenRetryText: {
     fontFamily: fonts.dmSansSemiBold,
     fontSize: 15,
     color: colors.white,
